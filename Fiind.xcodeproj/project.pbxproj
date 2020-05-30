@@ -14,6 +14,8 @@
 		00E674A82481E19B00506B61 /* Fiind.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00E674A62481E19B00506B61 /* Fiind.xcdatamodeld */; };
 		00E674AA2481E19E00506B61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00E674A92481E19E00506B61 /* Assets.xcassets */; };
 		00E674AD2481E19E00506B61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E674AB2481E19E00506B61 /* LaunchScreen.storyboard */; };
+		00E674B52481E1C900506B61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00E674B42481E1C900506B61 /* GoogleService-Info.plist */; };
+		5D260848830210A7787661AA /* Pods_Fiind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C400F9D021C817897FFE7EAC /* Pods_Fiind.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		00E674A92481E19E00506B61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00E674AC2481E19E00506B61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00E674AE2481E19E00506B61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00E674B42481E1C900506B61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		97713D30DC1B528C1FFCB276 /* Pods-Fiind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fiind.debug.xcconfig"; path = "Target Support Files/Pods-Fiind/Pods-Fiind.debug.xcconfig"; sourceTree = "<group>"; };
+		C0C6B0A14A7669131DF9BD83 /* Pods-Fiind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fiind.release.xcconfig"; path = "Target Support Files/Pods-Fiind/Pods-Fiind.release.xcconfig"; sourceTree = "<group>"; };
+		C400F9D021C817897FFE7EAC /* Pods_Fiind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fiind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D260848830210A7787661AA /* Pods_Fiind.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +51,8 @@
 			children = (
 				00E6749C2481E19B00506B61 /* Fiind */,
 				00E6749B2481E19B00506B61 /* Products */,
+				1FA1843C093515E0C0C490E8 /* Pods */,
+				597E3C9FE847D4C13D5B1F06 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,9 +74,28 @@
 				00E674A92481E19E00506B61 /* Assets.xcassets */,
 				00E674AB2481E19E00506B61 /* LaunchScreen.storyboard */,
 				00E674AE2481E19E00506B61 /* Info.plist */,
+				00E674B42481E1C900506B61 /* GoogleService-Info.plist */,
 				00E674A62481E19B00506B61 /* Fiind.xcdatamodeld */,
 			);
 			path = Fiind;
+			sourceTree = "<group>";
+		};
+		1FA1843C093515E0C0C490E8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				97713D30DC1B528C1FFCB276 /* Pods-Fiind.debug.xcconfig */,
+				C0C6B0A14A7669131DF9BD83 /* Pods-Fiind.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		597E3C9FE847D4C13D5B1F06 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C400F9D021C817897FFE7EAC /* Pods_Fiind.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +105,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E674B12481E19E00506B61 /* Build configuration list for PBXNativeTarget "Fiind" */;
 			buildPhases = (
+				A555663E872CF18A21FF75D2 /* [CP] Check Pods Manifest.lock */,
 				00E674962481E19B00506B61 /* Sources */,
 				00E674972481E19B00506B61 /* Frameworks */,
 				00E674982481E19B00506B61 /* Resources */,
+				497CB1D93FD84F8617F9FD99 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,12 +159,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				00E674AD2481E19E00506B61 /* LaunchScreen.storyboard in Resources */,
+				00E674B52481E1C900506B61 /* GoogleService-Info.plist in Resources */,
 				00E674AA2481E19E00506B61 /* Assets.xcassets in Resources */,
 				00E674A52481E19B00506B61 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		497CB1D93FD84F8617F9FD99 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fiind/Pods-Fiind-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fiind/Pods-Fiind-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fiind/Pods-Fiind-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A555663E872CF18A21FF75D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fiind-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		00E674962481E19B00506B61 /* Sources */ = {
@@ -286,6 +359,7 @@
 		};
 		00E674B22481E19E00506B61 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97713D30DC1B528C1FFCB276 /* Pods-Fiind.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -303,6 +377,7 @@
 		};
 		00E674B32481E19E00506B61 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0C6B0A14A7669131DF9BD83 /* Pods-Fiind.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
