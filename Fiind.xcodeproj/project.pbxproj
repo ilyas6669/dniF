@@ -3,13 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		003BCDA02483E01100CE8981 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BCD9F2483E01100CE8981 /* Constraints.swift */; };
+		003BCDA22483E04100CE8981 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BCDA12483E04100CE8981 /* UIColor.swift */; };
+		003BCDA42483E19000CE8981 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BCDA32483E19000CE8981 /* Alert.swift */; };
+		007A35CE2488468C001C6CDC /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007A35CD2488468C001C6CDC /* HomePage.swift */; };
+		007A35D1248849F3001C6CDC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007A35D0248849F3001C6CDC /* User.swift */; };
+		00924E822485E27F0091D0EA /* OzelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00924E812485E27F0091D0EA /* OzelTextField.swift */; };
+		00C94B722485A54800C43A52 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C94B712485A54800C43A52 /* SignIn.swift */; };
+		00C94B742485A55500C43A52 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C94B732485A55500C43A52 /* SignUp.swift */; };
+		00C94B762485A58300C43A52 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C94B752485A58300C43A52 /* ForgotPassword.swift */; };
 		00E6749E2481E19B00506B61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E6749D2481E19B00506B61 /* AppDelegate.swift */; };
 		00E674A02481E19B00506B61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E6749F2481E19B00506B61 /* SceneDelegate.swift */; };
-		00E674A22481E19B00506B61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E674A12481E19B00506B61 /* ViewController.swift */; };
+		00E674A22481E19B00506B61 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E674A12481E19B00506B61 /* SplashView.swift */; };
 		00E674A52481E19B00506B61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E674A32481E19B00506B61 /* Main.storyboard */; };
 		00E674A82481E19B00506B61 /* Fiind.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00E674A62481E19B00506B61 /* Fiind.xcdatamodeld */; };
 		00E674AA2481E19E00506B61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00E674A92481E19E00506B61 /* Assets.xcassets */; };
@@ -19,10 +28,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		003BCD9F2483E01100CE8981 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		003BCDA12483E04100CE8981 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		003BCDA32483E19000CE8981 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		007A35CD2488468C001C6CDC /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		007A35D0248849F3001C6CDC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		00924E812485E27F0091D0EA /* OzelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OzelTextField.swift; sourceTree = "<group>"; };
+		00C94B712485A54800C43A52 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
+		00C94B732485A55500C43A52 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		00C94B752485A58300C43A52 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		00E6749A2481E19B00506B61 /* Fiind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fiind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E6749D2481E19B00506B61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00E6749F2481E19B00506B61 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		00E674A12481E19B00506B61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		00E674A12481E19B00506B61 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		00E674A42481E19B00506B61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		00E674A72481E19B00506B61 /* Fiind.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fiind.xcdatamodel; sourceTree = "<group>"; };
 		00E674A92481E19E00506B61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,10 +64,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		003BCD9E2483DFE700CE8981 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				003BCD9F2483E01100CE8981 /* Constraints.swift */,
+				003BCDA12483E04100CE8981 /* UIColor.swift */,
+				003BCDA32483E19000CE8981 /* Alert.swift */,
+				00924E812485E27F0091D0EA /* OzelTextField.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		0049EB1D2483DC1200EB084A /* Welcome and Registation */ = {
+			isa = PBXGroup;
+			children = (
+				00E674A12481E19B00506B61 /* SplashView.swift */,
+				00C94B712485A54800C43A52 /* SignIn.swift */,
+				00C94B732485A55500C43A52 /* SignUp.swift */,
+				00C94B752485A58300C43A52 /* ForgotPassword.swift */,
+			);
+			path = "Welcome and Registation";
+			sourceTree = "<group>";
+		};
+		006B96CD24866D2D00B2CF25 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				007A35CD2488468C001C6CDC /* HomePage.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		007A35CF248849D7001C6CDC /* Firebase Model */ = {
+			isa = PBXGroup;
+			children = (
+				007A35D0248849F3001C6CDC /* User.swift */,
+			);
+			path = "Firebase Model";
+			sourceTree = "<group>";
+		};
 		00E674912481E19B00506B61 = {
 			isa = PBXGroup;
 			children = (
 				00E6749C2481E19B00506B61 /* Fiind */,
+				007A35CF248849D7001C6CDC /* Firebase Model */,
+				0049EB1D2483DC1200EB084A /* Welcome and Registation */,
+				006B96CD24866D2D00B2CF25 /* New Group */,
+				003BCD9E2483DFE700CE8981 /* Extension */,
 				00E6749B2481E19B00506B61 /* Products */,
 				1FA1843C093515E0C0C490E8 /* Pods */,
 				597E3C9FE847D4C13D5B1F06 /* Frameworks */,
@@ -69,7 +129,6 @@
 			children = (
 				00E6749D2481E19B00506B61 /* AppDelegate.swift */,
 				00E6749F2481E19B00506B61 /* SceneDelegate.swift */,
-				00E674A12481E19B00506B61 /* ViewController.swift */,
 				00E674A32481E19B00506B61 /* Main.storyboard */,
 				00E674A92481E19E00506B61 /* Assets.xcassets */,
 				00E674AB2481E19E00506B61 /* LaunchScreen.storyboard */,
@@ -86,7 +145,6 @@
 				97713D30DC1B528C1FFCB276 /* Pods-Fiind.debug.xcconfig */,
 				C0C6B0A14A7669131DF9BD83 /* Pods-Fiind.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -214,10 +272,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				007A35D1248849F3001C6CDC /* User.swift in Sources */,
+				00924E822485E27F0091D0EA /* OzelTextField.swift in Sources */,
 				00E674A82481E19B00506B61 /* Fiind.xcdatamodeld in Sources */,
-				00E674A22481E19B00506B61 /* ViewController.swift in Sources */,
+				003BCDA22483E04100CE8981 /* UIColor.swift in Sources */,
+				00E674A22481E19B00506B61 /* SplashView.swift in Sources */,
+				003BCDA02483E01100CE8981 /* Constraints.swift in Sources */,
 				00E6749E2481E19B00506B61 /* AppDelegate.swift in Sources */,
 				00E674A02481E19B00506B61 /* SceneDelegate.swift in Sources */,
+				007A35CE2488468C001C6CDC /* HomePage.swift in Sources */,
+				003BCDA42483E19000CE8981 /* Alert.swift in Sources */,
+				00C94B742485A55500C43A52 /* SignUp.swift in Sources */,
+				00C94B722485A54800C43A52 /* SignIn.swift in Sources */,
+				00C94B762485A58300C43A52 /* ForgotPassword.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +430,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 695LGZ67Y9;
 				INFOPLIST_FILE = Fiind/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -381,7 +450,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3XLGNFVB8K;
 				INFOPLIST_FILE = Fiind/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

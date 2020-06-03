@@ -1,4 +1,5 @@
 PODS:
+  - DLRadioButton (1.4.12)
   - Firebase/Auth (6.24.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.5.3)
@@ -66,12 +67,14 @@ PODS:
   - PromisesObjC (1.2.8)
 
 DEPENDENCIES:
+  - DLRadioButton (~> 1.4)
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Storage
 
 SPEC REPOS:
   trunk:
+    - DLRadioButton
     - Firebase
     - FirebaseAuth
     - FirebaseAuthInterop
@@ -89,6 +92,7 @@ SPEC REPOS:
     - PromisesObjC
 
 SPEC CHECKSUMS:
+  DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
   Firebase: b28e55c60efd98963cd9011fe2fac5a10c2ba124
   FirebaseAuth: 7047aec89c0b17ecd924a550c853f0c27ac6015e
   FirebaseAuthInterop: a0f37ae05833af156e72028f648d313f7e7592e9
@@ -105,6 +109,6 @@ SPEC CHECKSUMS:
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
 
-PODFILE CHECKSUM: 9be57952e7feaa22be43fb8542e57fede2250d3f
+PODFILE CHECKSUM: a9bf20408afd98b4ac31b0466e87655fdad29ba2
 
 COCOAPODS: 1.9.1
