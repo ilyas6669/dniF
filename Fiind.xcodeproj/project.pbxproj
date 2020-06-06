@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		001DDEA6248914B700A67AC9 /* UrunlerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001DDEA4248914B700A67AC9 /* UrunlerCell.swift */; };
+		001DDEA7248914B700A67AC9 /* UrunlerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 001DDEA5248914B700A67AC9 /* UrunlerCell.xib */; };
 		003BCDA02483E01100CE8981 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BCD9F2483E01100CE8981 /* Constraints.swift */; };
 		003BCDA22483E04100CE8981 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BCDA12483E04100CE8981 /* UIColor.swift */; };
 		003BCDA42483E19000CE8981 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BCDA32483E19000CE8981 /* Alert.swift */; };
@@ -16,6 +18,11 @@
 		00C94B722485A54800C43A52 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C94B712485A54800C43A52 /* SignIn.swift */; };
 		00C94B742485A55500C43A52 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C94B732485A55500C43A52 /* SignUp.swift */; };
 		00C94B762485A58300C43A52 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C94B752485A58300C43A52 /* ForgotPassword.swift */; };
+		00CEB060248C38260045FE22 /* LeftSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CEB05F248C38260045FE22 /* LeftSideMenu.swift */; };
+		00CEB062248C3A2A0045FE22 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CEB061248C3A2A0045FE22 /* Home.swift */; };
+		00CEB064248C596B0045FE22 /* LeftSideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CEB063248C596B0045FE22 /* LeftSideMenuView.swift */; };
+		00CEB067248C5B090045FE22 /* LeftSideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CEB065248C5B090045FE22 /* LeftSideMenuCell.swift */; };
+		00CEB068248C5B090045FE22 /* LeftSideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00CEB066248C5B090045FE22 /* LeftSideMenuCell.xib */; };
 		00E6749E2481E19B00506B61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E6749D2481E19B00506B61 /* AppDelegate.swift */; };
 		00E674A02481E19B00506B61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E6749F2481E19B00506B61 /* SceneDelegate.swift */; };
 		00E674A22481E19B00506B61 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E674A12481E19B00506B61 /* SplashView.swift */; };
@@ -28,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		001DDEA4248914B700A67AC9 /* UrunlerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrunlerCell.swift; sourceTree = "<group>"; };
+		001DDEA5248914B700A67AC9 /* UrunlerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UrunlerCell.xib; sourceTree = "<group>"; };
 		003BCD9F2483E01100CE8981 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		003BCDA12483E04100CE8981 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		003BCDA32483E19000CE8981 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -37,6 +46,11 @@
 		00C94B712485A54800C43A52 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		00C94B732485A55500C43A52 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		00C94B752485A58300C43A52 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
+		00CEB05F248C38260045FE22 /* LeftSideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideMenu.swift; sourceTree = "<group>"; };
+		00CEB061248C3A2A0045FE22 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		00CEB063248C596B0045FE22 /* LeftSideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideMenuView.swift; sourceTree = "<group>"; };
+		00CEB065248C5B090045FE22 /* LeftSideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideMenuCell.swift; sourceTree = "<group>"; };
+		00CEB066248C5B090045FE22 /* LeftSideMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeftSideMenuCell.xib; sourceTree = "<group>"; };
 		00E6749A2481E19B00506B61 /* Fiind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fiind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E6749D2481E19B00506B61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00E6749F2481E19B00506B61 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,12 +100,19 @@
 			path = "Welcome and Registation";
 			sourceTree = "<group>";
 		};
-		006B96CD24866D2D00B2CF25 /* New Group */ = {
+		006B96CD24866D2D00B2CF25 /* HomeController */ = {
 			isa = PBXGroup;
 			children = (
 				007A35CD2488468C001C6CDC /* HomePage.swift */,
+				001DDEA4248914B700A67AC9 /* UrunlerCell.swift */,
+				001DDEA5248914B700A67AC9 /* UrunlerCell.xib */,
+				00CEB063248C596B0045FE22 /* LeftSideMenuView.swift */,
+				00CEB065248C5B090045FE22 /* LeftSideMenuCell.swift */,
+				00CEB066248C5B090045FE22 /* LeftSideMenuCell.xib */,
+				00CEB061248C3A2A0045FE22 /* Home.swift */,
+				00CEB05F248C38260045FE22 /* LeftSideMenu.swift */,
 			);
-			path = "New Group";
+			path = HomeController;
 			sourceTree = "<group>";
 		};
 		007A35CF248849D7001C6CDC /* Firebase Model */ = {
@@ -108,7 +129,7 @@
 				00E6749C2481E19B00506B61 /* Fiind */,
 				007A35CF248849D7001C6CDC /* Firebase Model */,
 				0049EB1D2483DC1200EB084A /* Welcome and Registation */,
-				006B96CD24866D2D00B2CF25 /* New Group */,
+				006B96CD24866D2D00B2CF25 /* HomeController */,
 				003BCD9E2483DFE700CE8981 /* Extension */,
 				00E6749B2481E19B00506B61 /* Products */,
 				1FA1843C093515E0C0C490E8 /* Pods */,
@@ -217,8 +238,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				00E674AD2481E19E00506B61 /* LaunchScreen.storyboard in Resources */,
+				001DDEA7248914B700A67AC9 /* UrunlerCell.xib in Resources */,
 				00E674B52481E1C900506B61 /* GoogleService-Info.plist in Resources */,
 				00E674AA2481E19E00506B61 /* Assets.xcassets in Resources */,
+				00CEB068248C5B090045FE22 /* LeftSideMenuCell.xib in Resources */,
 				00E674A52481E19B00506B61 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,13 +300,18 @@
 				00E674A82481E19B00506B61 /* Fiind.xcdatamodeld in Sources */,
 				003BCDA22483E04100CE8981 /* UIColor.swift in Sources */,
 				00E674A22481E19B00506B61 /* SplashView.swift in Sources */,
+				001DDEA6248914B700A67AC9 /* UrunlerCell.swift in Sources */,
 				003BCDA02483E01100CE8981 /* Constraints.swift in Sources */,
 				00E6749E2481E19B00506B61 /* AppDelegate.swift in Sources */,
+				00CEB067248C5B090045FE22 /* LeftSideMenuCell.swift in Sources */,
 				00E674A02481E19B00506B61 /* SceneDelegate.swift in Sources */,
+				00CEB060248C38260045FE22 /* LeftSideMenu.swift in Sources */,
 				007A35CE2488468C001C6CDC /* HomePage.swift in Sources */,
 				003BCDA42483E19000CE8981 /* Alert.swift in Sources */,
 				00C94B742485A55500C43A52 /* SignUp.swift in Sources */,
 				00C94B722485A54800C43A52 /* SignIn.swift in Sources */,
+				00CEB064248C596B0045FE22 /* LeftSideMenuView.swift in Sources */,
+				00CEB062248C3A2A0045FE22 /* Home.swift in Sources */,
 				00C94B762485A58300C43A52 /* ForgotPassword.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

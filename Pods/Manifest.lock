@@ -65,12 +65,14 @@ PODS:
   - nanopb/decode (1.30905.0)
   - nanopb/encode (1.30905.0)
   - PromisesObjC (1.2.8)
+  - SideMenu (6.4.8)
 
 DEPENDENCIES:
   - DLRadioButton (~> 1.4)
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Storage
+  - SideMenu
 
 SPEC REPOS:
   trunk:
@@ -90,6 +92,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - SideMenu
 
 SPEC CHECKSUMS:
   DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
@@ -108,7 +111,8 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
+  SideMenu: 4a891be552d30bb6fa87ad404d62e485f8450c34
 
-PODFILE CHECKSUM: a9bf20408afd98b4ac31b0466e87655fdad29ba2
+PODFILE CHECKSUM: 9404c3a235459a87a17bf454a2de867c81b14f20
 
 COCOAPODS: 1.9.1
