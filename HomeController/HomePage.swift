@@ -60,10 +60,22 @@ class HomePage: UIViewController {
         return view
     }()
     
-    let urunlerTableView : UITableView = {
-        let table = UITableView()
-        table.backgroundColor = .white
-        return table
+     fileprivate let urunlerCollectionView : UICollectionView = {
+           let layout = UICollectionViewFlowLayout()
+           layout.scrollDirection = .vertical
+           let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+           cv.translatesAutoresizingMaskIntoConstraints = false
+           cv.backgroundColor = .white
+           cv.translatesAutoresizingMaskIntoConstraints = false
+           return cv
+       }()
+    
+    let btnAdd : UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setImage(UIImage(named: "AAdd"), for: .normal)
+        btn.addTarget(self, action: #selector(addAction), for: .touchUpInside)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
     }()
     
 
@@ -76,6 +88,7 @@ class HomePage: UIViewController {
         addSubview()
         addConstraint()
         sideMenu()
+        layoutTableView()
        
         
     }
@@ -84,15 +97,17 @@ class HomePage: UIViewController {
         let stackView = UIStackView(arrangedSubviews: [topView,searchView,tableView])
         stackView.axis = .vertical
         view.addSubview(stackView)
-        _ = stackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, bottom: view.bottomAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor)
+        _ = stackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor)
         
+       
     }
     
     func addSubview() {
         topView.addSubview(btnSideMenu)
         topView.addSubview(imgLogo)
         searchView.addSubview(searchBar)
-        tableView.addSubview(urunlerTableView)
+        tableView.addSubview(urunlerCollectionView)
+        view.addSubview(btnAdd)
         
     }
     
@@ -104,12 +119,13 @@ class HomePage: UIViewController {
         
         _ = searchBar.anchor(top: searchView.topAnchor, bottom: searchView.bottomAnchor, leading: searchView.leadingAnchor, trailing: searchView.trailingAnchor)
         
-        _ = urunlerTableView.anchor(top: tableView.topAnchor, bottom: tableView.bottomAnchor, leading: tableView.leadingAnchor, trailing: tableView.trailingAnchor)
+        _ = urunlerCollectionView.anchor(top: tableView.topAnchor, bottom: tableView.bottomAnchor, leading: tableView.leadingAnchor, trailing: tableView.trailingAnchor)
         
+        _ = btnAdd.anchor(top: nil, bottom: view.safeAreaLayoutGuide.bottomAnchor, leading: nil, trailing: view.trailingAnchor,padding: .init(top: 0, left: 0, bottom: 15, right: 15))
     }
     
     func sideMenu() {
-         menu = SideMenuNavigationController(rootViewController: LeftSideMenuView())
+         menu = SideMenuNavigationController(rootViewController:LeftSideMenu())
         menu?.leftSide = true
         
         SideMenuManager.default.leftMenuNavigationController = menu
@@ -122,25 +138,41 @@ class HomePage: UIViewController {
     }
     
     func layoutTableView() {
-        urunlerTableView.delegate = self
-        urunlerTableView.dataSource = self
+        urunlerCollectionView.delegate = self
+        urunlerCollectionView.dataSource = self
+        urunlerCollectionView.register(UINib(nibName: "UrunlerCel", bundle: nil), forCellWithReuseIdentifier: "UrunlerCel")
+        
+        if let layout = urunlerCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+                   layout.itemSize = CGSize(width: view.frame.width, height: 334)
+                   layout.minimumLineSpacing = 10
+                   layout.minimumInteritemSpacing = 5
+                   layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+               }
     }
     
 
+    
+    @objc func addAction() {
+        let addimage = AddImage()
+        addimage.modalPresentationStyle = .fullScreen
+        present(addimage, animated: true, completion: nil)
+    }
    
 
 }
 
-extension HomePage : UITableViewDataSource,UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+extension HomePage : UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 20
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = urunlerTableView.dequeueReusableCell(withIdentifier: "UrunlerCell", for: indexPath)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = urunlerCollectionView.dequeueReusableCell(withReuseIdentifier: "UrunlerCel", for: indexPath) as! UrunlerCel
+        cell.backgroundColor = .red
         return cell
-    }
-   
+        
     
+}
+
 }
 

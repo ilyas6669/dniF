@@ -88,7 +88,8 @@ class ForgotPassword: UIViewController {
     let txtEmail: OzelTextField  = {
         let txt = OzelTextField()
         txt.backgroundColor = .white
-        txt.placeholder = "E-posta adresinizi giriniz"
+        txt.attributedPlaceholder = NSAttributedString(string:  "E-posta adresinizi giriniz", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        txt.textColor = .black
         txt.heightAnchor.constraint(equalToConstant: 40).isActive = true
         return txt
     }()

@@ -82,7 +82,8 @@ class SignIn: UIViewController {
     let txtEmail: OzelTextField  = {
         let txt = OzelTextField()
         txt.backgroundColor = .white
-        txt.placeholder = "E-posta adresinizi giriniz"
+        txt.attributedPlaceholder = NSAttributedString(string: "E-posta adresinizi giriniz", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        txt.textColor = .black
         txt.heightAnchor.constraint(equalToConstant: 40).isActive = true
         return txt
     }()
@@ -90,9 +91,10 @@ class SignIn: UIViewController {
     let txtPassword: OzelTextField = {
         let txt = OzelTextField()
         txt.backgroundColor = .white
-        txt.placeholder = "Şifrenizi girin"
         txt.heightAnchor.constraint(equalToConstant: 40).isActive = true
         txt.isSecureTextEntry = true
+        txt.attributedPlaceholder = NSAttributedString(string: "Şifrenizi girin", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        txt.textColor = .black
         return txt
     }()
     

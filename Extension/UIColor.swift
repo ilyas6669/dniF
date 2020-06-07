@@ -31,3 +31,9 @@ extension UIColor {
         return UIColor(red: 255/255, green: 220/255, blue: 180/255, alpha: 1)
     }
 }
+
+extension UIColor {
+    class func customWhite() -> UIColor {
+        return UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
+    }
+}

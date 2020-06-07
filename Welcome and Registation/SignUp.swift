@@ -104,7 +104,8 @@ class SignUp: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
     let txtEmail: OzelTextField  = {
         let txt = OzelTextField()
         txt.backgroundColor = .white
-        txt.placeholder = "E-posta adresinizi giriniz"
+        txt.attributedPlaceholder = NSAttributedString(string:  "E-posta adresinizi giriniz", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        txt.textColor = .black
         txt.heightAnchor.constraint(equalToConstant: 40).isActive = true
         return txt
     }()
@@ -112,7 +113,8 @@ class SignUp: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
     let txtPassword: OzelTextField = {
         let txt = OzelTextField()
         txt.backgroundColor = .white
-        txt.placeholder = "Şifrenizi girin"
+        txt.attributedPlaceholder = NSAttributedString(string:  "Şifrenizi girin", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        txt.textColor = .black
         txt.heightAnchor.constraint(equalToConstant: 40).isActive = true
         txt.isSecureTextEntry = true
         return txt
@@ -121,7 +123,8 @@ class SignUp: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
     let txtPassword2: OzelTextField = {
         let txt = OzelTextField()
         txt.backgroundColor = .white
-        txt.placeholder = "Şifrenizi tekrar giriniz"
+        txt.attributedPlaceholder = NSAttributedString(string:  "Şifrenizi tekrar giriniz", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        txt.textColor = .black
         txt.heightAnchor.constraint(equalToConstant: 40).isActive = true
         txt.isSecureTextEntry = true
         return txt

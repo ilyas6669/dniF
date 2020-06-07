@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		001DDEA6248914B700A67AC9 /* UrunlerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001DDEA4248914B700A67AC9 /* UrunlerCell.swift */; };
-		001DDEA7248914B700A67AC9 /* UrunlerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 001DDEA5248914B700A67AC9 /* UrunlerCell.xib */; };
+		0010155A248DB06C0049554F /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00101559248DB06C0049554F /* Items.swift */; };
 		003BCDA02483E01100CE8981 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BCD9F2483E01100CE8981 /* Constraints.swift */; };
 		003BCDA22483E04100CE8981 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BCDA12483E04100CE8981 /* UIColor.swift */; };
 		003BCDA42483E19000CE8981 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BCDA32483E19000CE8981 /* Alert.swift */; };
 		007A35CE2488468C001C6CDC /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007A35CD2488468C001C6CDC /* HomePage.swift */; };
 		007A35D1248849F3001C6CDC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007A35D0248849F3001C6CDC /* User.swift */; };
 		00924E822485E27F0091D0EA /* OzelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00924E812485E27F0091D0EA /* OzelTextField.swift */; };
+		00BD7BEC248D31E400D54516 /* LeftSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7BEB248D31E400D54516 /* LeftSideMenu.swift */; };
+		00BD7BEF248D32B800D54516 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7BED248D32B700D54516 /* SideMenuCell.swift */; };
+		00BD7BF0248D32B800D54516 /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00BD7BEE248D32B700D54516 /* SideMenuCell.xib */; };
+		00BD7BF3248D43BB00D54516 /* UrunlerCel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7BF1248D43BB00D54516 /* UrunlerCel.swift */; };
+		00BD7BF4248D43BB00D54516 /* UrunlerCel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00BD7BF2248D43BB00D54516 /* UrunlerCel.xib */; };
+		00BD7BF7248D519100D54516 /* AddImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD7BF6248D519100D54516 /* AddImage.swift */; };
 		00C94B722485A54800C43A52 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C94B712485A54800C43A52 /* SignIn.swift */; };
 		00C94B742485A55500C43A52 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C94B732485A55500C43A52 /* SignUp.swift */; };
 		00C94B762485A58300C43A52 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C94B752485A58300C43A52 /* ForgotPassword.swift */; };
-		00CEB060248C38260045FE22 /* LeftSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CEB05F248C38260045FE22 /* LeftSideMenu.swift */; };
-		00CEB062248C3A2A0045FE22 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CEB061248C3A2A0045FE22 /* Home.swift */; };
-		00CEB064248C596B0045FE22 /* LeftSideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CEB063248C596B0045FE22 /* LeftSideMenuView.swift */; };
-		00CEB067248C5B090045FE22 /* LeftSideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CEB065248C5B090045FE22 /* LeftSideMenuCell.swift */; };
-		00CEB068248C5B090045FE22 /* LeftSideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00CEB066248C5B090045FE22 /* LeftSideMenuCell.xib */; };
 		00E6749E2481E19B00506B61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E6749D2481E19B00506B61 /* AppDelegate.swift */; };
 		00E674A02481E19B00506B61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E6749F2481E19B00506B61 /* SceneDelegate.swift */; };
 		00E674A22481E19B00506B61 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E674A12481E19B00506B61 /* SplashView.swift */; };
@@ -35,22 +35,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		001DDEA4248914B700A67AC9 /* UrunlerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrunlerCell.swift; sourceTree = "<group>"; };
-		001DDEA5248914B700A67AC9 /* UrunlerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UrunlerCell.xib; sourceTree = "<group>"; };
+		00101559248DB06C0049554F /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		003BCD9F2483E01100CE8981 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		003BCDA12483E04100CE8981 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		003BCDA32483E19000CE8981 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		007A35CD2488468C001C6CDC /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		007A35D0248849F3001C6CDC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		00924E812485E27F0091D0EA /* OzelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OzelTextField.swift; sourceTree = "<group>"; };
+		00BD7BEB248D31E400D54516 /* LeftSideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideMenu.swift; sourceTree = "<group>"; };
+		00BD7BED248D32B700D54516 /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
+		00BD7BEE248D32B700D54516 /* SideMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
+		00BD7BF1248D43BB00D54516 /* UrunlerCel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrunlerCel.swift; sourceTree = "<group>"; };
+		00BD7BF2248D43BB00D54516 /* UrunlerCel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UrunlerCel.xib; sourceTree = "<group>"; };
+		00BD7BF6248D519100D54516 /* AddImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImage.swift; sourceTree = "<group>"; };
 		00C94B712485A54800C43A52 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		00C94B732485A55500C43A52 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		00C94B752485A58300C43A52 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
-		00CEB05F248C38260045FE22 /* LeftSideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideMenu.swift; sourceTree = "<group>"; };
-		00CEB061248C3A2A0045FE22 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		00CEB063248C596B0045FE22 /* LeftSideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideMenuView.swift; sourceTree = "<group>"; };
-		00CEB065248C5B090045FE22 /* LeftSideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideMenuCell.swift; sourceTree = "<group>"; };
-		00CEB066248C5B090045FE22 /* LeftSideMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeftSideMenuCell.xib; sourceTree = "<group>"; };
 		00E6749A2481E19B00506B61 /* Fiind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fiind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E6749D2481E19B00506B61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00E6749F2481E19B00506B61 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,13 +104,11 @@
 			isa = PBXGroup;
 			children = (
 				007A35CD2488468C001C6CDC /* HomePage.swift */,
-				001DDEA4248914B700A67AC9 /* UrunlerCell.swift */,
-				001DDEA5248914B700A67AC9 /* UrunlerCell.xib */,
-				00CEB063248C596B0045FE22 /* LeftSideMenuView.swift */,
-				00CEB065248C5B090045FE22 /* LeftSideMenuCell.swift */,
-				00CEB066248C5B090045FE22 /* LeftSideMenuCell.xib */,
-				00CEB061248C3A2A0045FE22 /* Home.swift */,
-				00CEB05F248C38260045FE22 /* LeftSideMenu.swift */,
+				00BD7BF1248D43BB00D54516 /* UrunlerCel.swift */,
+				00BD7BF2248D43BB00D54516 /* UrunlerCel.xib */,
+				00BD7BEB248D31E400D54516 /* LeftSideMenu.swift */,
+				00BD7BED248D32B700D54516 /* SideMenuCell.swift */,
+				00BD7BEE248D32B700D54516 /* SideMenuCell.xib */,
 			);
 			path = HomeController;
 			sourceTree = "<group>";
@@ -119,8 +117,17 @@
 			isa = PBXGroup;
 			children = (
 				007A35D0248849F3001C6CDC /* User.swift */,
+				00101559248DB06C0049554F /* Items.swift */,
 			);
 			path = "Firebase Model";
+			sourceTree = "<group>";
+		};
+		00BD7BF5248D516200D54516 /* AddPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				00BD7BF6248D519100D54516 /* AddImage.swift */,
+			);
+			path = AddPhoto;
 			sourceTree = "<group>";
 		};
 		00E674912481E19B00506B61 = {
@@ -130,6 +137,7 @@
 				007A35CF248849D7001C6CDC /* Firebase Model */,
 				0049EB1D2483DC1200EB084A /* Welcome and Registation */,
 				006B96CD24866D2D00B2CF25 /* HomeController */,
+				00BD7BF5248D516200D54516 /* AddPhoto */,
 				003BCD9E2483DFE700CE8981 /* Extension */,
 				00E6749B2481E19B00506B61 /* Products */,
 				1FA1843C093515E0C0C490E8 /* Pods */,
@@ -238,10 +246,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				00E674AD2481E19E00506B61 /* LaunchScreen.storyboard in Resources */,
-				001DDEA7248914B700A67AC9 /* UrunlerCell.xib in Resources */,
+				00BD7BF0248D32B800D54516 /* SideMenuCell.xib in Resources */,
 				00E674B52481E1C900506B61 /* GoogleService-Info.plist in Resources */,
+				00BD7BF4248D43BB00D54516 /* UrunlerCel.xib in Resources */,
 				00E674AA2481E19E00506B61 /* Assets.xcassets in Resources */,
-				00CEB068248C5B090045FE22 /* LeftSideMenuCell.xib in Resources */,
 				00E674A52481E19B00506B61 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,20 +306,20 @@
 				007A35D1248849F3001C6CDC /* User.swift in Sources */,
 				00924E822485E27F0091D0EA /* OzelTextField.swift in Sources */,
 				00E674A82481E19B00506B61 /* Fiind.xcdatamodeld in Sources */,
+				00BD7BF3248D43BB00D54516 /* UrunlerCel.swift in Sources */,
+				0010155A248DB06C0049554F /* Items.swift in Sources */,
 				003BCDA22483E04100CE8981 /* UIColor.swift in Sources */,
 				00E674A22481E19B00506B61 /* SplashView.swift in Sources */,
-				001DDEA6248914B700A67AC9 /* UrunlerCell.swift in Sources */,
+				00BD7BEF248D32B800D54516 /* SideMenuCell.swift in Sources */,
 				003BCDA02483E01100CE8981 /* Constraints.swift in Sources */,
+				00BD7BEC248D31E400D54516 /* LeftSideMenu.swift in Sources */,
 				00E6749E2481E19B00506B61 /* AppDelegate.swift in Sources */,
-				00CEB067248C5B090045FE22 /* LeftSideMenuCell.swift in Sources */,
 				00E674A02481E19B00506B61 /* SceneDelegate.swift in Sources */,
-				00CEB060248C38260045FE22 /* LeftSideMenu.swift in Sources */,
+				00BD7BF7248D519100D54516 /* AddImage.swift in Sources */,
 				007A35CE2488468C001C6CDC /* HomePage.swift in Sources */,
 				003BCDA42483E19000CE8981 /* Alert.swift in Sources */,
 				00C94B742485A55500C43A52 /* SignUp.swift in Sources */,
 				00C94B722485A54800C43A52 /* SignIn.swift in Sources */,
-				00CEB064248C596B0045FE22 /* LeftSideMenuView.swift in Sources */,
-				00CEB062248C3A2A0045FE22 /* Home.swift in Sources */,
 				00C94B762485A58300C43A52 /* ForgotPassword.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
