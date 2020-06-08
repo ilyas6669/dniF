@@ -9,6 +9,7 @@ pod 'Firebase/Database'
 pod 'Firebase/Storage'
 pod 'DLRadioButton', '~> 1.4'
 pod 'SideMenu'
+pod 'SDWebImage', '~> 5.0'
   # Pods for Fiind
 
 end

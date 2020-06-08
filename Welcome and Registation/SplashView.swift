@@ -68,7 +68,7 @@ class SplashView: UIViewController {
     }
     
     @objc func toHomePage() {
-        let homePage = HomePage()
+        let homePage = Home()
         homePage.modalPresentationStyle = .fullScreen
         self.present(homePage, animated: true, completion: nil)
     }
