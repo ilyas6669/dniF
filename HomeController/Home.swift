@@ -53,11 +53,11 @@ class Home: UIViewController {
         tableView.dataSource = self
         tableView.allowsSelection = false
         
-        menu = SideMenuNavigationController(rootViewController:LeftSideMenu())
-        menu?.leftSide = true
-        
-        SideMenuManager.default.leftMenuNavigationController = menu
-        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+//        menu = SideMenuNavigationController(rootViewController:LeftMenu())
+//        menu?.leftSide = true
+//        
+//        SideMenuManager.default.leftMenuNavigationController = menu
+//        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
         
         view.addSubview(btnAdd)
         _ = btnAdd.anchor(top: nil, bottom: view.safeAreaLayoutGuide.bottomAnchor, leading: nil, trailing: view.trailingAnchor,padding: .init(top: 0, left: 0, bottom: 15, right: 15))
@@ -68,7 +68,7 @@ class Home: UIViewController {
     }
     
     @IBAction func btnLeftAction(_ sender: Any) {
-        present(menu!, animated: true, completion: nil)
+//        present(menu!, animated: true, completion: nil)
     }
     
     @objc func addAction() {
