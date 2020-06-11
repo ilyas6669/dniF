@@ -68,9 +68,10 @@ class SplashView: UIViewController {
     }
     
     @objc func toHomePage() {
-        let homePage = Home()
-        homePage.modalPresentationStyle = .fullScreen
-        self.present(homePage, animated: true, completion: nil)
+       let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "Home") as! Home
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
     }
     
     @objc func toSignIn() {

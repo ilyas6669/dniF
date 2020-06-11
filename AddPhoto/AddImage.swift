@@ -14,6 +14,18 @@ import Firebase
 
 class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate,MKMapViewDelegate,CLLocationManagerDelegate  {
     
+    var ref : DatabaseReference?
+    
+    var photoUrl : String?
+    
+    var activityIndicator : UIActivityIndicatorView = {
+        var indicator = UIActivityIndicatorView()
+        indicator.hidesWhenStopped = true
+        indicator.style = .large
+        indicator.color = .black
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        return indicator
+    }()
     
     lazy var contentViewSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
     
@@ -158,6 +170,7 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
     var longutide1 = 0.0
     let locationMaager = CLLocationManager()
     
+    
     let mapView : UIView = {
         let view = UIView()
         view.backgroundColor = .customBlue()
@@ -211,13 +224,14 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
         mapView.isHidden = true
         view.backgroundColor = .customBlue()
         stackView()
         addSubview()
         addConstraint()
         
-       
+        
         
         let gestureREcongizer = UITapGestureRecognizer(target: self, action: #selector(pickerViewGizle))
         view.addGestureRecognizer(gestureREcongizer)
@@ -246,7 +260,7 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
         
         map.addGestureRecognizer(gestureRecongizer3)
         
-       
+        
         
     }
     
@@ -273,6 +287,7 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
         topView.addSubview(btnLeft)
         topView.addSubview(lblIlanEkle)
         topView.addSubview(btnEkle)
+        view.addSubview(activityIndicator)
         centerView.addSubview(imgAdd)
         txtKategori.addSubview(imgDown)
         view.addSubview(mapView)
@@ -294,6 +309,9 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
         _ = btnEkle.anchor(top: topView.topAnchor, bottom: topView.bottomAnchor, leading: lblIlanEkle.trailingAnchor, trailing: topView.trailingAnchor,padding: .init(top: 10, left: 40, bottom: 10, right: 10))
         btnLeft.merkezYSuperView()
         
+        activityIndicator.merkezKonumlamdirmaSuperView()
+        
+        
         _ = imgAdd.anchor(top: centerView.topAnchor, bottom: centerView.bottomAnchor, leading: centerView.leadingAnchor, trailing: centerView.trailingAnchor,padding: .init(top: 5, left: 5, bottom: 5, right: 5))
         imgDown.trailingAnchor.constraint(equalTo: txtKategori.trailingAnchor,constant: -5).isActive = true
         imgDown.merkezYSuperView()
@@ -304,9 +322,9 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
         
         btnLeftMap.leadingAnchor.constraint(equalTo: topViewMap.leadingAnchor,constant: 10).isActive = true
         btnLeftMap.merkezYSuperView()
-
+        
         _ = btnKonumKullan.anchor(top: topViewMap.topAnchor, bottom: nil, leading: nil, trailing: topViewMap.trailingAnchor,padding: .init(top: 5, left: 0, bottom: 0, right: 5))
-
+        
         _ = lblKonum.anchor(top: btnKonumKullan.bottomAnchor, bottom: nil, leading: nil, trailing: topViewMap.trailingAnchor,padding: .init(top: 5, left: 0, bottom: 0, right: 5))
         
         _ = map.anchor(top: topViewMap.bottomAnchor, bottom: mapView.bottomAnchor, leading: mapView.leadingAnchor, trailing: mapView.trailingAnchor)
@@ -322,20 +340,77 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
     }
     
     @objc func ekleAction() {
+        activityIndicator.startAnimating()
         if txtBaslik.text == "" {
             makeAlert(tittle: "Hata", message: "Lütfen başlık girniz")
+            activityIndicator.stopAnimating()
             return
         }else if txtAciklama.text == "" {
-             makeAlert(tittle: "Hata", message: "Lütfen açıklama girniz")
+            makeAlert(tittle: "Hata", message: "Lütfen açıklama girniz")
+            activityIndicator.stopAnimating()
+            return
         }else if txtKategori.text == "" {
             makeAlert(tittle: "Hata", message: "Lütfen kategori seçiniz")
+            activityIndicator.stopAnimating()
+            return
         }else if latidude1 == 0.0 && longutide1 == 0.0 {
-             makeAlert(tittle: "Hata", message: "Lütfen konumu seçiniz")
+            makeAlert(tittle: "Hata", message: "Lütfen konumu seçiniz")
+            activityIndicator.stopAnimating()
+            return
         }else if imgAdd.image == UIImage(named: "camera") {
             makeAlert(tittle: "Hata", message: "Lütfen ilanınız için fotoğraf seçiniz")
+            activityIndicator.stopAnimating()
+            return
         }
         
-       
+        
+        let postid = Database.database().reference().child("items").childByAutoId().key
+        
+        let imagename = "images/\(postid!)/1.jpg"
+        let storageRef = Storage.storage().reference().child("WorkPhoto").child(imagename)
+        
+        if let uploadData = imgAdd.image!.pngData() {
+            storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
+                if error != nil {
+                    print("error:\(error.debugDescription)")
+                    self.activityIndicator.stopAnimating()
+                } else { //succesfully
+                    
+                    storageRef.downloadURL(completion: { (url, error) in
+                        
+                        
+                        let photourl = url?.absoluteString
+                        print("succes")
+                        
+                        self.photoUrl = photourl
+                        
+                    })
+                }
+            }
+        }
+        
+        
+        
+        let userid = Auth.auth().currentUser!.uid
+        
+        let items = Items(category: self.txtKategori.text!, description: self.txtAciklama.text!, header: self.txtBaslik.text!, itemid: postid!, latitude: self.latidude1, longitude: self.longutide1, photourl:photoUrl! , publisher: userid)
+        
+        let dict : [String:Any] = ["category":items.category!,"description":items.description!,"header":items.header!,"itemid":items.itemid!,"latitude":items.latitude!,"longitude":items.longitude!,"photourl":items.photourl!,"publisher":items.publisher!]
+        
+        let newRef = self.ref?.child("items").child(userid)
+        newRef?.setValue(dict) {
+            (err, resp) in
+            guard err == nil else {
+                print("Posting failed : ")
+                self.activityIndicator.stopAnimating()
+                //self.btnSignUp.isHidden = false
+                return
+            }
+            let splashView = Home()
+            splashView.modalPresentationStyle = .fullScreen
+            self.present(splashView, animated: true, completion: nil)
+        }
+        self.activityIndicator.stopAnimating()
         
         
     }
@@ -357,7 +432,7 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
                 self.mapView.alpha = 1
             }
         }
-       
+        
     }
     
     @objc func pickerViewGizle() {
@@ -383,7 +458,7 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
         map.setRegion(region, animated: true)
     }
     
-   
+    
     
     @objc func chooseLocation(gestureRecongizer : UITapGestureRecognizer) {
         
@@ -409,7 +484,6 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
         
         
     }
-    
     @objc func konumKullanAction() {
         if latidude1 != 0.0 && longutide1 != 0.0 {
             UIView.transition(with: btnKonumuSec, duration: 0.5, options: .transitionCrossDissolve, animations: {
@@ -419,7 +493,7 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
                 self.btnKonumuSec.setTitleColor(.white, for: .normal)
             }, completion: nil)
         }
-       
+        
         if !mapView.isHidden {
             UIView.animate(withDuration: 0.35) { [unowned self] in
                 self.mapView.isHidden = true
@@ -468,3 +542,4 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
     }
     
 }
+

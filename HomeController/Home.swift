@@ -9,6 +9,7 @@
 import UIKit
 import SideMenu
 import Firebase
+import SDWebImage
 
 class cell666 : UITableViewCell {
     
@@ -32,6 +33,10 @@ class cell666 : UITableViewCell {
 
 class Home: UIViewController {
     
+    var ref : DatabaseReference?
+    
+     var itemlist : [NSDictionary] = []
+    
     @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var tableView: UITableView!
@@ -48,6 +53,9 @@ class Home: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
+        
+         getitemfromDB()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -79,20 +87,61 @@ class Home: UIViewController {
     
     
     
+    
+    
 }
 
 
 extension Home : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 11
+        return itemlist.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : cell666 = tableView.dequeueReusableCell(withIdentifier: "cell666") as! cell666
-        cell.lblName.text = "Baslik"
-        cell.lblAciklama.text = "Aciklama"
+       let value2 = self.itemlist[indexPath.row]
+
+       let header = value2["header"] as? String ?? ""
+       let description = value2["description"] as? String ?? ""
+       let photourl = value2["photourl"] as? String ?? ""
+      
+        cell.lblName.text = header
+        cell.lblAciklama.text = description
+        cell.img.sd_setImage(with: URL(string: "\(photourl)"))
+        
+        
         return cell
     }
+    
+     func getitemfromDB(){
+            
+            let userRef = Database.database().reference().child("items")
+    //        let userRef = Database.database().reference().child("items")
+
+            userRef.observe(.value, with: { (snapshot) in
+            
+                self.itemlist.removeAll(keepingCapacity: false)
+                
+                for child in snapshot.children {
+                    
+                    let snap = child as! DataSnapshot //get first snapshot
+                    let value = snap.value as? NSDictionary //get second snapshot
+                    
+                    self.itemlist.append(value!)
+                    
+                    
+
+                }
+                
+             
+                //reverseni yeni bunu
+    //            self.itemlist = self.itemlist.reversed()
+            
+                self.itemlist = self.itemlist.shuffled()
+                self.tableView.reloadData()
+            })
+            
+        }
     
     
 }
