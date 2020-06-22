@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Fiind
+
+  Created by İlyas Abiyev on 6/12/20.
+  Copyright © 2020 İlyas Abiyev. All rights reserved.
+*/
+"Hesap" = "Konto" ;
+"Ana Sayfa" = "Startseite" ;
+"Konumunu Güncelle" = "Aktualisieren Sie Ihren Standort" ;
+"Dili değiştir" = "Sprache ändern" ;
+"Çıkış Yap" = "Ausloggen" ;
+"Market" = "Markt" ;
+"Eczane" = "Apotheke" ;
+"Otel" = "Hotel" ;
+"Bankamatik" = "Geldautomat" ;
+"Ptt" = "Post" ;
+"Berber" = "Barbier" ;
+"Restoran" = "Restaurant" ;
+"Terzi" = "Schneider" ;

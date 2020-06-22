@@ -273,7 +273,7 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
         stackView.axis = .vertical
         
         containerView.addSubview(stackView)
-        _ = stackView.anchor(top: containerView.safeAreaLayoutGuide.topAnchor, bottom: containerView.safeAreaLayoutGuide.bottomAnchor, leading: containerView.leadingAnchor, trailing: containerView.trailingAnchor)
+        _ = stackView.anchor(top: containerView.safeAreaLayoutGuide.topAnchor, bottom: containerView.bottomAnchor, leading: containerView.leadingAnchor, trailing: containerView.trailingAnchor)
         
         let txtStackView = UIStackView(arrangedSubviews: [txtBaslik,txtAciklama,txtKategori,btnKonumuSec])
         txtStackView.axis = .vertical
@@ -384,6 +384,31 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
                         
                         self.photoUrl = photourl
                         
+                        let userid = Auth.auth().currentUser!.uid
+                            
+                        let items = Items(category: self.txtKategori.text!, description: self.txtAciklama.text!, header: self.txtBaslik.text!, itemid: postid!, latitude: self.latidude1, longitude: self.longutide1, photourl:self.photoUrl! , publisher: userid)
+                            
+                            let dict : [String:Any] = ["category":items.category!,"description":items.description!,"header":items.header!,"itemid":items.itemid!,"latitude":items.latitude!,"longitude":items.longitude!,"photourl":items.photourl!,"publisher":items.publisher!]
+                            //itemid postid did yuxaridaki
+                        let newRef = self.ref?.child("items").child(postid!)
+                            newRef?.setValue(dict) {
+                                (err, resp) in
+                                guard err == nil else {
+                                    print("Posting failed : ")
+                                    self.activityIndicator.stopAnimating()
+                                    //self.btnSignUp.isHidden = false
+                                    return
+                                }
+                                self.activityIndicator.stopAnimating()
+                                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                let vc = storyboard.instantiateViewController(withIdentifier: "Home") as! Home
+                                vc.modalPresentationStyle = .fullScreen
+                                self.present(vc, animated: true, completion: nil)
+                                
+                              
+                        }
+                        
+                        
                     })
                 }
             }
@@ -391,26 +416,7 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
         
         
         
-        let userid = Auth.auth().currentUser!.uid
-        
-        let items = Items(category: self.txtKategori.text!, description: self.txtAciklama.text!, header: self.txtBaslik.text!, itemid: postid!, latitude: self.latidude1, longitude: self.longutide1, photourl:photoUrl! , publisher: userid)
-        
-        let dict : [String:Any] = ["category":items.category!,"description":items.description!,"header":items.header!,"itemid":items.itemid!,"latitude":items.latitude!,"longitude":items.longitude!,"photourl":items.photourl!,"publisher":items.publisher!]
-        
-        let newRef = self.ref?.child("items").child(userid)
-        newRef?.setValue(dict) {
-            (err, resp) in
-            guard err == nil else {
-                print("Posting failed : ")
-                self.activityIndicator.stopAnimating()
-                //self.btnSignUp.isHidden = false
-                return
-            }
-            let splashView = Home()
-            splashView.modalPresentationStyle = .fullScreen
-            self.present(splashView, animated: true, completion: nil)
-        }
-        self.activityIndicator.stopAnimating()
+    
         
         
     }
@@ -536,7 +542,7 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        imgAdd.image = info[.originalImage] as? UIImage
+        imgAdd.image =  info[UIImagePickerController.InfoKey.editedImage] as? UIImage
         self.dismiss(animated: true, completion: nil)
         
     }

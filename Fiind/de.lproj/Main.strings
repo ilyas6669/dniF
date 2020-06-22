@@ -1,0 +1,60 @@
+
+/* Class = "UILabel"; text = "Bankamatik"; ObjectID = "4EK-Wg-Iac"; */
+"4EK-Wg-Iac.text" = "Bankamatik";
+
+/* Class = "UILabel"; text = "Market"; ObjectID = "6l4-P8-Mhs"; */
+"6l4-P8-Mhs.text" = "Market";
+
+/* Class = "UILabel"; text = "Otel"; ObjectID = "6yj-c7-la4"; */
+"6yj-c7-la4.text" = "Otel";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8bN-Rm-6a5"; */
+"8bN-Rm-6a5.text" = "Label";
+
+/* Class = "UILabel"; text = "Kategoriler"; ObjectID = "BkX-6h-Ocg"; */
+"BkX-6h-Ocg.text" = "Kategoriler";
+
+/* Class = "UILabel"; text = "Dili değiştir"; ObjectID = "PVe-XV-taE"; */
+"PVe-XV-taE.text" = "Dili değiştir";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "QQf-pa-jee"; */
+"QQf-pa-jee.title" = "Item";
+
+/* Class = "UILabel"; text = "0 yorumun tümünü gör"; ObjectID = "TRm-Hj-r6T"; */
+"TRm-Hj-r6T.text" = "0 yorumun tümünü gör";
+
+/* Class = "UILabel"; text = "Berber"; ObjectID = "fFb-CT-5XG"; */
+"fFb-CT-5XG.text" = "Berber";
+
+/* Class = "UILabel"; text = "Terzi"; ObjectID = "g70-Oh-11Z"; */
+"g70-Oh-11Z.text" = "Terzi";
+
+/* Class = "UILabel"; text = "Eczane"; ObjectID = "gun-Mv-9QU"; */
+"gun-Mv-9QU.text" = "Eczane";
+
+/* Class = "UILabel"; text = "Restoran"; ObjectID = "ke6-9e-egi"; */
+"ke6-9e-egi.text" = "Restoran";
+
+/* Class = "UILabel"; text = "Hesap"; ObjectID = "mI0-VV-JFx"; */
+"mI0-VV-JFx.text" = "Hesap";
+
+/* Class = "UILabel"; text = "Ptt"; ObjectID = "mnW-f4-Yfq"; */
+"mnW-f4-Yfq.text" = "Ptt";
+
+/* Class = "UILabel"; text = "Çıkış Yap"; ObjectID = "nTk-JS-Yuk"; */
+"nTk-JS-Yuk.text" = "Çıkış Yap";
+
+/* Class = "UILabel"; text = "Ana Sayfa"; ObjectID = "qgp-ya-41M"; */
+"qgp-ya-41M.text" = "Ana Sayfa";
+
+/* Class = "UILabel"; text = "Konumunu Güncelle"; ObjectID = "sdH-Q5-5Qw"; */
+"sdH-Q5-5Qw.text" = "Konumunu Güncelle";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "uv5-mf-8dI"; */
+"uv5-mf-8dI.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "vk6-61-yjC"; */
+"vk6-61-yjC.title" = "Item";
+
+/* Class = "UILabel"; text = "0 beğenme"; ObjectID = "yrg-ki-KwD"; */
+"yrg-ki-KwD.text" = "0 beğenme";

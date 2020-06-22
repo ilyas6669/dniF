@@ -403,9 +403,10 @@ class SignUp: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
                         self.btnSignUp.isHidden = false
                         return
                     }
-                    let splashView = Home()
-                    splashView.modalPresentationStyle = .fullScreen
-                    self.present(splashView, animated: true, completion: nil)
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "Home") as! Home
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true, completion: nil)
                 }
 
             }

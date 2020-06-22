@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LeftMenu: UIViewController {
     
@@ -94,17 +95,46 @@ extension LeftMenu : UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-           //none
+            //none
         }else if indexPath.row == 1 {
             //none
         }else if indexPath.row == 2 {
+            self.dismiss(animated: true, completion: nil)
+            
             
         }else if indexPath.row == 3 {
             
         }else if indexPath.row == 4 {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "Home") as! Home
+            vc.modalPresentationStyle = .fullScreen
+            vc.isHiddenn = "false"
+            self.present(vc, animated: true, completion: nil)
+            
             
         }else if indexPath.row == 5 {
+            let refreshAlert = UIAlertController(title: "Çıkış Yap", message: "Çıkıs yapmak istediğinizden eminmisiniz?", preferredStyle: UIAlertController.Style.alert)
             
+            refreshAlert.addAction(UIAlertAction(title: "Evet", style: .default, handler: { (action: UIAlertAction!) in
+                do {
+                    try Auth.auth().signOut()
+                    let login = SignIn()
+                    login.modalPresentationStyle = .fullScreen
+                    self.present(login, animated: true, completion: nil)
+                    
+                    
+                } catch {
+                    print("error")
+                }
+            }))
+            
+            refreshAlert.addAction(UIAlertAction(title: "İptal Et", style: .cancel, handler: { (action: UIAlertAction!) in
+                self.dismiss(animated: true, completion: nil)
+                self.view.endEditing(true)
+                
+            }))
+            
+            present(refreshAlert, animated: true, completion: nil)
         }else if indexPath.row == 6 {
             
         }else if indexPath.row == 7 {
