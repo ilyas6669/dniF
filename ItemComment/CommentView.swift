@@ -200,7 +200,15 @@ extension CommentView : UITableViewDelegate,UITableViewDataSource {
         cell.lblComment.text = "jnjdncdcdscscjnjdncdcdscscnjnjdncdcdscscnjnjdncdcdscscnjnjdncdcdscscnjnjdncdcdscscnn"
         cell.btnTapAction = {
             () in
-            print("test")
+            let alert = UIAlertController(title: "Sil", message: "Yorumunuzu silmek mi istiyorsunuz?", preferredStyle: .actionSheet)
+            let silAction = UIAlertAction(title: "Paylaşımı sil", style: .default) { (action) in
+                
+            }
+            let iptalAction = UIAlertAction(title: "İptal Et", style: .cancel, handler: nil)
+            
+            alert.addAction(silAction)
+            alert.addAction(iptalAction)
+            self.present(alert, animated: true, completion: nil)
         }
         return cell
     }

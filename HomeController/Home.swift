@@ -12,6 +12,7 @@ import Firebase
 import SDWebImage
 import MapKit
 
+
 class cell666 : UITableViewCell {
     
     @IBOutlet weak var img: UIImageView!
@@ -23,6 +24,10 @@ class cell666 : UITableViewCell {
     @IBOutlet weak var btnComment: UIButton!
     @IBOutlet weak var btnMap: UIButton!
     
+
+    @IBOutlet weak var btnEdit: UIButton!
+    
+    
     var lblCommentAction : (()->())?
     
     var btnCommentAction : (()->())?
@@ -30,6 +35,8 @@ class cell666 : UITableViewCell {
     var btnLikeAction : (()->())?
     
     var btnMapAction : (()->())?
+    
+    var btnEditAction : (()->())?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,7 +51,7 @@ class cell666 : UITableViewCell {
         
         btnMap.addTarget(self, action: #selector(btnmapAction), for: .touchUpInside)
         
-        
+        btnEdit.addTarget(self, action: #selector(btneditAction), for: .touchUpInside)
     }
     
     @objc func lblcommentAction() {
@@ -63,7 +70,12 @@ class cell666 : UITableViewCell {
         btnMapAction?()
     }
     
+    @objc func btneditAction() {
+        btnEditAction?()
+    }
+    
 }
+
 
 class Home: UIViewController {
     
@@ -163,6 +175,28 @@ class Home: UIViewController {
     
     var isHiddenn = ""
     
+    let bulunmadiView : UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let bulunamadiImg : UIImageView = {
+       let img = UIImageView(image: #imageLiteral(resourceName: "alert"))
+        img.translatesAutoresizingMaskIntoConstraints = false
+        return img
+    }()
+    
+    let bulunamadiLbl : UILabel = {
+       let lbl = UILabel()
+        lbl.text = "Hiç bir şey bulunamadı."
+        lbl.textAlignment = .center
+        lbl.textColor = .black
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -170,6 +204,7 @@ class Home: UIViewController {
         addSubview()
         addConstraint()
         isHiddenControl()
+        getuserinfo()
         getitemfromDB()
         
         ref = Database.database().reference()
@@ -183,8 +218,8 @@ class Home: UIViewController {
         //        SideMenuManager.default.leftMenuNavigationController = menu
         //        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
         
-       
-        
+        searchitemlist = itemlist
+        btnAdd.isHidden = true
     }
     
     
@@ -213,6 +248,10 @@ class Home: UIViewController {
         
         view.addSubview(activityIndicator)
         
+        bulunmadiView.isHidden = true
+        view.addSubview(bulunmadiView)
+        bulunmadiView.addSubview(bulunamadiImg)
+        bulunmadiView.addSubview(bulunamadiLbl)
     }
     
     func addConstraint() {
@@ -227,6 +266,14 @@ class Home: UIViewController {
         
         activityIndicator.merkezKonumlamdirmaSuperView()
         activityIndicator.startAnimating()
+        
+        _ = bulunmadiView.anchor(top: searchBar.topAnchor, bottom: view.bottomAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor)
+        
+        bulunamadiImg.merkezKonumlamdirmaSuperView()
+        
+        _ = bulunamadiLbl.anchor(top: bulunamadiImg.bottomAnchor, bottom: nil, leading: nil, trailing: nil,padding: .init(top: 10, left: 0, bottom: 0, right: 0))
+        
+        bulunamadiLbl.merkezXSuperView()
         
     }
     
@@ -269,6 +316,8 @@ class Home: UIViewController {
     
     @objc func turkeyAction() {
         print("turk")
+        let settingsURL = URL(string: UIApplication.openSettingsURLString)!
+        UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
     }
     
     @objc func germanyAction() {
@@ -418,6 +467,20 @@ extension Home : UITableViewDelegate,UITableViewDataSource {
                     
             }
             
+            cell.btnEditAction = {
+                () in
+                let alert = UIAlertController(title: "Sil", message: "Paylaşımınızı silmek mi istiyorsunuz?", preferredStyle: .actionSheet)
+                let silAction = UIAlertAction(title: "Paylaşımı sil", style: .default) { (action) in
+                    
+                }
+                let iptalAction = UIAlertAction(title: "İptal Et", style: .cancel, handler: nil)
+                
+                alert.addAction(silAction)
+                alert.addAction(iptalAction)
+                self.present(alert, animated: true, completion: nil)
+                
+            }
+            
         }
         
         
@@ -455,6 +518,33 @@ extension Home : UITableViewDelegate,UITableViewDataSource {
         
     }
     
+    func getuserinfo(){
+    
+        let userid = Auth.auth().currentUser!.uid
+        let userRef = Database.database().reference().child("user").child(userid)
+        
+        userRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            
+           let usertype = value?["usertype"] as? String ?? ""
+            
+            if usertype == "owner"{
+                self.btnAdd.isHidden = false
+            }else{
+                self.btnAdd.isHidden = true
+            }
+            
+            
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+        
+        
+    }
+    
   
     
     
@@ -469,22 +559,14 @@ extension Home : UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        
+     
+
         //searchitemlist = itemlist.filter({$0.prefix(searchText.count) == searchText})
-       searching = true
-              let filteredArray = searchitemlist.filter {
-                  for key in $0.allKeys {
-                      if let string = $0[key] as? String,
-                          string.contains(searchText) {
-                          return true
-                      }
-                  }
-                 tableView.reloadData()
-                  return false
-              }
+        searching = true
+        tableView.reloadData()
         
-             
-              
-          }
+    }
     
 }
+
+

@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 
+
+
 class LeftMenu: UIViewController {
     
     @IBOutlet weak var tableVIew: UITableView!
@@ -85,6 +87,7 @@ extension LeftMenu : UITableViewDataSource,UITableViewDelegate {
         return cellHesap
         
     }
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {

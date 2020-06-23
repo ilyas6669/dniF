@@ -320,7 +320,7 @@ class SignUp: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
         
     }
     
-    
+  
     @objc func radioAction(sender:DLRadioButton) {
         var buttons = [DLRadioButton]()
         buttons.append(btnRadio1)

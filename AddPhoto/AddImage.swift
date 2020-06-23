@@ -152,6 +152,8 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
     var pickerView = UIPickerView()
     
     var kategoriArray = ["Market","Eczane","Otel","Bankamatik","Ptt","Berber","Restoran","Terzi"]
+    var kategoriArrayEng = ["Market","Pharmacy","Hotel","ATM","Post","Barber","Restaurant","Tailor"]
+    
     
     let btnKonumuSec : UIButton = {
         let btn = UIButton(type: .system)
@@ -221,6 +223,8 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
         let map = MKMapView()
         return map
     }()
+    
+    var selectedcategory = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -385,27 +389,28 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
                         self.photoUrl = photourl
                         
                         let userid = Auth.auth().currentUser!.uid
-                            
-                        let items = Items(category: self.txtKategori.text!, description: self.txtAciklama.text!, header: self.txtBaslik.text!, itemid: postid!, latitude: self.latidude1, longitude: self.longutide1, photourl:self.photoUrl! , publisher: userid)
-                            
-                            let dict : [String:Any] = ["category":items.category!,"description":items.description!,"header":items.header!,"itemid":items.itemid!,"latitude":items.latitude!,"longitude":items.longitude!,"photourl":items.photourl!,"publisher":items.publisher!]
-                            //itemid postid did yuxaridaki
+                        
+                        
+                        let items = Items(category: self.selectedcategory, description: self.txtAciklama.text!, header: self.txtBaslik.text!, itemid: postid!, latitude: self.latidude1, longitude: self.longutide1, photourl:self.photoUrl! , publisher: userid)
+                        
+                        let dict : [String:Any] = ["category":items.category!,"description":items.description!,"header":items.header!,"itemid":items.itemid!,"latitude":items.latitude!,"longitude":items.longitude!,"photourl":items.photourl!,"publisher":items.publisher!]
+                        //itemid postid did yuxaridaki
                         let newRef = self.ref?.child("items").child(postid!)
-                            newRef?.setValue(dict) {
-                                (err, resp) in
-                                guard err == nil else {
-                                    print("Posting failed : ")
-                                    self.activityIndicator.stopAnimating()
-                                    //self.btnSignUp.isHidden = false
-                                    return
-                                }
+                        newRef?.setValue(dict) {
+                            (err, resp) in
+                            guard err == nil else {
+                                print("Posting failed : ")
                                 self.activityIndicator.stopAnimating()
-                                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                                let vc = storyboard.instantiateViewController(withIdentifier: "Home") as! Home
-                                vc.modalPresentationStyle = .fullScreen
-                                self.present(vc, animated: true, completion: nil)
-                                
-                              
+                                //self.btnSignUp.isHidden = false
+                                return
+                            }
+                            self.activityIndicator.stopAnimating()
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let vc = storyboard.instantiateViewController(withIdentifier: "Home") as! Home
+                            vc.modalPresentationStyle = .fullScreen
+                            self.present(vc, animated: true, completion: nil)
+                            
+                            
                         }
                         
                         
@@ -416,7 +421,7 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
         
         
         
-    
+        
         
         
     }
@@ -535,8 +540,10 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
         return kategoriArray[row]
     }
     
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         txtKategori.text = kategoriArray[row]
+        selectedcategory = kategoriArrayEng[row]
         txtKategori.resignFirstResponder()
         
     }
