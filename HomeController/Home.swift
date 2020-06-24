@@ -24,7 +24,7 @@ class cell666 : UITableViewCell {
     @IBOutlet weak var btnComment: UIButton!
     @IBOutlet weak var btnMap: UIButton!
     
-
+    
     @IBOutlet weak var btnEdit: UIButton!
     
     
@@ -52,10 +52,12 @@ class cell666 : UITableViewCell {
         btnMap.addTarget(self, action: #selector(btnmapAction), for: .touchUpInside)
         
         btnEdit.addTarget(self, action: #selector(btneditAction), for: .touchUpInside)
+        
+        btnEdit.isHidden = true
     }
     
     @objc func lblcommentAction() {
-         lblCommentAction?()
+        lblCommentAction?()
     }
     
     @objc func btncommentAction() {
@@ -63,7 +65,7 @@ class cell666 : UITableViewCell {
     }
     
     @objc func btnlikeAction() {
-         btnLikeAction?()
+        btnLikeAction?()
     }
     
     @objc func btnmapAction() {
@@ -76,14 +78,17 @@ class cell666 : UITableViewCell {
     
 }
 
-
+//burdan
 class Home: UIViewController {
     
     var ref : DatabaseReference?
     
-    var itemlist : [NSDictionary] = []
+    @objc var itemlist : [NSDictionary] = []
     
     var searchitemlist : [NSDictionary] = []
+    
+    
+    
     
     var searching = false
     var activityIndicator : UIActivityIndicatorView = {
@@ -113,7 +118,7 @@ class Home: UIViewController {
     var menu : SideMenuNavigationController?
     
     let languageView : UIView = {
-       let view = UIView()
+        let view = UIView()
         view.backgroundColor = .clear
         view.layer.cornerRadius = 10
         view.heightAnchor.constraint(equalToConstant: 100).isActive = true
@@ -134,7 +139,7 @@ class Home: UIViewController {
         let btn = UIButton(type: .system)
         btn.setImage(UIImage(named: "germany"), for: .normal)
         btn.translatesAutoresizingMaskIntoConstraints = false
-         btn.addTarget(self, action: #selector(germanyAction), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(germanyAction), for: .touchUpInside)
         return btn
     }()
     
@@ -142,7 +147,7 @@ class Home: UIViewController {
         let btn = UIButton(type: .system)
         btn.setImage(UIImage(named: "uk"), for: .normal)
         btn.translatesAutoresizingMaskIntoConstraints = false
-         btn.addTarget(self, action: #selector(ukAction), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(ukAction), for: .touchUpInside)
         return btn
     }()
     
@@ -183,13 +188,13 @@ class Home: UIViewController {
     }()
     
     let bulunamadiImg : UIImageView = {
-       let img = UIImageView(image: #imageLiteral(resourceName: "alert"))
+        let img = UIImageView(image: #imageLiteral(resourceName: "alert"))
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
     
     let bulunamadiLbl : UILabel = {
-       let lbl = UILabel()
+        let lbl = UILabel()
         lbl.text = "Hiç bir şey bulunamadı."
         lbl.textAlignment = .center
         lbl.textColor = .black
@@ -197,15 +202,28 @@ class Home: UIViewController {
         return lbl
     }()
     
+    //________NOTIFICATION
+    @objc func onReceiveData(_ notification:Notification) {
+        getitemfromDB(query: "", categoryfilter: Cache.filterkeyword)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "ReceiveData"), object: nil)
+    }
+    //--------------------
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        //________NOTIFICATION
+        NotificationCenter.default.addObserver(self, selector: #selector(onReceiveData(_:)), name: NSNotification.Name(rawValue: "ReceiveData"), object: nil)
+        //--------------------
+        
         tableview()
         addSubview()
         addConstraint()
         isHiddenControl()
         getuserinfo()
-        getitemfromDB()
+        getitemfromDB(query: "", categoryfilter: "")
         
         ref = Database.database().reference()
         
@@ -262,12 +280,12 @@ class Home: UIViewController {
         visualEffectView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         visualEffectView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         
-       
+        
         
         activityIndicator.merkezKonumlamdirmaSuperView()
         activityIndicator.startAnimating()
         
-        _ = bulunmadiView.anchor(top: searchBar.topAnchor, bottom: view.bottomAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor)
+        _ = bulunmadiView.anchor(top: searchBar.bottomAnchor, bottom: view.bottomAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor)
         
         bulunamadiImg.merkezKonumlamdirmaSuperView()
         
@@ -328,9 +346,9 @@ class Home: UIViewController {
         print("uk")
     }
     
-//    func changeLanguage(str:String) -> String {
-//        
-//    }
+    //    func changeLanguage(str:String) -> String {
+    //
+    //    }
     
     
 }
@@ -346,150 +364,171 @@ extension String {
 
 extension Home : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searching {
-            return searchitemlist.count
-        }
         return itemlist.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : cell666 = tableView.dequeueReusableCell(withIdentifier: "cell666") as! cell666
+        let value2 = self.itemlist[indexPath.row]
+
+        let itemid = value2["itemid"] as? String ?? ""
+        let header = value2["header"] as? String ?? ""
+        let description = value2["description"] as? String ?? ""
+        let photourl = value2["photourl"] as? String ?? ""
+        let publisher = value2["publisher"] as? String ?? ""
+
+       
+        let userid = Auth.auth().currentUser!.uid
+        if publisher == userid {
+            cell.btnEdit.isHidden = false
+        }else {
+            cell.btnEdit.isHidden = true
+        }
         
-        if searching {
-            let value2 = self.searchitemlist[indexPath.row]
-            
-            let header = value2["header"] as? String ?? ""
-            let description = value2["description"] as? String ?? ""
-            let photourl = value2["photourl"] as? String ?? ""
-            
-            cell.lblName.text = header
-            cell.lblAciklama.text = description
-            cell.img.sd_setImage(with: URL(string: "\(photourl)"))
-            activityIndicator.stopAnimating()
-            cell.lblCommentAction = {
-                () in
-                print("lblComment")
-            }
-            
-            cell.btnCommentAction = {
-                () in
-                print("btncomment")
-            }
-            
-            cell.btnLikeAction = {
-                () in
-                print("btnlike")
-            }
-            
-            cell.btnMapAction = {
-                () in
+        cell.lblName.text = header
+        cell.lblAciklama.text = description
+        cell.img.sd_setImage(with: URL(string: "\(photourl)"))
+        activityIndicator.stopAnimating()
+        cell.lblCommentAction = {
+            () in
+            print("lblComment")
+            let comment = CommentView()
+            comment.modalPresentationStyle = .fullScreen
+            self.present(comment, animated: true, completion: nil)
+        }
+        
+        cell.btnCommentAction = {
+            () in
+            print("btncomment")
+            let comment = CommentView()
+            comment.modalPresentationStyle = .fullScreen
+            self.present(comment, animated: true, completion: nil)
+        }
+        
+        //LIKE COUNTER_____________________________
+         let userRef = Database.database().reference().child("itemLikes").child(itemid)
+
+            userRef.observe(.value, with: { (snapshot) in
+
+               
+                cell.lblLike.text = "\(snapshot.childrenCount) beğenme"
                 
-                let latitude = value2["latitude"] as? Double ?? 0.0
-                let longitude = value2["longitude"] as? Double ?? 0.0
                
                 
-                var requestLocation = CLLocation(latitude: latitude, longitude: longitude)
-                
-                CLGeocoder().reverseGeocodeLocation(requestLocation) { (placemarks, error) in
-                    
-                    if let placemark = placemarks {
-                        if placemark.count > 0 {
-                            let newPlacemark = MKPlacemark(placemark: placemark[0])
-                            let item = MKMapItem(placemark: newPlacemark)
-                            item.name = self.annotationTitle
-                            let launchOptions = [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving]
-                            item.openInMaps(launchOptions: launchOptions)
-                            
-                        }
-                    }
-                    
-                }
-                
-                
+
+            }) { (error) in
+                print(error.localizedDescription)
             }
+
+
+        
+        //LIKE_____________________________________
+        checklikestatus(itemid: itemid, button: cell.btnLike)
+        
+        cell.btnLikeAction = {
+            () in
+
+            let tagstatus = cell.btnLike.tag
+                   let userID = Auth.auth().currentUser?.uid
+
+              
+
+                   if(tagstatus==0){
+                       Database.database().reference().child("itemLikes").child(itemid).child(userID!).setValue(true)
+                   }else{
+                    Database.database().reference().child("itemLikes").child(itemid).child(userID!).removeValue()
+                   }
             
-        }else{
-            let value2 = self.itemlist[indexPath.row]
-            
-            let header = value2["header"] as? String ?? ""
-            let description = value2["description"] as? String ?? ""
-            let photourl = value2["photourl"] as? String ?? ""
-            
-            cell.lblName.text = header
-            cell.lblAciklama.text = description
-            cell.img.sd_setImage(with: URL(string: "\(photourl)"))
-            activityIndicator.stopAnimating()
-            cell.lblCommentAction = {
-                () in
-                print("lblComment")
-                let comment = CommentView()
-                comment.modalPresentationStyle = .fullScreen
-                self.present(comment, animated: true, completion: nil)
-            }
-            
-            cell.btnCommentAction = {
-                () in
-                print("btncomment")
-                let comment = CommentView()
-                comment.modalPresentationStyle = .fullScreen
-                self.present(comment, animated: true, completion: nil)
-            }
-            
-            cell.btnLikeAction = {
-                () in
-                print("btnlike")
-            }
-            
-            cell.btnMapAction = {
-                () in
-                let latitude = value2["latitude"] as? Double ?? 0.0
-                let longitude = value2["longitude"] as? Double ?? 0.0
-                print("ilyas\(latitude)")
-                print("ilyas\(longitude)")
-                
-                var requestLocation = CLLocation(latitude: latitude, longitude: longitude)
-                
-                CLGeocoder().reverseGeocodeLocation(requestLocation) { (placemarks, error) in
-                    
-                    if let placemark = placemarks {
-                        if placemark.count > 0 {
-                            let newPlacemark = MKPlacemark(placemark: placemark[0])
-                            let item = MKMapItem(placemark: newPlacemark)
-                            item.name = self.annotationTitle
-                            let launchOptions = [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving]
-                            item.openInMaps(launchOptions: launchOptions)
-                            
-                        }
-                    }
-                    
-                }
-                
-                    
-            }
-            
-            cell.btnEditAction = {
-                () in
-                let alert = UIAlertController(title: "Sil", message: "Paylaşımınızı silmek mi istiyorsunuz?", preferredStyle: .actionSheet)
-                let silAction = UIAlertAction(title: "Paylaşımı sil", style: .default) { (action) in
-                    
-                }
-                let iptalAction = UIAlertAction(title: "İptal Et", style: .cancel, handler: nil)
-                
-                alert.addAction(silAction)
-                alert.addAction(iptalAction)
-                self.present(alert, animated: true, completion: nil)
-                
-            }
             
         }
+        
+        cell.btnMapAction = {
+            () in
+            let latitude = value2["latitude"] as? Double ?? 0.0
+            let longitude = value2["longitude"] as? Double ?? 0.0
+            print("ilyas\(latitude)")
+            print("ilyas\(longitude)")
+            
+            var requestLocation = CLLocation(latitude: latitude, longitude: longitude)
+            
+            CLGeocoder().reverseGeocodeLocation(requestLocation) { (placemarks, error) in
+                
+                if let placemark = placemarks {
+                    if placemark.count > 0 {
+                        let newPlacemark = MKPlacemark(placemark: placemark[0])
+                        let item = MKMapItem(placemark: newPlacemark)
+                        item.name = self.annotationTitle
+                        let launchOptions = [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving]
+                        item.openInMaps(launchOptions: launchOptions)
+                        
+                    }
+                }
+                
+            }
+            
+            
+        }
+        
+        cell.btnEditAction = {
+            () in
+            let alert = UIAlertController(title: "Sil", message: "Paylaşımınızı silmek mi istiyorsunuz?", preferredStyle: .actionSheet)
+            let silAction = UIAlertAction(title: "Paylaşımı sil", style: .default) { (action) in
+              
+                var ref : DatabaseReference?
+                var ref2 : DatabaseReference?
+                var ref3 : DatabaseReference?
+                
+                ref = Database.database().reference().child("items").child(itemid)
+                ref!.removeValue()
+                
+                ref2 = Database.database().reference().child("itemLikes").child(itemid)
+                ref2!.removeValue()
+                
+                
+                ref3 = Database.database().reference().child("itemsComments").child(itemid)
+                ref3!.removeValue()
+                
+               
+            }
+            let iptalAction = UIAlertAction(title: "İptal Et", style: .cancel, handler: nil)
+            
+            alert.addAction(silAction)
+            alert.addAction(iptalAction)
+            self.present(alert, animated: true, completion: nil)
+            
+        }
+        
+        
         
         
         return cell
     }
     
-   
+    func checklikestatus(itemid:String,button:UIButton){
+
+           let userID = Auth.auth().currentUser?.uid
+
+        let userRef = Database.database().reference().child("itemLikes").child(itemid)
+
+           userRef.observe(.value, with: { (snapshot) in
+
+            if(snapshot.hasChild(userID!)){
+                   button.setImage(UIImage(named: "heart2"), for: .normal)
+                   button.tag = 1
+               }else{
+                   button.setImage(UIImage(named: "heart"), for: .normal)
+                   button.tag = 0
+               }
+
+           }) { (error) in
+               print(error.localizedDescription)
+           }
+
+
+       }
     
-    func getitemfromDB(){
+    
+    func getitemfromDB(query : String,categoryfilter : String){
         
         let userRef = Database.database().reference().child("items")
         
@@ -502,24 +541,48 @@ extension Home : UITableViewDelegate,UITableViewDataSource {
                 let snap = child as! DataSnapshot //get first snapshot
                 let value = snap.value as? NSDictionary //get second snapshot
                 
-                self.itemlist.append(value!)
-                self.searchitemlist.append(value!)
+                
+                let category = value!["category"] as? String ?? ""
+                let header = value!["header"] as? String ?? ""
+                
+                var addcontrol = true
+                
+                //search filter
+                if query != "" && !header.lowercased().contains(query){
+                    addcontrol = false
+                }
+                
+                //category filter
+                if categoryfilter != "" && category != categoryfilter{
+                    addcontrol = false
+                }
+                
+                
+                if(addcontrol){
+                    self.itemlist.append(value!)
+                    self.searchitemlist.append(value!)
+                }
                 
             }
             
-            //reverseni yeni bunu
-            //            self.itemlist = self.itemlist.reversed()
+            
+            //itemlist size control
+            if self.itemlist.count == 0 { //urun yoxdu
+                self.bulunmadiView.isHidden = false
+            }else{ //urun var
+                self.bulunmadiView.isHidden = true
+            }
             
             self.itemlist = self.itemlist.shuffled()
             self.searchitemlist = self.searchitemlist.shuffled()
             self.tableView.reloadData()
-           
+            
         })
         
     }
     
     func getuserinfo(){
-    
+        
         let userid = Auth.auth().currentUser!.uid
         let userRef = Database.database().reference().child("user").child(userid)
         
@@ -527,7 +590,7 @@ extension Home : UITableViewDelegate,UITableViewDataSource {
             // Get user value
             let value = snapshot.value as? NSDictionary
             
-           let usertype = value?["usertype"] as? String ?? ""
+            let usertype = value?["usertype"] as? String ?? ""
             
             if usertype == "owner"{
                 self.btnAdd.isHidden = false
@@ -545,7 +608,7 @@ extension Home : UITableViewDelegate,UITableViewDataSource {
         
     }
     
-  
+    
     
     
 }
@@ -557,16 +620,21 @@ extension Home : UISearchBarDelegate {
     
    
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        //texniki xetadi:D deyan bidene
+        getitemfromDB(query: (searchBar.text?.lowercased())!, categoryfilter: Cache.filterkeyword)
+         searchBar.resignFirstResponder()
+    }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+        getitemfromDB(query: "", categoryfilter: Cache.filterkeyword)
+        }
         
-     
-
-        //searchitemlist = itemlist.filter({$0.prefix(searchText.count) == searchText})
-        searching = true
-        tableView.reloadData()
-        
+    
     }
     
 }
+
 
 

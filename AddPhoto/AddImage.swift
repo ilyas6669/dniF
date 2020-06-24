@@ -493,8 +493,8 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
         print("\(touchCordinate.latitude)")
         print("\(touchCordinate.longitude)")
         
-        
     }
+    
     @objc func konumKullanAction() {
         if latidude1 != 0.0 && longutide1 != 0.0 {
             UIView.transition(with: btnKonumuSec, duration: 0.5, options: .transitionCrossDissolve, animations: {

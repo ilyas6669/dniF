@@ -14,6 +14,7 @@
 		003BCDA42483E19000CE8981 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BCDA32483E19000CE8981 /* Alert.swift */; };
 		004C803C249245CB00AEF579 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004C803B249245CB00AEF579 /* CommentView.swift */; };
 		0054591A248EC2FE00395245 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00545919248EC2FE00395245 /* Home.swift */; };
+		0072259624A2C76F0042AAFA /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0072259524A2C76F0042AAFA /* Cache.swift */; };
 		0074EB03248EF71B0087C97C /* LeftMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074EB02248EF71B0087C97C /* LeftMenu.swift */; };
 		007A35D1248849F3001C6CDC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007A35D0248849F3001C6CDC /* User.swift */; };
 		00924E822485E27F0091D0EA /* OzelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00924E812485E27F0091D0EA /* OzelTextField.swift */; };
@@ -49,6 +50,7 @@
 		003BCDA32483E19000CE8981 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		004C803B249245CB00AEF579 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		00545919248EC2FE00395245 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		0072259524A2C76F0042AAFA /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		0074EB02248EF71B0087C97C /* LeftMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenu.swift; sourceTree = "<group>"; };
 		007A35D0248849F3001C6CDC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		00924E812485E27F0091D0EA /* OzelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OzelTextField.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				00545919248EC2FE00395245 /* Home.swift */,
+				0072259524A2C76F0042AAFA /* Cache.swift */,
 			);
 			path = HomeController;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				00924E822485E27F0091D0EA /* OzelTextField.swift in Sources */,
 				009EA30C248F106E00D4AA06 /* LeftMenuCell.swift in Sources */,
 				00E674A82481E19B00506B61 /* Fiind.xcdatamodeld in Sources */,
+				0072259624A2C76F0042AAFA /* Cache.swift in Sources */,
 				0010155A248DB06C0049554F /* Items.swift in Sources */,
 				003BCDA22483E04100CE8981 /* UIColor.swift in Sources */,
 				00E674A22481E19B00506B61 /* SplashView.swift in Sources */,

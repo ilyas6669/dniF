@@ -8,12 +8,25 @@
 
 import UIKit
 import Firebase
+import CoreLocation
+import MapKit
 
 
 
-class LeftMenu: UIViewController {
+class LeftMenu: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
     
     @IBOutlet weak var tableVIew: UITableView!
+    
+    var mapView = MKMapView()
+    
+    var locationManager = CLLocationManager()
+    
+    var locationcontrol = false
+    
+    var lattitude = Double()
+    var longitude = Double()
+    
+     
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +35,21 @@ class LeftMenu: UIViewController {
         tableVIew.separatorColor = .white
         
         
+        mapView.delegate = self
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        
+        
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
+        lattitude = location.latitude
+        longitude = location.latitude
     }
     
     
@@ -31,6 +59,8 @@ class LeftMenu: UIViewController {
 
 
 extension LeftMenu : UITableViewDataSource,UITableViewDelegate {
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 15
     }
@@ -102,10 +132,22 @@ extension LeftMenu : UITableViewDataSource,UITableViewDelegate {
         }else if indexPath.row == 1 {
             //none
         }else if indexPath.row == 2 {
+            
+            Cache.filterkeyword = ""
+            NotificationCenter.default.post(name: Notification.Name("ReceiveData"), object: nil)
+                           
             self.dismiss(animated: true, completion: nil)
             
             
         }else if indexPath.row == 3 {
+            //duzelis edecem......
+            let userid = Auth.auth().currentUser!.uid
+            var ref : DatabaseReference?
+            ref = Database.database().reference().child("user").child(userid)
+            
+            let dict : [String:Any] = ["latitude":lattitude,"longitude":longitude]
+            ref?.updateChildValues(dict)
+                        
             
         }else if indexPath.row == 4 {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -140,23 +182,18 @@ extension LeftMenu : UITableViewDataSource,UITableViewDelegate {
             present(refreshAlert, animated: true, completion: nil)
         }else if indexPath.row == 6 {
             
-        }else if indexPath.row == 7 {
-            //none
-        }else if indexPath.row == 8 {
+        }else {
+            var kategoriArrayEng = ["Market","Pharmacy","Hotel","ATM","Post","Barber","Restaurant","Tailor"]
             
-        }else if indexPath.row == 9 {
+            print("\(kategoriArrayEng[indexPath.row-7])")
             
-        }else if indexPath.row == 10 {
+            Cache.filterkeyword = "\(kategoriArrayEng[indexPath.row-7])"
+            NotificationCenter.default.post(name: Notification.Name("ReceiveData"), object: nil) 
+            self.dismiss(animated: true, completion: nil)
             
-        }else if indexPath.row == 11 {
+           }
             
-        }else if indexPath.row == 12 {
-            
-        }else if indexPath.row == 13 {
-            
-        }else if indexPath.row == 14 {
-            
-        }
+        
     }
     
 }
