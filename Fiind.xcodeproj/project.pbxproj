@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0010155A248DB06C0049554F /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00101559248DB06C0049554F /* Items.swift */; };
+		001669DA24A6B12500BC8120 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001669D924A6B12500BC8120 /* Comment.swift */; };
 		00325C8F2492F65900B61734 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00325C912492F65900B61734 /* Localizable.strings */; };
 		003BCDA02483E01100CE8981 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BCD9F2483E01100CE8981 /* Constraints.swift */; };
 		003BCDA22483E04100CE8981 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BCDA12483E04100CE8981 /* UIColor.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		00101559248DB06C0049554F /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
+		001669D924A6B12500BC8120 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		00325C902492F65900B61734 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		00325C922492F69500B61734 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
 		00325C932492F69600B61734 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				007A35D0248849F3001C6CDC /* User.swift */,
 				00101559248DB06C0049554F /* Items.swift */,
+				001669D924A6B12500BC8120 /* Comment.swift */,
 			);
 			path = "Firebase Model";
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				0010155A248DB06C0049554F /* Items.swift in Sources */,
 				003BCDA22483E04100CE8981 /* UIColor.swift in Sources */,
 				00E674A22481E19B00506B61 /* SplashView.swift in Sources */,
+				001669DA24A6B12500BC8120 /* Comment.swift in Sources */,
 				003BCDA02483E01100CE8981 /* Constraints.swift in Sources */,
 				0054591A248EC2FE00395245 /* Home.swift in Sources */,
 				00E6749E2481E19B00506B61 /* AppDelegate.swift in Sources */,

@@ -371,7 +371,7 @@ extension Home : UITableViewDelegate,UITableViewDataSource {
         let cell : cell666 = tableView.dequeueReusableCell(withIdentifier: "cell666") as! cell666
         let value2 = self.itemlist[indexPath.row]
 
-        let itemid = value2["itemid"] as? String ?? ""
+        var itemid = value2["itemid"] as? String ?? ""
         let header = value2["header"] as? String ?? ""
         let description = value2["description"] as? String ?? ""
         let photourl = value2["photourl"] as? String ?? ""
@@ -391,22 +391,26 @@ extension Home : UITableViewDelegate,UITableViewDataSource {
         activityIndicator.stopAnimating()
         cell.lblCommentAction = {
             () in
-            print("lblComment")
+            
             let comment = CommentView()
             comment.modalPresentationStyle = .fullScreen
+            comment.postid = itemid
+            comment.postpublisher = publisher
             self.present(comment, animated: true, completion: nil)
         }
         
         cell.btnCommentAction = {
             () in
-            print("btncomment")
+            
             let comment = CommentView()
             comment.modalPresentationStyle = .fullScreen
+            comment.postid = itemid
+            comment.postpublisher = publisher
             self.present(comment, animated: true, completion: nil)
         }
         
         //LIKE COUNTER_____________________________
-         let userRef = Database.database().reference().child("itemLikes").child(itemid)
+        let userRef = Database.database().reference().child("itemLikes").child(itemid)
 
             userRef.observe(.value, with: { (snapshot) in
 
@@ -419,7 +423,25 @@ extension Home : UITableViewDelegate,UITableViewDataSource {
             }) { (error) in
                 print(error.localizedDescription)
             }
+        
+        //comment
+        
+        let userRefComment = Database.database().reference().child("itemsComments").child(itemid)
+        
+        userRefComment.observe(.value, with: { (snapshot) in
 
+           
+           cell.lblComment.text = "\(snapshot.childrenCount) yorumun tümünü gör"
+            
+
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+       
+
+        
+        
+        
 
         
         //LIKE_____________________________________

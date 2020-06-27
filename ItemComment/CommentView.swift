@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 extension UITextView {
     func adjustUITextViewHeight() {
@@ -17,6 +18,11 @@ extension UITextView {
 }
 
 class CommentView: UIViewController,UITextFieldDelegate {
+    
+    var ref : DatabaseReference?
+    var postid = ""
+    var postpublisher = ""
+    var itemlist : [NSDictionary] = []
     
     let topView : UIView = {
         let view = UIView()
@@ -87,6 +93,9 @@ class CommentView: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .customBlue()
+        
+        ref = Database.database().reference()
+        
         stackView()
         addSubview()
         addConstraint()
@@ -102,9 +111,10 @@ class CommentView: UIViewController,UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        let gestureREcongizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        view.addGestureRecognizer(gestureREcongizer)
+//        let gestureREcongizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+//        view.addGestureRecognizer(gestureREcongizer)
         
+        dataPullFirebase()
     }
     
     
@@ -156,8 +166,30 @@ class CommentView: UIViewController,UITextFieldDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
+    
+    
+    //ba bidene mene basa sala sala eliyeh ceomment idni bele almiram? yaxsi deyan
+    //ne sefh oldub a? bu commentleri sen yazdirmisan ? 2 sib=ni men 1 nide sennen yazdm yazdirdigimiz hansidi ? ala sende ikideeni mende bideneni id
     @objc func btnPaylasAction() {
-        print("paylas")
+        if txtComment.text != "" {
+            let commentid = Database.database().reference().child("itemsComments").child(postid).childByAutoId().key
+            
+            let userid = Auth.auth().currentUser!.uid
+            
+            let itemsComment = ItemsComments(comment: txtComment.text!, commentid: commentid!, postid: postid, postpublisher:postpublisher , posttime: signupdateint(), publisher: userid)
+            
+            let comment : [String:Any] = ["comment":itemsComment.comment!,"commentid":itemsComment.commentid!,"postid":itemsComment.postid!,"postpublisher":itemsComment.postpublisher!,"posttime":itemsComment.posttime!,"publisher":itemsComment.publisher!]
+            //bele olmalidi yadinnan cioxib olar he
+            let newRef = self.ref?.child("itemsComments").child(postid).child(commentid!)
+            newRef?.setValue(comment, withCompletionBlock: { (error, response) in
+                guard error == nil else {
+                    print("Posting failed : ")
+                    return
+                }
+                self.txtComment.text = ""
+            })
+            
+        }
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -182,7 +214,16 @@ class CommentView: UIViewController,UITextFieldDelegate {
         view.endEditing(true)
     }
     
-   
+    func signupdateint() -> String {
+        //    20200101
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yy-yy-MMdd"
+        let result = formatter.string(from: date)
+        return String(result)
+    }
+    
+    
     
     
 }
@@ -191,26 +232,99 @@ class CommentView: UIViewController,UITextFieldDelegate {
 
 extension CommentView : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return itemlist.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : CommentCell = tableView.dequeueReusableCell(withIdentifier: "CommentCell") as! CommentCell
-        cell.lblEmail.text = "ilyas.666@mail.ru"
-        cell.lblComment.text = "jnjdncdcdscscjnjdncdcdscscnjnjdncdcdscscnjnjdncdcdscscnjnjdncdcdscscnjnjdncdcdscscnn"
+        
+        let value2 = self.itemlist[indexPath.row]
+        
+        let comment = value2["comment"] as? String ?? ""
+        let posttime = value2["posttime"] as? String ?? ""
+        let email = value2["email"] as? String ?? ""
+        let publisher = value2["publisher"] as? String ?? ""
+        
+        cell.lblEmail.text = email
+        cell.lblComment.text = comment
+        cell.lblDate.text = posttime
+    
+        userMailPullFirebase(userid: publisher, cell: cell)
+        
         cell.btnTapAction = {
             () in
             let alert = UIAlertController(title: "Sil", message: "Yorumunuzu silmek mi istiyorsunuz?", preferredStyle: .actionSheet)
             let silAction = UIAlertAction(title: "Paylaşımı sil", style: .default) { (action) in
-                
+
+                var ref : DatabaseReference?
+
+
+                ref = Database.database().reference().child("itemsComments").child(self.postid)
+                ref!.removeValue()
+
+
+
             }
             let iptalAction = UIAlertAction(title: "İptal Et", style: .cancel, handler: nil)
-            
+
             alert.addAction(silAction)
             alert.addAction(iptalAction)
             self.present(alert, animated: true, completion: nil)
         }
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         print("\(postid)")
+               print("ilyas")
+               print("\(postpublisher)")
+    }
+        
+    func dataPullFirebase() {
+        let userRef = Database.database().reference().child("itemsComments").child(postid)
+        userRef.observe(.value) { (snapshot) in
+            self.itemlist.removeAll(keepingCapacity: false)
+            
+            for child in snapshot.children {
+                
+                let snap = child as! DataSnapshot
+                let value = snap.value as? NSDictionary
+                
+                let comment = value!["comment"] as? String ?? ""
+                
+                if comment != "" {
+                    self.itemlist.append(value!)
+                }
+            }
+            self.itemlist = self.itemlist.shuffled()
+            self.tableView.reloadData()
+            
+            
+        }
+        
+    }
+    
+    func userMailPullFirebase(userid : String, cell : CommentCell) {
+        let userRef = Database.database().reference().child("user").child(userid)
+        
+        userRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            
+            let email = value?["email"] as? String ?? ""
+         
+            cell.lblEmail.text = email
+           
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+    }
+    
+    func getUserInfo() {
+        
     }
     
     
