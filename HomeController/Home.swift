@@ -643,9 +643,13 @@ extension Home : UISearchBarDelegate {
    
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        //texniki xetadi:D deyan bidene
-        getitemfromDB(query: (searchBar.text?.lowercased())!, categoryfilter: Cache.filterkeyword)
-         searchBar.resignFirstResponder()
+        if searchBar.text == "" {
+            searchBar.resignFirstResponder()
+        }else{
+            getitemfromDB(query: (searchBar.text?.lowercased())!, categoryfilter: Cache.filterkeyword)
+            searchBar.resignFirstResponder()
+        }
+        
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

@@ -22,7 +22,7 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
         var indicator = UIActivityIndicatorView()
         indicator.hidesWhenStopped = true
         indicator.style = .large
-        indicator.color = .black
+        indicator.color = .white
         indicator.translatesAutoresizingMaskIntoConstraints = false
         return indicator
     }()
@@ -151,8 +151,9 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
     
     var pickerView = UIPickerView()
     
-    var kategoriArray = ["Market","Eczane","Otel","Bankamatik","Ptt","Berber","Restoran","Terzi"]
-    var kategoriArrayEng = ["Market","Pharmacy","Hotel","ATM","Post","Barber","Restaurant","Tailor"]
+    var kategoriArray = ["Avukat","Araba Tamir","Araba Parça","Av Malzemesi","Banka","Bankamatik","Belediye","Berber","Benzinlik","Bilgisayar","Bisiklet","Beyaz Eşya","Cafe","Cep Telefonu","Çiçekçi","Çocuk Parkı","Dershane","Düğün","Eczane","Eğlence","Ehliyet","Elektronik","Fabrika","Fırın","Hastane","Hamam","Giyim","Güzellik Salonu","Kasap","Kırtasiye","Kreş","Konsolosluk","Kozmetik","Kurs Yerleri","Kuru Temizleme","Küçük İlan","Lokanta","Manav","Masaj","Marangoz","Market","Mobilya","Muhasebe","Müzik","Nüfus","Okul","Otel","Otopark","Organizasyon","Özel Okul","Pastane","Polis Karakolu","PTT","Restorant","Sarraf","Serbest Meslek","Sinema","Sigorta","Spor","Tatil Yeri","Temizlik","Tercüme","Terzi","Toptancı"]
+    
+    var kategoriArrayEng = ["Lawyer","Car Repair","Car Track","Hunting Equipment","Bank","Cash dispenser","Municipality","Barber","Petrol station","Computer","Bike","Household appliances","Cafe","Mobile phone","Florist","Child park","Class","Wedding","Pharmacy","Entertainment","Driving license","Electronic","Factory","Bakery","Hospital","Bath","Clothing","Beauty centre","Butcher","Stationery","Nursery","Consular","Cosmetic","Course Locations","Dry cleaner","Small Ad","Restaurant","Greengrocer","Massage","Carpenter","Market","Furniture","Accounting","Music","Population","School","Hotel","Car park","Organization","Private school","Patisserie","Police station","PTT","Restaurant","Moneychanger","Self-employment","Cinema","Insurance","Sport","Resort","Cleaning","Translation","Tailor","Wholesaler"]
     
     
     let btnKonumuSec : UIButton = {
@@ -226,6 +227,15 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
     
     var selectedcategory = ""
     
+    let toolBar : UIToolbar = {
+      let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = true
+        toolBar.sizeToFit()
+        toolBar.tintColor = .customPink()
+        return toolBar
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
@@ -264,8 +274,16 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
         
         map.addGestureRecognizer(gestureRecongizer3)
         
+        let doneButton = UIBarButtonItem(title: "Tamam", style: UIBarButtonItem.Style.done, target: self, action: #selector(actionTamam))
+
+        toolBar.setItems([doneButton], animated: true)
+        txtKategori.inputAccessoryView = toolBar
         
         
+    }
+    
+    @objc func actionTamam() {
+        txtKategori.resignFirstResponder()
     }
     
     
@@ -493,6 +511,7 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
         print("\(touchCordinate.latitude)")
         print("\(touchCordinate.longitude)")
         
+        
     }
     
     @objc func konumKullanAction() {
@@ -544,7 +563,7 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         txtKategori.text = kategoriArray[row]
         selectedcategory = kategoriArrayEng[row]
-        txtKategori.resignFirstResponder()
+        //txtKategori.resignFirstResponder()
         
     }
     

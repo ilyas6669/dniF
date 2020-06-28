@@ -171,6 +171,7 @@ class CommentView: UIViewController,UITextFieldDelegate {
     //ba bidene mene basa sala sala eliyeh ceomment idni bele almiram? yaxsi deyan
     //ne sefh oldub a? bu commentleri sen yazdirmisan ? 2 sib=ni men 1 nide sennen yazdm yazdirdigimiz hansidi ? ala sende ikideeni mende bideneni id
     @objc func btnPaylasAction() {
+        view.endEditing(true)
         if txtComment.text != "" {
             let commentid = Database.database().reference().child("itemsComments").child(postid).childByAutoId().key
             
@@ -188,8 +189,9 @@ class CommentView: UIViewController,UITextFieldDelegate {
                 }
                 self.txtComment.text = ""
             })
-            
+            view.endEditing(true)
         }
+       
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {

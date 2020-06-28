@@ -62,7 +62,7 @@ extension LeftMenu : UITableViewDataSource,UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 71
+        return 73
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -243,7 +243,13 @@ extension LeftMenu : UITableViewDataSource,UITableViewDelegate {
         }else if indexPath.row == 58 {
             let cellTerzi45 : cellTerzi45 = tableView.dequeueReusableCell(withIdentifier: "cellTerzi45") as! cellTerzi45
             return cellTerzi45
-        }else if indexPath.row == 60 {
+        }
+        
+        //------------------------------
+        
+        
+        
+        else if indexPath.row == 60 {
             let cellTerzi46 : cellTerzi46 = tableView.dequeueReusableCell(withIdentifier: "cellTerzi46") as! cellTerzi46
             return cellTerzi46
         }else if indexPath.row == 61 {
@@ -351,7 +357,7 @@ extension LeftMenu : UITableViewDataSource,UITableViewDelegate {
         }else if indexPath.row == 6 {
             
         }else {
-            var kategoriArrayEng = ["Avukat","Araba Tamir","Araba Parça","Av Malzemesi","Banka","Bankamatik","Belediye","Berber","Benzinlik","Bilgisayar","Bisiklet","Beyaz Eşya","Cafe","Cep Telefonu","Çiçekçi","Çocuk Parkı","Dershane","Düğün","Eczane","Eğlence","Ehliyet","Elektronik","Fabrika","Fırın","Hastane",""]
+            let kategoriArrayEng = ["Lawyer","Car Repair","Car Track","Hunting Equipment","Bank","Cash dispenser","Municipality","Barber","Petrol station","Computer","Bike","Household appliances","Cafe","Mobile phone","Florist","Child park","Class","Wedding","Pharmacy","Entertainment","Driving license","Electronic","Factory","Bakery","Hospital","Bath","Clothing","Beauty centre","Butcher","Stationery","Nursery","Consular","Cosmetic","Course Locations","Dry cleaner","Small Ad","Restaurant","Greengrocer","Massage","Carpenter","Market","Furniture","Accounting","Music","Population","School","Hotel","Car park","Organization","Private school","Patisserie","Police station","PTT","Restaurant","Moneychanger","Self-employment","Cinema","Insurance","Sport","Resort","Cleaning","Translation","Tailor","Wholesaler"]
             
             print("\(kategoriArrayEng[indexPath.row-7])")
             
