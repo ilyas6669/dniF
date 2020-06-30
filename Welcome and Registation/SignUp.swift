@@ -11,6 +11,7 @@ import Firebase
 import DLRadioButton
 import CoreLocation
 import MapKit
+import CoreData
 
 class SignUp: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
     
@@ -239,8 +240,32 @@ class SignUp: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
         return alert
     }()
     
+    var country = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        getData()
+        
+        if country == "tr" {
+            actionLanguageSignUp_tr()
+            print("tr")
+        } else if country == "de" {
+            actionLanguageSignUp_de()
+        }else if country == "en" {
+            actionLanguageSignUp_en()
+        }else if country == "ar" {
+            actionLanguageSignUp_ar()
+        }else if country == "ru" {
+            actionLanguageSignUp_ru()
+        }else if country == "da" {
+            actionLanguageSignUp_da()
+        }else if country == "fr" {
+            actionLanguageSignUp_fr()
+        }else if country == "it" {
+            actionLanguageSignUp_it()
+        }else if country == "nl" {
+            actionLanguageSignUp_nl()
+        }
         
         
         view.backgroundColor = .black
@@ -323,6 +348,30 @@ class SignUp: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
         
     }
     
+    func getData() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Language")
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do {
+            let results =  try context.fetch(fetchRequest)
+            
+            for result in results as! [NSManagedObject] {
+                if let country = result.value(forKey: "country") as? String {
+                    //self.countryArray.append(country)
+                    self.country = country
+                }
+            }
+            print("request")
+        }catch{
+            print("error")
+        }
+        
+    }
+    
+    
     
     
     @objc func leftAction() {
@@ -331,33 +380,29 @@ class SignUp: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
     
    
     
-   func actionLanguageSignUp_tr() {
-           changeLanguage(str: "tr") // turkish
-       }
-       
-       func actionLanguageSignUp_de() {
-           changeLanguage(str: "de") //german
-       }
-       
-       
-       func actionLanguageSignUp_en() {
-           changeLanguage(str: "en") // engilsh
-       }
-       
-       
-       func actionLanguageSignUp_ar() {
-           
-           changeLanguage(str: "ar") //arabic
-       }
-       
-       func actionLanguageSignUp_ru() {
-           changeLanguage(str: "ru")  //russian
-       }
-       
-       func actionLanguageSignUp_fr() {
-           changeLanguage(str: "ru")  //russian
-       }
-       
+    func actionLanguageSignUp_tr() {
+        changeLanguage(str: "tr") // turkish
+    }
+    
+    func actionLanguageSignUp_de() {
+        changeLanguage(str: "de") //german
+    }
+    
+    
+    func actionLanguageSignUp_en() {
+        changeLanguage(str: "en") // engilsh
+    }
+    
+    
+    func actionLanguageSignUp_ar() {
+        
+        changeLanguage(str: "ar") //arabic
+    }
+    
+    func actionLanguageSignUp_ru() {
+        changeLanguage(str: "ru")  //russian
+    }
+    
     func actionLanguageSignUp_da() {
         changeLanguage(str: "da") //danish
     }
@@ -368,8 +413,8 @@ class SignUp: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
     
     func actionLanguageSignUp_it() {
         changeLanguage(str: "it")  //italian
-       }
-       
+    }
+    
        
        func actionLanguageSignUp_nl() {
            changeLanguage(str: "nl")  //duct flemence

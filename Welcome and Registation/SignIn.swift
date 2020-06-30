@@ -8,8 +8,9 @@
 
 import UIKit
 import Firebase
+import CoreData
 
-class SignIn: UIViewController {
+class SignIn: UIViewController, UITextFieldDelegate {
     
     lazy var contentViewSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
     
@@ -156,8 +157,195 @@ class SignIn: UIViewController {
         return alert
     }()
     
+    let btnChangeLanguage : UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setImage(UIImage(named: "turkey"), for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(btnLanguageAction), for: .touchUpInside)
+        btn.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        btn.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        return btn
+    }()
+    
+    
+       let visualEffectView : UIVisualEffectView = {
+           let blurEffect = UIBlurEffect(style: .dark)
+           let view = UIVisualEffectView(effect: blurEffect)
+           view.translatesAutoresizingMaskIntoConstraints = false
+           return view
+       }()
+       
+       
+       let btnTurkey : UIButton = {
+           let btn = UIButton(type: .system)
+           btn.setImage(UIImage(named: "turkey"), for: .normal)
+           btn.translatesAutoresizingMaskIntoConstraints = false
+           btn.addTarget(self, action: #selector(turkeyAction), for: .touchUpInside)
+           return btn
+       }()
+       
+       let btnGermany : UIButton = {
+           let btn = UIButton(type: .system)
+           btn.setImage(UIImage(named: "germany"), for: .normal)
+           btn.translatesAutoresizingMaskIntoConstraints = false
+           btn.addTarget(self, action: #selector(germanyAction), for: .touchUpInside)
+           return btn
+       }()
+       
+       let btnUk : UIButton = {
+           let btn = UIButton(type: .system)
+           btn.setImage(UIImage(named: "uk"), for: .normal)
+           btn.translatesAutoresizingMaskIntoConstraints = false
+           btn.addTarget(self, action: #selector(ukAction), for: .touchUpInside)
+           return btn
+       }()
+       
+       let btnAlgeri : UIButton = {
+           let btn = UIButton(type: .system)
+           btn.setImage(UIImage(named: "algeria"), for: .normal)
+           btn.translatesAutoresizingMaskIntoConstraints = false
+           btn.addTarget(self, action: #selector(algeriAction), for: .touchUpInside)
+           return btn
+       }()
+       
+       let btnRussia : UIButton = {
+           let btn = UIButton(type: .system)
+           btn.setImage(UIImage(named: "russia"), for: .normal)
+           btn.translatesAutoresizingMaskIntoConstraints = false
+           btn.addTarget(self, action: #selector(russiaAction), for: .touchUpInside)
+           return btn
+       }()
+       
+       let btnDenmark : UIButton = {
+           let btn = UIButton(type: .system)
+           btn.setImage(UIImage(named: "denmark"), for: .normal)
+           btn.translatesAutoresizingMaskIntoConstraints = false
+           btn.addTarget(self, action: #selector(denmarkAction), for: .touchUpInside)
+           return btn
+       }()
+       
+       let btnFrench : UIButton = {
+           let btn = UIButton(type: .system)
+           btn.setImage(UIImage(named: "french"), for: .normal)
+           btn.translatesAutoresizingMaskIntoConstraints = false
+           btn.addTarget(self, action: #selector(frenchAction), for: .touchUpInside)
+           return btn
+       }()
+       
+       let btnItaly : UIButton = {
+           let btn = UIButton(type: .system)
+           btn.setImage(UIImage(named: "italy"), for: .normal)
+           btn.translatesAutoresizingMaskIntoConstraints = false
+           btn.addTarget(self, action: #selector(italyAction), for: .touchUpInside)
+           return btn
+       }()
+       
+       let btnHolland : UIButton = {
+           let btn = UIButton(type: .system)
+           btn.setImage(UIImage(named: "holland"), for: .normal)
+           btn.translatesAutoresizingMaskIntoConstraints = false
+           btn.addTarget(self, action: #selector(hollandAction), for: .touchUpInside)
+           return btn
+       }()
+       
+       let lineView1 : UIView = {
+           let view = UIView()
+           view.backgroundColor = .white
+           view.heightAnchor.constraint(equalToConstant: 70).isActive = true
+           view.widthAnchor.constraint(equalToConstant: 2).isActive = true
+           view.translatesAutoresizingMaskIntoConstraints = false
+           return view
+       }()
+       
+       let lineView2 : UIView = {
+           let view = UIView()
+           view.backgroundColor = .white
+           view.heightAnchor.constraint(equalToConstant: 70).isActive = true
+           view.widthAnchor.constraint(equalToConstant: 2).isActive = true
+           view.translatesAutoresizingMaskIntoConstraints = false
+           return view
+       }()
+       
+       let lineView3 : UIView = {
+           let view = UIView()
+           view.backgroundColor = .white
+           view.heightAnchor.constraint(equalToConstant: 70).isActive = true
+           view.widthAnchor.constraint(equalToConstant: 2).isActive = true
+           view.translatesAutoresizingMaskIntoConstraints = false
+           return view
+       }()
+       
+       let lineView4 : UIView = {
+           let view = UIView()
+           view.backgroundColor = .white
+           view.heightAnchor.constraint(equalToConstant: 70).isActive = true
+           view.widthAnchor.constraint(equalToConstant: 2).isActive = true
+           view.translatesAutoresizingMaskIntoConstraints = false
+           return view
+       }()
+       
+       let lineView5 : UIView = {
+           let view = UIView()
+           view.backgroundColor = .white
+           view.heightAnchor.constraint(equalToConstant: 70).isActive = true
+           view.widthAnchor.constraint(equalToConstant: 2).isActive = true
+           view.translatesAutoresizingMaskIntoConstraints = false
+           return view
+       }()
+       
+       let lineView6 : UIView = {
+           let view = UIView()
+           view.backgroundColor = .white
+           view.heightAnchor.constraint(equalToConstant: 70).isActive = true
+           view.widthAnchor.constraint(equalToConstant: 2).isActive = true
+           view.translatesAutoresizingMaskIntoConstraints = false
+           return view
+       }()
+       
+       let stack = UIStackView()
+       
+       let stack2 = UIStackView()
+       
+       let stack3 = UIStackView()
+    
+     var country = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        getData()
+        
+        if country == "tr" {
+            actionLanguageSignIn_tr()
+            btnChangeLanguage.setImage(UIImage(named: "turkey"), for: .normal)
+            print("tr")
+        } else if country == "de" {
+            actionLanguageSignIn_de()
+             btnChangeLanguage.setImage(UIImage(named: "germany"), for: .normal)
+        }else if country == "en" {
+            actionLanguageSignIn_en()
+             btnChangeLanguage.setImage(UIImage(named: "uk"), for: .normal)
+        }else if country == "ar" {
+            actionLanguageSignIn_ar()
+             btnChangeLanguage.setImage(UIImage(named: "algeria"), for: .normal)
+        }else if country == "ru" {
+            actionLanguageSignIn_ru()
+             btnChangeLanguage.setImage(UIImage(named: "russia"), for: .normal)
+        }else if country == "da" {
+            actionLanguageSignIn_da()
+             btnChangeLanguage.setImage(UIImage(named: "denmark"), for: .normal)
+        }else if country == "fr" {
+            actionLanguageSignIn_fr()
+             btnChangeLanguage.setImage(UIImage(named: "french"), for: .normal)
+        }else if country == "it" {
+            actionLanguageSignIn_it()
+             btnChangeLanguage.setImage(UIImage(named: "italy"), for: .normal)
+        }else if country == "nl" {
+            actionLanguageSignIn_nl()
+             btnChangeLanguage.setImage(UIImage(named: "holland"), for: .normal)
+        }
+              
+        
+        
         
         view.backgroundColor = .black
         
@@ -180,6 +368,7 @@ class SignIn: UIViewController {
         
         addSubview()
         addConstraint()
+       
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -187,8 +376,80 @@ class SignIn: UIViewController {
         let gestureREcongizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(gestureREcongizer)
         
+        let gesturereRecongizer2 = UITapGestureRecognizer(target: self, action: #selector(viewHiddenAction))
+        view.addGestureRecognizer(gesturereRecongizer2)
         
+        view.addSubview(visualEffectView)
+        
+        stack.addArrangedSubview(btnTurkey)
+        stack.addArrangedSubview(lineView1)
+        stack.addArrangedSubview(btnGermany)
+        stack.addArrangedSubview(lineView2)
+        stack.addArrangedSubview(btnUk)
+        
+        stack2.addArrangedSubview(btnAlgeri)
+        stack2.addArrangedSubview(lineView3)
+        stack2.addArrangedSubview(btnRussia)
+        stack2.addArrangedSubview(lineView4)
+        stack2.addArrangedSubview(btnDenmark)
+        
+        stack3.addArrangedSubview(btnFrench)
+        stack3.addArrangedSubview(lineView5)
+        stack3.addArrangedSubview(btnItaly)
+        stack3.addArrangedSubview(lineView6)
+        stack3.addArrangedSubview(btnHolland)
+        
+        
+        stack.axis = .horizontal
+        stack.spacing = 10
+        
+        stack2.axis = .horizontal
+        stack2.spacing = 10
+        
+        stack3.axis = .horizontal
+        stack3.spacing = 10
+        
+        view.addSubview(stack)
+        view.addSubview(stack2)
+        view.addSubview(stack3)
+        
+        
+        stack2.merkezKonumlamdirmaSuperView()
+        
+        _ = stack.anchor(top: nil, bottom: stack2.topAnchor, leading: nil, trailing: nil,padding: .init(top: 0, left: 0, bottom: 0, right: 0))
+        stack.merkezXSuperView()
+        
+        _ = stack3.anchor(top: stack2.bottomAnchor, bottom: nil, leading: nil, trailing: nil,padding: .init(top: 0, left: 0, bottom: 0, right: 0))
+        
+        stack3.merkezXSuperView()
+        
+        visualEffectView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        visualEffectView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        visualEffectView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        visualEffectView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+       
+        visualEffectView.isHidden = true
+        stack.isHidden = true
+        stack2.isHidden = true
+        stack3.isHidden = true
+        
+        txtPassword.delegate = self
+        txtEmail.delegate = self
+        
+      
+    }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        txtEmail.resignFirstResponder()
+         txtPassword.resignFirstResponder()
+        return true
+    }
+    
+    @objc func btnLanguageAction() {
+        visualEffectView.isHidden = false
+        stack.isHidden = false
+        stack2.isHidden = false
+        stack3.isHidden = false
     }
     
     func addSubview() {
@@ -201,6 +462,7 @@ class SignIn: UIViewController {
         bottomView.addSubview(btnSignIn)
         bottomView.addSubview(btnSignUp)
         bottomView.addSubview(activityIndicator)
+        bottomView.addSubview(btnChangeLanguage)
         
     }
     
@@ -222,10 +484,238 @@ class SignIn: UIViewController {
         _ = btnSignUp.anchor(top: btnSignIn.bottomAnchor, bottom: nil, leading: nil, trailing: nil,padding: .init(top: 0, left: 0, bottom: 0, right: 0))
         btnSignUp.merkezXSuperView()
         
+        _ = btnChangeLanguage.anchor(top: nil, bottom: bottomView.bottomAnchor, leading :nil, trailing: bottomView.trailingAnchor,padding: .init(top: 0, left: 0, bottom: 15, right: 15))
         
        
         
     }
+    
+    func getData() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Language")
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do {
+            let results =  try context.fetch(fetchRequest)
+            
+            for result in results as! [NSManagedObject] {
+                if let country = result.value(forKey: "country") as? String {
+                    //self.countryArray.append(country)
+                    self.country = country
+                }
+            }
+            print("request")
+        }catch{
+            print("error")
+        }
+        
+    }
+    
+ 
+    
+    @objc func viewHiddenAction() {
+        visualEffectView.isHidden = true
+        stack.isHidden = true
+        stack2.isHidden = true
+        stack3.isHidden = true
+        
+        
+    }
+    
+    
+    @objc func turkeyAction() {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let newLanguage = NSEntityDescription.insertNewObject(forEntityName: "Language", into: context)
+        
+        newLanguage.setValue("tr", forKey: "country")
+        
+        do {
+            try context.save()
+            print("save")
+        }catch {
+            print("erro")
+        }
+        
+        
+        
+        let splashView = SplashView()
+        splashView.modalPresentationStyle = .fullScreen
+        self.present(splashView, animated: true, completion: nil)
+        
+      }
+      
+      @objc func germanyAction() {
+          
+          let appDelegate = UIApplication.shared.delegate as! AppDelegate
+          let context = appDelegate.persistentContainer.viewContext
+          
+          let newLanguage = NSEntityDescription.insertNewObject(forEntityName: "Language", into: context)
+          
+          newLanguage.setValue("de", forKey: "country")
+          
+          do {
+              try context.save()
+              print("save")
+          }catch {
+              print("erro")
+          }
+          
+          let splashView = SplashView()
+          splashView.modalPresentationStyle = .fullScreen
+          self.present(splashView, animated: true, completion: nil)
+          
+      }
+      
+      @objc func ukAction() {
+          let appDelegate = UIApplication.shared.delegate as! AppDelegate
+          let context = appDelegate.persistentContainer.viewContext
+          
+          let newLanguage = NSEntityDescription.insertNewObject(forEntityName: "Language", into: context)
+          
+          newLanguage.setValue("en", forKey: "country")
+          
+          do {
+              try context.save()
+              print("save")
+          }catch {
+              print("erro")
+          }
+          
+          let splashView = SplashView()
+          splashView.modalPresentationStyle = .fullScreen
+          self.present(splashView, animated: true, completion: nil)
+      }
+      
+      @objc func algeriAction() {
+          let appDelegate = UIApplication.shared.delegate as! AppDelegate
+          let context = appDelegate.persistentContainer.viewContext
+          
+          let newLanguage = NSEntityDescription.insertNewObject(forEntityName: "Language", into: context)
+          
+          newLanguage.setValue("ar", forKey: "country")
+          
+          do {
+              try context.save()
+              print("save")
+          }catch {
+              print("erro")
+          }
+          
+          
+          let splashView = SplashView()
+          splashView.modalPresentationStyle = .fullScreen
+          self.present(splashView, animated: true, completion: nil)
+      }
+      
+      @objc func russiaAction() {
+          let appDelegate = UIApplication.shared.delegate as! AppDelegate
+          let context = appDelegate.persistentContainer.viewContext
+          
+          let newLanguage = NSEntityDescription.insertNewObject(forEntityName: "Language", into: context)
+          
+          newLanguage.setValue("ru", forKey: "country")
+          
+          do {
+              try context.save()
+              print("save")
+          }catch {
+              print("erro")
+          }
+          
+          
+          let splashView = SplashView()
+          splashView.modalPresentationStyle = .fullScreen
+          self.present(splashView, animated: true, completion: nil)
+      }
+      
+      @objc func denmarkAction() {
+          let appDelegate = UIApplication.shared.delegate as! AppDelegate
+          let context = appDelegate.persistentContainer.viewContext
+          
+          let newLanguage = NSEntityDescription.insertNewObject(forEntityName: "Language", into: context)
+          
+          newLanguage.setValue("da", forKey: "country")
+          
+          do {
+              try context.save()
+              print("save")
+          }catch {
+              print("erro")
+          }
+          
+          
+          let splashView = SplashView()
+          splashView.modalPresentationStyle = .fullScreen
+          self.present(splashView, animated: true, completion: nil)
+      }
+      
+      @objc func frenchAction() {
+          let appDelegate = UIApplication.shared.delegate as! AppDelegate
+          let context = appDelegate.persistentContainer.viewContext
+          
+          let newLanguage = NSEntityDescription.insertNewObject(forEntityName: "Language", into: context)
+          
+          newLanguage.setValue("fr", forKey: "country")
+          
+          do {
+              try context.save()
+              print("save")
+          }catch {
+              print("erro")
+          }
+          
+          
+          let splashView = SplashView()
+          splashView.modalPresentationStyle = .fullScreen
+          self.present(splashView, animated: true, completion: nil)
+      }
+      
+      @objc func italyAction() {
+          
+          let appDelegate = UIApplication.shared.delegate as! AppDelegate
+          let context = appDelegate.persistentContainer.viewContext
+          
+          let newLanguage = NSEntityDescription.insertNewObject(forEntityName: "Language", into: context)
+          
+          newLanguage.setValue("it", forKey: "country")
+          
+          do {
+              try context.save()
+              print("save")
+          }catch {
+              print("erro")
+          }
+          
+          
+          let splashView = SplashView()
+          splashView.modalPresentationStyle = .fullScreen
+          self.present(splashView, animated: true, completion: nil)
+      }
+      
+      @objc func hollandAction() {
+          let appDelegate = UIApplication.shared.delegate as! AppDelegate
+          let context = appDelegate.persistentContainer.viewContext
+          
+          let newLanguage = NSEntityDescription.insertNewObject(forEntityName: "Language", into: context)
+          
+          newLanguage.setValue("nl", forKey: "country")
+          
+          do {
+              try context.save()
+              print("save")
+          }catch {
+              print("erro")
+          }
+          
+          let splashView = SplashView()
+          splashView.modalPresentationStyle = .fullScreen
+          self.present(splashView, animated: true, completion: nil)
+      }
     
     @objc func forgotPasswordAction() {
         
@@ -338,6 +828,7 @@ class SignIn: UIViewController {
     
     @objc func hideKeyboard() {
         view.endEditing(true)
+        print("test")
     }
     
     

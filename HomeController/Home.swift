@@ -11,7 +11,7 @@ import SideMenu
 import Firebase
 import SDWebImage
 import MapKit
-
+import CoreData
 
 class cell666 : UITableViewCell {
     
@@ -200,8 +200,37 @@ class Home: UIViewController {
     }
     //--------------------
     
+    var country = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getData()
+        
+        if country == "tr" {
+            actionLanguageHome_tr()
+            print("tr")
+        } else if country == "de" {
+            actionLanguageHome_de()
+        }else if country == "en" {
+            actionLanguageHome_en()
+        }else if country == "ar" {
+            actionLanguageHome_ar()
+        }else if country == "ru" {
+            actionLanguageHome_ru()
+        }else if country == "da" {
+            actionLanguageHome_da()
+        }else if country == "fr" {
+            actionLanguageHome_fr()
+        }else if country == "it" {
+            actionLanguageHome_it()
+        }else if country == "nl" {
+            actionLanguageHome_nl()
+        }
+        
+        
+        
+        
         
         //________NOTIFICATION
         NotificationCenter.default.addObserver(self, selector: #selector(onReceiveData(_:)), name: NSNotification.Name(rawValue: "ReceiveData"), object: nil)
@@ -226,6 +255,29 @@ class Home: UIViewController {
         
         searchitemlist = itemlist
         btnAdd.isHidden = true
+    }
+    
+    func getData() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Language")
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do {
+            let results =  try context.fetch(fetchRequest)
+            
+            for result in results as! [NSManagedObject] {
+                if let country = result.value(forKey: "country") as? String {
+                    //self.countryArray.append(country)
+                    self.country = country
+                }
+            }
+            print("request")
+        }catch{
+            print("error")
+        }
+        
     }
     
    

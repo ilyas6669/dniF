@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import CoreData
 
 class ForgotPassword: UIViewController {
     
@@ -127,9 +128,36 @@ class ForgotPassword: UIViewController {
         return alert
     }()
     
+    var country = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getData()
+        
+        if country == "tr" {
+            actionLanguageForgot_tr()
+            print("tr")
+        } else if country == "de" {
+            actionLanguageForgot_de()
+        }else if country == "en" {
+            actionLanguageForgot_en()
+        }else if country == "ar" {
+            actionLanguageForgot_ar()
+        }else if country == "ru" {
+            actionLanguageForgot_ru()
+        }else if country == "da" {
+            actionLanguageForgot_da()
+        }else if country == "fr" {
+            actionLanguageForgot_fr()
+        }else if country == "it" {
+            actionLanguageForgot_it()
+        }else if country == "nl" {
+            actionLanguageForgot_nl()
+        }
+        
+        
+        
         
         view.backgroundColor = .black
         
@@ -183,6 +211,29 @@ class ForgotPassword: UIViewController {
         _ = activityIndicator.anchor(top: txtEmail.bottomAnchor, bottom: nil, leading: nil, trailing: nil,padding: .init(top: 30, left: 0, bottom: 0, right: 0))
         activityIndicator.merkezXSuperView()
         
+        
+    }
+    
+    func getData() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Language")
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do {
+            let results =  try context.fetch(fetchRequest)
+            
+            for result in results as! [NSManagedObject] {
+                if let country = result.value(forKey: "country") as? String {
+                    //self.countryArray.append(country)
+                    self.country = country
+                }
+            }
+            print("request")
+        }catch{
+            print("error")
+        }
         
     }
     

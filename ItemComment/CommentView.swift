@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import CoreData
 
 extension UITextView {
     func adjustUITextViewHeight() {
@@ -114,8 +115,36 @@ class CommentView: UIViewController,UITextFieldDelegate {
         return alert
     }()
     
+    var country = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getData()
+        
+        if country == "tr" {
+            actionLanguageComment_tr()
+            print("tr")
+        } else if country == "de" {
+            actionLanguageComment_de()
+        }else if country == "en" {
+            actionLanguageComment_en()
+        }else if country == "ar" {
+            actionLanguageComment_ar()
+        }else if country == "ru" {
+            actionLanguageComment_ru()
+        }else if country == "da" {
+            actionLanguageComment_da()
+        }else if country == "fr" {
+            actionLanguageComment_fr()
+        }else if country == "it" {
+            actionLanguageComment_it()
+        }else if country == "nl" {
+            actionLanguageComment_nl()
+        }
+        
+        
+        
         view.backgroundColor = .customBlue()
         
         ref = Database.database().reference()
@@ -139,6 +168,30 @@ class CommentView: UIViewController,UITextFieldDelegate {
 //        view.addGestureRecognizer(gestureREcongizer)
         
         dataPullFirebase()
+    }
+    
+    
+    func getData() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Language")
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do {
+            let results =  try context.fetch(fetchRequest)
+            
+            for result in results as! [NSManagedObject] {
+                if let country = result.value(forKey: "country") as? String {
+                    //self.countryArray.append(country)
+                    self.country = country
+                }
+            }
+            print("request")
+        }catch{
+            print("error")
+        }
+        
     }
     
     
@@ -219,8 +272,8 @@ class CommentView: UIViewController,UITextFieldDelegate {
         changeLanguage(str: "da") //danish
     }
     
-    func actionLanguageComment_frencEn() {
-        changeLanguage(str: "it")  //italian
+    func actionLanguageComment_fr() {
+        changeLanguage(str: "fr")  //italian
     }
     
     

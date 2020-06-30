@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 import Firebase
-
+import CoreData
 
 class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate,MKMapViewDelegate,CLLocationManagerDelegate  {
     
@@ -156,6 +156,7 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
     var kategoriArrayEng = ["Lawyer","Car Repair","Car Track","Hunting Equipment","Bank","Cash dispenser","Municipality","Barber","Petrol station","Computer","Bike","Household appliances","Cafe","Mobile phone","Florist","Child park","Class","Wedding","Pharmacy","Entertainment","Driving license","Electronic","Factory","Bakery","Hospital","Bath","Clothing","Beauty centre","Butcher","Stationery","Nursery","Consular","Cosmetic","Course Locations","Dry cleaner","Small Ad","Restaurant","Greengrocer","Massage","Carpenter","Market","Furniture","Accounting","Music","Population","School","Hotel","Car park","Organization","Private school","Patisserie","Police station","PTT","Restaurant","Moneychanger","Self-employment","Cinema","Insurance","Sport","Resort","Cleaning","Translation","Tailor","Wholesaler"]
     
     
+    
     let btnKonumuSec : UIButton = {
         let btn = UIButton(type: .system)
         btn.backgroundColor = .white
@@ -266,9 +267,34 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
         return alert
     }()
     
+     var country = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
+        getData()
+        
+        if country == "tr" {
+            actionLanguageAddImage_tr()
+            print("tr")
+        } else if country == "de" {
+            actionLanguageAddImage_de()
+        }else if country == "en" {
+            actionLanguageAddImage_en()
+        }else if country == "ar" {
+            actionLanguageAddImage_ar()
+        }else if country == "ru" {
+            actionLanguageAddImage_ru()
+        }else if country == "da" {
+            actionLanguageAddImage_da()
+        }else if country == "fr" {
+            actionLanguageAddImage_fr()
+        }else if country == "it" {
+            actionLanguageAddImage_it()
+        }else if country == "nl" {
+            actionLanguageAddImage_nl()
+        }
+        
         ref = Database.database().reference()
         mapView.isHidden = true
         view.backgroundColor = .customBlue()
@@ -314,7 +340,30 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
         
     }
     
-  
+    func getData() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Language")
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do {
+            let results =  try context.fetch(fetchRequest)
+            
+            for result in results as! [NSManagedObject] {
+                if let country = result.value(forKey: "country") as? String {
+                    //self.countryArray.append(country)
+                    self.country = country
+                }
+            }
+            print("request")
+        }catch{
+            print("error")
+        }
+        
+    }
+    
+    
     
     @objc func actionTamam() {
         txtKategori.resignFirstResponder()
@@ -449,6 +498,9 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
         alertAciklama.text = "Lütfen açıklama girniz".addLocalizableString(str: str)
         alertKategori.text = "Lütfen kategori seçiniz".addLocalizableString(str: str)
         alertKonum.text = "Lütfen konumu seçiniz".addLocalizableString(str: str)
+        lblKonum.text = "Seçmek istediğiniz konuma haritada tıklayın".addLocalizableString(str: str)
+        btnKonumKullan.setTitle("KONUMUNU KULLAN".addLocalizableString(str: str), for: .normal)
+        
     }
     
     
@@ -643,10 +695,52 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        if country == "tr" {
+          return kategoriArray.count
+        } else if country == "de" {
+            
+        }else if country == "en" {
+            kategoriArrayEng.count
+        }else if country == "ar" {
+           
+        }else if country == "ru" {
+           
+        }else if country == "da" {
+           
+        }else if country == "fr" {
+           
+        }else if country == "it" {
+            
+        }else if country == "nl" {
+            
+        }
+        
+        
         return kategoriArray.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if country == "tr" {
+                  return kategoriArray[row]
+               } else if country == "de" {
+                   
+               }else if country == "en" {
+                   return kategoriArrayEng[row]
+               }else if country == "ar" {
+                  
+               }else if country == "ru" {
+                  
+               }else if country == "da" {
+                  
+               }else if country == "fr" {
+                  
+               }else if country == "it" {
+                   
+               }else if country == "nl" {
+                   
+               }
+        
         return kategoriArray[row]
     }
     
