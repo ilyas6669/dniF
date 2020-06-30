@@ -12,6 +12,7 @@ class Cache: UIViewController {
 
     static public var filterkeyword = ""
     
+    static public var isHidden = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 

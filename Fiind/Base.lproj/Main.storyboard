@@ -280,6 +280,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblAnaSayfa" destination="qgp-ya-41M" id="1w9-9w-FGP"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellKonum" rowHeight="60" id="HpR-z5-ed2" customClass="cellKonum" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="248" width="414" height="60"/>
@@ -305,6 +308,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblKonum" destination="sdH-Q5-5Qw" id="iTB-zs-ro8"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellDil" rowHeight="60" id="dbh-HL-dTp" customClass="cellDil" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="308" width="414" height="60"/>
@@ -327,6 +333,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblDil" destination="PVe-XV-taE" id="g6N-ZW-SbZ"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellCik" rowHeight="60" id="An0-IY-bgR" customClass="cellCik" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="368" width="414" height="60"/>
@@ -362,6 +371,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblCikis" destination="nTk-JS-Yuk" id="jG3-aH-VLt"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellKategori" rowHeight="60" id="9ve-lq-Zb6" customClass="cellKategori" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="428" width="414" height="60"/>
@@ -421,6 +433,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblAvukat" destination="6l4-P8-Mhs" id="Toi-KD-oJR"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellEczane" rowHeight="60" id="3ek-sU-CwF" customClass="cellEczane" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="548" width="414" height="60"/>
@@ -455,6 +470,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblAraba" destination="gun-Mv-9QU" id="Ybf-Vq-kqy"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellOtel" rowHeight="60" id="ysR-yK-HC5" customClass="cellOtel" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="608" width="414" height="60"/>
@@ -489,6 +507,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblArabaParca" destination="6yj-c7-la4" id="RqX-8S-Eic"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellBankamatik" rowHeight="60" id="wHn-tH-2Yf" customClass="cellBankamatik" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="668" width="414" height="60"/>
@@ -523,6 +544,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblAv" destination="4EK-Wg-Iac" id="e0w-Gm-uxK"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellPtt" rowHeight="60" id="Y9Q-8L-v6k" customClass="cellPtt" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="728" width="414" height="60"/>
@@ -557,6 +581,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblBanka" destination="mnW-f4-Yfq" id="VHq-AM-Vhw"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellBerber" rowHeight="60" id="uTb-Ak-BrC" customClass="cellBerber" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="788" width="414" height="60"/>
@@ -590,6 +617,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblBankamatik" destination="fFb-CT-5XG" id="DKY-qp-3bd"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellRestoran" rowHeight="60" id="DGc-k5-rtt" customClass="cellRestoran" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="848" width="414" height="60"/>
@@ -624,6 +654,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblBelediyye" destination="ke6-9e-egi" id="Kc9-Iy-Ehz"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi" rowHeight="60" id="Dl5-OT-PMT" customClass="cellTerzi" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="908" width="414" height="60"/>
@@ -658,6 +691,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblBerber" destination="g70-Oh-11Z" id="FFv-cW-1ux"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi2" rowHeight="60" id="r12-rT-Ii8" customClass="cellTerzi2" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="968" width="414" height="60"/>
@@ -692,6 +728,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblBenzinlik" destination="UcU-ct-VdQ" id="dCS-3t-NH3"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi3" rowHeight="60" id="Id2-ba-Aab" customClass="cellTerzi3" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1028" width="414" height="60"/>
@@ -726,6 +765,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblBilgisayar" destination="41t-DF-lZe" id="DmH-4N-EQ2"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi4" rowHeight="60" id="zHQ-6o-4IW" customClass="cellTerzi4" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1088" width="414" height="60"/>
@@ -760,6 +802,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblBisiklet" destination="Kig-Fk-nXM" id="Zcr-zY-nkD"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi5" rowHeight="60" id="UEX-Fa-81O" customClass="cellTerzi5" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1148" width="414" height="60"/>
@@ -794,6 +839,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblBeyazEsya" destination="ZSq-UE-YZg" id="QAm-k9-3F0"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi6" rowHeight="60" id="eUY-3g-FW8" customClass="cellTerzi6" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1208" width="414" height="60"/>
@@ -828,6 +876,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblCafe" destination="13r-aR-C4d" id="GBe-3m-VsJ"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi7" rowHeight="60" id="YhT-jU-duq" customClass="cellTerzi7" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1268" width="414" height="60"/>
@@ -862,6 +913,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblCepTelefonu" destination="DXk-3y-DSD" id="0dr-VQ-k2I"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi8" rowHeight="60" id="Oq8-ti-gMs" customClass="cellTerzi8" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1328" width="414" height="60"/>
@@ -896,6 +950,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblCicekci" destination="3T1-mk-eOj" id="Y9k-pj-Npi"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi9" rowHeight="60" id="eFJ-wH-eXy" customClass="cellTerzi9" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1388" width="414" height="60"/>
@@ -930,6 +987,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblCocukParki" destination="8WK-1y-EFt" id="Oog-Mx-Qhi"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi10" rowHeight="60" id="K5x-n7-HSd" customClass="cellTerzi10" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1448" width="414" height="60"/>
@@ -964,6 +1024,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblDershane" destination="t7Y-aF-3nU" id="B6T-HW-Glc"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi11" rowHeight="60" id="e5V-9k-e07" customClass="cellTerzi11" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1508" width="414" height="60"/>
@@ -998,6 +1061,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblDugun" destination="1P6-iB-4vp" id="87Y-se-Ssx"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi12" rowHeight="60" id="zW1-39-hQD" customClass="cellTerzi12" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1568" width="414" height="60"/>
@@ -1032,6 +1098,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblEczane" destination="Ohu-Om-RRc" id="8kr-t3-kJZ"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi13" rowHeight="60" id="R5T-ER-mCn" customClass="cellTerzi13" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1628" width="414" height="60"/>
@@ -1066,6 +1135,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblEglence" destination="K3H-TW-oqQ" id="8YM-d9-e11"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi14" rowHeight="60" id="qod-hm-UKf" customClass="cellTerzi14" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1688" width="414" height="60"/>
@@ -1100,6 +1172,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblEhliyet" destination="Y4V-zp-rdf" id="Yii-WZ-OaC"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi15" rowHeight="60" id="CIi-wR-T3c" customClass="cellTerzi15" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1748" width="414" height="60"/>
@@ -1134,6 +1209,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblElektronik" destination="5MF-1F-UHv" id="ppG-a8-Jhe"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi16" rowHeight="60" id="gG1-kZ-tdY" customClass="cellTerzi16" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1808" width="414" height="60"/>
@@ -1168,6 +1246,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblFabrika" destination="UsL-0m-bUD" id="vxo-28-QyA"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi17" rowHeight="60" id="lid-L7-2wv" customClass="cellTerzi17" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1868" width="414" height="60"/>
@@ -1202,6 +1283,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblFirin" destination="LJs-54-vDp" id="J52-tA-egg"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi18" rowHeight="60" id="fAu-LM-9Ec" customClass="cellTerzi18" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1928" width="414" height="60"/>
@@ -1236,6 +1320,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblHastane" destination="FOU-Vb-1V7" id="eah-4z-s2b"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi19" rowHeight="60" id="fZg-38-lQm" customClass="cellTerzi19" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1988" width="414" height="60"/>
@@ -1270,6 +1357,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblHamam" destination="1dw-Ez-bve" id="3cH-BP-sLK"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi20" rowHeight="60" id="hH3-KC-dBF" customClass="cellTerzi20" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="2048" width="414" height="60"/>
@@ -1304,6 +1394,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblGiyim" destination="my2-kq-NJO" id="9gL-OH-2dr"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi21" rowHeight="60" id="ifN-k4-wPO" customClass="cellTerzi21" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="2108" width="414" height="60"/>
@@ -1338,6 +1431,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblGuzellik" destination="bzC-U5-hKY" id="Pm5-5L-Ceg"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi22" rowHeight="60" id="NwS-yY-Wpv" customClass="cellTerzi22" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="2168" width="414" height="60"/>
@@ -1372,6 +1468,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblKasap" destination="HvQ-4I-iP9" id="zeu-A3-Cuk"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi23" rowHeight="60" id="O34-VG-M8t" customClass="cellTerzi23" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="2228" width="414" height="60"/>
@@ -1406,6 +1505,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblKirtasiye" destination="sW3-za-mP1" id="Z5k-3m-tny"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi24" rowHeight="60" id="lRN-Nz-f9M" customClass="cellTerzi24" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="2288" width="414" height="60"/>
@@ -1440,6 +1542,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblKres" destination="ufv-4f-O31" id="FiX-sL-keT"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi25" rowHeight="60" id="suJ-dA-6pq" customClass="cellTerzi25" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="2348" width="414" height="60"/>
@@ -1474,6 +1579,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblKonsulluk" destination="YYN-Pi-ccf" id="eqU-Rw-xtT"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi26" rowHeight="60" id="7Ee-jo-IPP" customClass="cellTerzi26" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="2408" width="414" height="60"/>
@@ -1508,6 +1616,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblKozmetik" destination="8sn-iC-j4M" id="X2M-0b-IGa"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi27" rowHeight="60" id="s62-Od-YEt" customClass="cellTerzi27" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="2468" width="414" height="60"/>
@@ -1542,6 +1653,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblKursYerleri" destination="hns-GN-nVT" id="wLf-K6-Idx"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi28" rowHeight="60" id="TD6-qe-fXV" customClass="cellTerzi28" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="2528" width="414" height="60"/>
@@ -1576,6 +1690,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblKuruTemizleme" destination="3Ny-7m-heS" id="QJ0-ZM-lbh"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi29" rowHeight="60" id="CrS-Zy-2eo" customClass="cellTerzi29" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="2588" width="414" height="60"/>
@@ -1610,6 +1727,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblKucukIlan" destination="fmo-Qd-o7h" id="RXb-dq-aW6"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi30" rowHeight="60" id="sBL-6D-zBa" customClass="cellTerzi30" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="2648" width="414" height="60"/>
@@ -1644,6 +1764,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblLokanta" destination="Jjn-uV-MUn" id="TC4-kW-UMq"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi31" rowHeight="60" id="v4d-ul-jJD" customClass="cellTerzi31" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="2708" width="414" height="60"/>
@@ -1678,6 +1801,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblManav" destination="ujI-95-BZi" id="ZkD-wC-Yv7"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi32" rowHeight="60" id="P1a-TT-rHN" customClass="cellTerzi32" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="2768" width="414" height="60"/>
@@ -1712,6 +1838,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblMasaj" destination="LK2-eT-v88" id="aDb-5i-r0A"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi33" rowHeight="60" id="oR3-Cj-BXX" customClass="cellTerzi33" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="2828" width="414" height="60"/>
@@ -1746,6 +1875,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblMarangoz" destination="uiO-4R-WNC" id="hch-Te-n9T"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi34" rowHeight="60" id="fyg-bF-mNS" customClass="cellTerzi34" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="2888" width="414" height="60"/>
@@ -1780,6 +1912,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblMarket" destination="35I-Gq-Svs" id="97C-rg-IXf"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi35" rowHeight="60" id="hyn-gY-gH5" customClass="cellTerzi35" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="2948" width="414" height="60"/>
@@ -1814,6 +1949,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblMobilya" destination="zNY-9b-dSW" id="ZAZ-BV-S9Q"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi36" rowHeight="60" id="22H-wg-3mW" customClass="cellTerzi36" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="3008" width="414" height="60"/>
@@ -1848,6 +1986,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblMuhasebe" destination="8SQ-td-XBr" id="4FE-3k-3vt"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi37" rowHeight="60" id="Bls-Em-d03" customClass="cellTerzi37" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="3068" width="414" height="60"/>
@@ -1882,6 +2023,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblMuzik" destination="wD6-Hn-ksL" id="ROF-Fp-Q8T"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi38" rowHeight="60" id="GF4-gH-9GO" customClass="cellTerzi38" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="3128" width="414" height="60"/>
@@ -1916,6 +2060,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblNufus" destination="c6k-Vd-S1c" id="LGy-qg-RAU"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi39" rowHeight="60" id="ITH-JR-yuM" customClass="cellTerzi39" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="3188" width="414" height="60"/>
@@ -1950,6 +2097,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblOkul" destination="FKY-LR-NHJ" id="oeO-8u-7jh"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi40" rowHeight="60" id="TtS-NM-Kyy" customClass="cellTerzi40" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="3248" width="414" height="60"/>
@@ -1984,6 +2134,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblOtel" destination="GbX-Sl-pNi" id="Bvf-ku-6OQ"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi41" rowHeight="60" id="SZC-tc-ZhH" customClass="cellTerzi41" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="3308" width="414" height="60"/>
@@ -2018,6 +2171,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblOtopark" destination="mnj-tf-MwW" id="TX9-Yb-LDn"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi42" rowHeight="60" id="DF3-r3-KUD" customClass="cellTerzi42" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="3368" width="414" height="60"/>
@@ -2052,6 +2208,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblOrganzisyon" destination="eAc-8z-CIR" id="EMb-k8-iVI"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi43" rowHeight="60" id="ckl-sj-Sj1" customClass="cellTerzi43" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="3428" width="414" height="60"/>
@@ -2086,6 +2245,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblOzelOkul" destination="i9Y-Fu-otj" id="1c4-VU-aZ1"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi44" rowHeight="60" id="ToR-PS-7wA" customClass="cellTerzi44" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="3488" width="414" height="60"/>
@@ -2120,6 +2282,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblPasthane" destination="g0V-g1-mhr" id="NJq-4O-8UE"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi45" rowHeight="60" id="3Y6-O6-sLv" customClass="cellTerzi45" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="3548" width="414" height="60"/>
@@ -2154,6 +2319,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblPolisKarakolu" destination="tkN-Yd-MXL" id="WGc-Vu-G0v"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi46" rowHeight="60" id="Be3-CH-30F" customClass="cellTerzi46" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="3608" width="414" height="60"/>
@@ -2188,6 +2356,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblPtt" destination="eG6-xR-9K4" id="iUi-X6-c1f"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi47" rowHeight="60" id="BTM-jp-Ned" customClass="cellTerzi47" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="3668" width="414" height="60"/>
@@ -2222,6 +2393,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblRestorant" destination="KcP-Jc-os9" id="Wop-Zb-geA"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi48" rowHeight="60" id="OyE-gK-wSu" customClass="cellTerzi48" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="3728" width="414" height="60"/>
@@ -2256,6 +2430,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblSarraf" destination="spv-ED-EQc" id="LoY-lP-OmM"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi49" rowHeight="60" id="GQd-OP-HUE" customClass="cellTerzi49" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="3788" width="414" height="60"/>
@@ -2290,6 +2467,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblSerbestMeslek" destination="Ib6-zk-PPd" id="9FU-Dp-I3i"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi50" rowHeight="60" id="hXC-LV-wzL" customClass="cellTerzi50" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="3848" width="414" height="60"/>
@@ -2324,6 +2504,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblSinema" destination="pFz-oF-bPZ" id="q63-8M-gbv"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi51" rowHeight="60" id="Rqg-6L-e2N" customClass="cellTerzi51" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="3908" width="414" height="60"/>
@@ -2358,6 +2541,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblSigorta" destination="XAS-kW-fBU" id="agT-Ln-cBd"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi52" rowHeight="60" id="Kp4-Rj-kWb" customClass="cellTerzi52" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="3968" width="414" height="60"/>
@@ -2392,6 +2578,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblSpor" destination="LLz-eY-0Ig" id="IAu-4i-DZU"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi53" rowHeight="60" id="hTr-zU-V0l" customClass="cellTerzi53" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="4028" width="414" height="60"/>
@@ -2426,6 +2615,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblTatilYeri" destination="gdT-48-5UX" id="5ml-d2-uj7"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi54" rowHeight="60" id="xvq-O5-zIE" customClass="cellTerzi54" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="4088" width="414" height="60"/>
@@ -2460,6 +2652,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblTemizlik" destination="Fzw-JN-yNa" id="y1d-Tc-v0w"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi55" rowHeight="60" id="eaP-jw-O7Q" customClass="cellTerzi55" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="4148" width="414" height="60"/>
@@ -2494,6 +2689,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblTercume" destination="L7H-ZA-ge3" id="tNM-oP-ucL"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi56" rowHeight="60" id="Vru-cq-63h" customClass="cellTerzi56" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="4208" width="414" height="60"/>
@@ -2528,6 +2726,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblTerzi" destination="I2V-ao-WiQ" id="AF9-vm-045"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTerzi57" rowHeight="60" id="tEt-CN-jf3" customClass="cellTerzi57" customModule="Fiind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="4268" width="414" height="60"/>
@@ -2562,6 +2763,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblToptanci" destination="ny1-4p-jei" id="gxV-h6-tb1"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

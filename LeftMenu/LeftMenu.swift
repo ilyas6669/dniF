@@ -30,6 +30,7 @@ class LeftMenu: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableVIew.delegate = self
         tableVIew.dataSource = self
         tableVIew.separatorColor = .white
@@ -40,6 +41,7 @@ class LeftMenu: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
         
         
         
@@ -62,7 +64,7 @@ extension LeftMenu : UITableViewDataSource,UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 73
+        return 71
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -249,40 +251,42 @@ extension LeftMenu : UITableViewDataSource,UITableViewDelegate {
         
         
         
-        else if indexPath.row == 60 {
+        else if indexPath.row == 59 {
             let cellTerzi46 : cellTerzi46 = tableView.dequeueReusableCell(withIdentifier: "cellTerzi46") as! cellTerzi46
             return cellTerzi46
-        }else if indexPath.row == 61 {
+        }else if indexPath.row == 60 {
             let cellTerzi47 : cellTerzi47 = tableView.dequeueReusableCell(withIdentifier: "cellTerzi47") as! cellTerzi47
             return cellTerzi47
-        }else if indexPath.row == 62 {
+        }else if indexPath.row == 61 {
             let cellTerzi48 : cellTerzi48 = tableView.dequeueReusableCell(withIdentifier: "cellTerzi48") as! cellTerzi48
             return cellTerzi48
-        }else if indexPath.row == 63 {
+        }else if indexPath.row == 62 {
             let cellTerzi49 : cellTerzi49 = tableView.dequeueReusableCell(withIdentifier: "cellTerzi49") as! cellTerzi49
             return cellTerzi49
-        }else if indexPath.row == 64 {
+        }else if indexPath.row == 63 {
             let cellTerzi50 : cellTerzi50 = tableView.dequeueReusableCell(withIdentifier: "cellTerzi50") as! cellTerzi50
             return cellTerzi50
-        }else if indexPath.row == 65 {
+        }else if indexPath.row == 64 {
             let cellTerzi51 : cellTerzi51 = tableView.dequeueReusableCell(withIdentifier: "cellTerzi51") as! cellTerzi51
             return cellTerzi51
-        }else if indexPath.row == 66 {
+        }else if indexPath.row == 65 {
             let cellTerzi52 : cellTerzi52 = tableView.dequeueReusableCell(withIdentifier: "cellTerzi52") as! cellTerzi52
             return cellTerzi52
-        }else if indexPath.row == 68 {
+            
+            
+        }else if indexPath.row == 66 {
             let cellTerzi53 : cellTerzi53 = tableView.dequeueReusableCell(withIdentifier: "cellTerzi53") as! cellTerzi53
             return cellTerzi53
-        }else if indexPath.row == 69 {
+        }else if indexPath.row == 67 {
             let cellTerzi54 : cellTerzi54 = tableView.dequeueReusableCell(withIdentifier: "cellTerzi54") as! cellTerzi54
             return cellTerzi54
-        }else if indexPath.row == 70 {
+        }else if indexPath.row == 68 {
             let cellTerzi55 : cellTerzi55 = tableView.dequeueReusableCell(withIdentifier: "cellTerzi55") as! cellTerzi55
             return cellTerzi55
-        }else if indexPath.row == 71 {
+        }else if indexPath.row == 69 {
             let cellTerzi56 : cellTerzi56 = tableView.dequeueReusableCell(withIdentifier: "cellTerzi56") as! cellTerzi56
             return cellTerzi56
-        }else if indexPath.row == 72 {
+        }else if indexPath.row == 70 {
             let cellTerzi57 : cellTerzi57 = tableView.dequeueReusableCell(withIdentifier: "cellTerzi57") as! cellTerzi57
             return cellTerzi57
         }
@@ -314,14 +318,27 @@ extension LeftMenu : UITableViewDataSource,UITableViewDelegate {
             
             
         }else if indexPath.row == 3 {
-            //duzelis edecem......
+            
             let userid = Auth.auth().currentUser!.uid
             var ref : DatabaseReference?
             ref = Database.database().reference().child("user").child(userid)
             
             let dict : [String:Any] = ["latitude":lattitude,"longitude":longitude]
             ref?.updateChildValues(dict)
-                        
+           
+            let refreshAlert = UIAlertController(title: "", message: "Konum Güncellendi", preferredStyle: UIAlertController.Style.alert)
+            
+            refreshAlert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: { (action: UIAlertAction!) in
+                do {
+                    self.dismiss(animated: true, completion: nil)
+                    self.view.endEditing(true)
+                    
+                } catch {
+                    print("error")
+                }
+            }))
+            present(refreshAlert, animated: true, completion: nil)
+            
             
         }else if indexPath.row == 4 {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)

@@ -1,0 +1,61 @@
+/* 
+  Localizable.strings
+  Fiind
+
+  Created by İlyas Abiyev on 6/29/20.
+  Copyright © 2020 İlyas Abiyev. All rights reserved.
+*/
+"Giriş Yap" = "Login" ;
+"E-posta adresinizi giriniz" = "Enter your e-mail address" ;
+"Şifrenizi girin" = "Enter your password" ;
+"Şifreni mi unuttun ?" = "Forget your password ?" ;
+"GİRİŞ YAP" = "LOGIN" ;
+"Hesabın yok mu ? Hemen oluştur!" = "Don\'t have an account? Create now!" ;
+"Lütfen email adresinizi girniz" = "Your e-mail address is wrong…" ;
+"Lütfen şifrenizi giriniz" = "Please enter your password" ;
+"Giris yapilirken bir hata oluştu" = "There was an error creating the account. Please try again. Error code:" ;
+"Kayıt Ol" = "Sign up" ;
+"E-posta adresinizi giriniz" = "Enter your e-mail address" ;
+"Şifrenizi girin" = "Enter your password" ;
+"Şifrenizi tekrar girin" = "Re-enter your password" ;
+"KONUMUNU BELİRLE" = "SET LOCATION" ;
+"İş yeri sahibiyim" = "I have a business owner" ;
+"İş yeri sahibi değilim" = "I don\'t own a business" ;
+"KAYIT OL" = "Sign up" ;
+"Lütfen email adresinizi girniz" = "Your e-mail address is wrong…" ;
+"Lütfen şifrenizi giriniz" = "Your password must be at least 8…" ;
+"Giris yapilirken bir hata oluştu" = "" ;
+"Girdiğiniz şifreler aynı değil" = "Passwords must be the same…" ;
+"Lutfen konumunuzu belirleyin" = "You need to set your location to register" ;
+"Şifremi unuttum" = "Forget Password" ;
+"E-posta adresinizi giriniz" = "Enter your e-mail address" ;
+"ŞİFREMİ SIFIRLA" = "RESET MY PASSWORD" ;
+"Lütfen email adresinizi girniz" = "Your e-mail address is wrong…" ;
+"Email adresinize gönderdiğimiz linke tıklıyarak şifrenizi değişebilirsiniz" = "A link has been sent to your e-mail address for a password change, please check your e-mail address." ;
+"İlan ekle" = "Add job" ;
+"Ekle" = "ADD" ;
+"Başlık" = "Title" ;
+"Açıklama" = "Description" ;
+"Kategori?" = "Category ?" ;
+"KONUMUNU İŞARETLE" = "SET LOCATION" ;
+"Lütfen ilanınız için fotoğraf seçiniz" = "Couldn\'t upload photo…" ;
+"Lütfen başlık girniz" = "Please enter a title…" ;
+"Lütfen açıklama girniz" = "Please enter a description…" ;
+"Lütfen kategori seçiniz" = "Please enter a category…" ;
+"Lütfen konumu seçiniz" = "Please select location…" ;
+"Yorumlar" = "Comments" ;
+"Yorum yapın" = "Make a comment" ;
+"PAYLAŞ" = "Share" ;
+"Sil" = "Delete" ;
+"Yorumunuzu silmek mi istiyorsunuz?" = "Want to delete your comment?" ;
+"Paylaşımı sil" = "Delete share" ;
+"İptal Et" = "Cancel" ;
+"Arama Yap" = "Search" ;
+"Hiç bir şey bulunamadı." = "Nothing found." ;
+"beğenme" = "like" ;
+"yorumun tümünü gör" = "comments" ;
+"Sil" = "Delete" ;
+"Paylaşımınızı silmek mi istiyorsunuz?" = "Want to delete your share?" ;
+"Paylaşımı sil" = "Delete share" ;
+"İptal Et" = "Cancel" ;
+

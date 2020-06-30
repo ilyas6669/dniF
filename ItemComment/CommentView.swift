@@ -90,6 +90,30 @@ class CommentView: UIViewController,UITextFieldDelegate {
         return table
     }()
     
+    let alertTitle : UILabel = {
+       let alert = UILabel()
+        alert.text = "Sil"
+        return alert
+    }()
+    
+    let alertMessage : UILabel = {
+       let alert = UILabel()
+        alert.text = "Yorumunuzu silmek mi istiyorsunuz?"
+        return alert
+    }()
+    
+    let alertButtonTitlle1 : UILabel = {
+        let alert = UILabel()
+        alert.text = "Paylaşımı sil"
+        return alert
+    }()
+    
+    let alertButtonTitlle2 : UILabel = {
+        let alert = UILabel()
+        alert.text = "İptal Et"
+        return alert
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .customBlue()
@@ -163,13 +187,56 @@ class CommentView: UIViewController,UITextFieldDelegate {
     
     
     @objc func leftAction() {
-        self.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    func actionLanguageHome_en() {
+        //       changeLanguage(str: "en") // engilsh
+        
+        
+    }
+    
+    func actionLanguageHome_de() {
+        //        changeLanguage(str: "de") //german
+    }
+    
+    func actionLanguageHome_ar() {
+        
+        //        changeLanguage(str: "ar") //arabic
+    }
+    
+    func actionLanguageHome_da() {
+        //        changeLanguage(str: "da") //danish
+    }
+    
+    func actionLanguageHome_it() {
+        //        changeLanguage(str: "it")  //italian
+    }
+    
+    func actionLanguageHome_ru() {
+        //        changeLanguage(str: "ru")  //russian
+    }
+    
+    func actionLanguageHome_nl() {
+        //        changeLanguage(str: "nl")  //duct flemence
+    }
+    
+    
+    func changeLanguage(str:String)  {
+        lblIlanEkle.text = "Yorumlar".addLocalizableString(str: str)
+        txtComment.placeholder = "Yorum yapın".addLocalizableString(str: str)
+        btnPaylas.setTitle("PAYLAŞ".addLocalizableString(str: str), for: .normal)
+        
+        alertTitle.text = "Sil".addLocalizableString(str: str)
+        alertMessage.text = "Yorumunuzu silmek mi istiyorsunuz?".addLocalizableString(str: str)
+        alertButtonTitlle1.text = "Paylaşımı sil".addLocalizableString(str: str)
+        alertButtonTitlle2.text = "İptal Et".addLocalizableString(str: str)
     }
     
     
     
-    //ba bidene mene basa sala sala eliyeh ceomment idni bele almiram? yaxsi deyan
-    //ne sefh oldub a? bu commentleri sen yazdirmisan ? 2 sib=ni men 1 nide sennen yazdm yazdirdigimiz hansidi ? ala sende ikideeni mende bideneni id
+   
     @objc func btnPaylasAction() {
         view.endEditing(true)
         if txtComment.text != "" {
@@ -180,7 +247,7 @@ class CommentView: UIViewController,UITextFieldDelegate {
             let itemsComment = ItemsComments(comment: txtComment.text!, commentid: commentid!, postid: postid, postpublisher:postpublisher , posttime: signupdateint(), publisher: userid)
             
             let comment : [String:Any] = ["comment":itemsComment.comment!,"commentid":itemsComment.commentid!,"postid":itemsComment.postid!,"postpublisher":itemsComment.postpublisher!,"posttime":itemsComment.posttime!,"publisher":itemsComment.publisher!]
-            //bele olmalidi yadinnan cioxib olar he
+            
             let newRef = self.ref?.child("itemsComments").child(postid).child(commentid!)
             newRef?.setValue(comment, withCompletionBlock: { (error, response) in
                 guard error == nil else {
@@ -255,8 +322,8 @@ extension CommentView : UITableViewDelegate,UITableViewDataSource {
         
         cell.btnTapAction = {
             () in
-            let alert = UIAlertController(title: "Sil", message: "Yorumunuzu silmek mi istiyorsunuz?", preferredStyle: .actionSheet)
-            let silAction = UIAlertAction(title: "Paylaşımı sil", style: .default) { (action) in
+            let alert = UIAlertController(title: self.alertTitle.text!, message: self.alertMessage.text!, preferredStyle: .actionSheet)
+            let silAction = UIAlertAction(title: self.alertButtonTitlle1.text!, style: .default) { (action) in
 
                 var ref : DatabaseReference?
 
@@ -267,7 +334,7 @@ extension CommentView : UITableViewDelegate,UITableViewDataSource {
 
 
             }
-            let iptalAction = UIAlertAction(title: "İptal Et", style: .cancel, handler: nil)
+            let iptalAction = UIAlertAction(title: self.alertButtonTitlle2.text!, style: .cancel, handler: nil)
 
             alert.addAction(silAction)
             alert.addAction(iptalAction)

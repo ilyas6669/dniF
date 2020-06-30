@@ -178,7 +178,7 @@ class SignUp: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
         btn.setImage(icon, for: .normal)
         btn.imageView?.contentMode = .scaleAspectFit
         btn.imageEdgeInsets = UIEdgeInsets(top: 0, left: -20, bottom: 0, right: 0)
-        btn.setTitle("KONUMUNU BELIRLE", for: .normal)
+        btn.setTitle("KONUMUNU BELİRLE", for: .normal)
         btn.setTitleColor(.customBlue(), for: .normal)
         btn.backgroundColor = .white
         //btn.layer.cornerRadius = 23
@@ -209,11 +209,40 @@ class SignUp: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
         return indicator
     }()
     
+    let alertMesaj : UILabel = {
+       let alert = UILabel()
+        alert.text = "Lütfen email adresinizi girniz"
+        return alert
+    }()
+    
+    let alertParola : UILabel = {
+        let alert = UILabel()
+        alert.text = "Lütfen şifrenizi giriniz"
+        return alert
+    }()
+    
+    let alertParola2 : UILabel = {
+        let alert = UILabel()
+        alert.text = "Lütfen şifrenizi tekrar giriniz"
+        return alert
+    }()
+    
+    let alertParolerror : UILabel = {
+        let alert = UILabel()
+        alert.text = "Girdiğiniz şifreler aynı değil"
+        return alert
+    }()
+    
+    let alertKonum : UILabel = {
+        let alert = UILabel()
+        alert.text = "Lutfen konumunuzu belirleyin"
+        return alert
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        
         view.backgroundColor = .black
         
         view.addSubview(scrolView)
@@ -300,6 +329,63 @@ class SignUp: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
         self.dismiss(animated: false, completion: nil)
     }
     
+   
+    
+    func actionLanguageHome_en() {
+        //       changeLanguage(str: "en") // engilsh
+        
+        
+    }
+    
+    func actionLanguageHome_de() {
+        //        changeLanguage(str: "de") //german
+    }
+    
+    func actionLanguageHome_ar() {
+        
+        //        changeLanguage(str: "ar") //arabic
+    }
+    
+    func actionLanguageHome_da() {
+        //        changeLanguage(str: "da") //danish
+    }
+    
+    func actionLanguageHome_it() {
+        //        changeLanguage(str: "it")  //italian
+    }
+    
+    func actionLanguageHome_ru() {
+        //        changeLanguage(str: "ru")  //russian
+    }
+    
+    func actionLanguageHome_nl() {
+        //        changeLanguage(str: "nl")  //duct flemence
+    }
+    
+    
+    func changeLanguage(str:String)  {
+        lblSignUp.text = "Kayıt Ol".addLocalizableString(str: str)
+        txtEmail.placeholder = "E-posta adresinizi giriniz".addLocalizableString(str: str)
+        txtPassword.placeholder = "Şifrenizi girin".addLocalizableString(str: str)
+        txtPassword2.placeholder = "Şifrenizi tekrar girin".addLocalizableString(str: str)
+        
+        
+        btnLocation.setTitle("KONUMUNU BELİRLE".addLocalizableString(str: str), for: .normal)
+        btnRadio1.setTitle("İş yeri sahibiyim".addLocalizableString(str: str), for: .normal)
+        btnRadio2.setTitle("İş yeri sahibi değilim".addLocalizableString(str: str), for: .normal)
+        btnSignUp.setTitle("KAYIT OL".addLocalizableString(str: str), for: .normal)
+        
+        
+        alertMesaj.text = "Lütfen email adresinizi girniz".addLocalizableString(str: str)
+        alertParola.text = "Lütfen şifrenizi giriniz".addLocalizableString(str: str)
+        alertParola2.text = "Giris yapilirken bir hata oluştu".addLocalizableString(str: str)
+        alertParolerror.text = "Girdiğiniz şifreler aynı değil".addLocalizableString(str: str)
+        alertKonum.text =  "Lutfen konumunuzu belirleyin".addLocalizableString(str: str)
+        
+    }
+    
+    
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
                let location = CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
                 lattitude = location.latitude
@@ -352,27 +438,27 @@ class SignUp: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
         btnSignUp.isHidden = true
         activityIndicator.startAnimating()
         if txtEmail.text == "" {
-            makeAlert(tittle: "Hata", message: "Lütfen email adresinizi girniz")
+            makeAlert(tittle: "Hata", message: alertMesaj.text!)
             activityIndicator.stopAnimating()
             btnSignUp.isHidden = false
             return
         } else if txtPassword.text == "" {
-            makeAlert(tittle: "Hata", message: "Lütfen şifrenizi giriniz")
+            makeAlert(tittle: "Hata", message: alertParola.text!)
             activityIndicator.stopAnimating()
               btnSignUp.isHidden = false
             return
         } else if txtPassword2.text == "" {
-            makeAlert(tittle: "Hata", message: "Lütfen şifrenizi tekrar giriniz")
+            makeAlert(tittle: "Hata", message: alertParola2.text!)
             activityIndicator.stopAnimating()
               btnSignUp.isHidden = false
             return
         } else if txtPassword.text != txtPassword2.text{
-            makeAlert(tittle: "Hata", message: "Girdiğiniz şifreler aynı değil")
+            makeAlert(tittle: "Hata", message: alertParolerror.text!)
             activityIndicator.stopAnimating()
               btnSignUp.isHidden = false
             return
         } else if locationcontrol == false {
-            makeAlert(tittle: "Error", message: "Lutfen konumunuzu belirleyin")
+            makeAlert(tittle: "Error", message: alertKonum.text!)
             activityIndicator.stopAnimating()
               btnSignUp.isHidden = false
             return

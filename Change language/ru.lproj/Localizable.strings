@@ -1,0 +1,62 @@
+/* 
+  Localizable.strings
+  Fiind
+
+  Created by İlyas Abiyev on 6/29/20.
+  Copyright © 2020 İlyas Abiyev. All rights reserved.
+*/
+"Giriş Yap" = "Авторизоваться" ;
+"E-posta adresinizi giriniz" = "Введите ваш адрес электронной почты" ;
+"Şifrenizi girin" = "Введите ваш пароль" ;
+"Şifreni mi unuttun ?" = "Вы забыли свой пароль ?" ;
+"GİRİŞ YAP" = "АВТОРИЗОВАТЬСЯ" ;
+"Hesabın yok mu ? Hemen oluştur!" = "У вас нет аккаунта? Создай сейчас!" ;
+"Lütfen email adresinizi girniz" = "Ваш адрес электронной почты неправильный ..." ;
+"Lütfen şifrenizi giriniz" = "Пожалуйста введите ваш пароль" ;
+"Giris yapilirken bir hata oluştu" = "При создании учетной записи произошла ошибка. Пожалуйста, попробуйте еще раз. Код ошибки:" ;
+"Kayıt Ol" = "регистр" ;
+"E-posta adresinizi giriniz" = "Введите ваш адрес электронной почты" ;
+"Şifrenizi girin" = "Введите ваш пароль" ;
+"Şifrenizi tekrar girin" = "Введите пароль еще раз" ;
+"KONUMUNU BELİRLE" = "УСТАНОВИТЬ МЕСТО" ;
+"İş yeri sahibiyim" = "У меня есть владелец бизнеса" ;
+"İş yeri sahibi değilim" = "У меня нет бизнеса" ;
+"KAYIT OL" = "регистр" ;
+"Lütfen email adresinizi girniz" = "Ваш адрес электронной почты неправильный ..." ;
+"Lütfen şifrenizi giriniz" = "Ваш пароль должен быть не менее 8 ..." ;
+"Giris yapilirken bir hata oluştu" = "" ;
+"Girdiğiniz şifreler aynı değil" = "Пароли должны быть одинаковыми ..." ;
+"Lutfen konumunuzu belirleyin" = "Вам необходимо указать свое местоположение для регистрации" ;
+"Şifremi unuttum" = ">Я забыл свой пароль" ;
+"E-posta adresinizi giriniz" = "Введите ваш адрес электронной почты" ;
+"ŞİFREMİ SIFIRLA" = "СБРОСИТЬ ПАРОЛЬ" ;
+"Lütfen email adresinizi girniz" = "аш адрес электронной почты неправильный …" ;
+"Email adresinize gönderdiğimiz linke tıklıyarak şifrenizi değişebilirsiniz" = "При отправке ссылки для подтверждения произошла ошибка. Пожалуйста, введите свой адрес электронной почты снова. Код ошибки:" ;
+"İlan ekle" = "Добавить работу" ;
+"Ekle" = "ДОБАВИТЬ" ;
+"Başlık" = "заглавие" ;
+"Açıklama" = "Описание" ;
+"Kategori?" = "категория ?" ;
+"KONUMUNU İŞARETLE" = "УСТАНОВИТЬ МЕСТО" ;
+"Lütfen ilanınız için fotoğraf seçiniz" = "Не удалось загрузить фото..." ;
+"Lütfen başlık girniz" = "Пожалуйста, введите название..." ;
+"Lütfen açıklama girniz" = "Пожалуйста, введите описание ..." ;
+"Lütfen kategori seçiniz" = "Пожалуйста, введите категорию ..." ;
+"Lütfen konumu seçiniz" = "Пожалуйста, выберите местоположение ..." ;
+"Yorumlar" = "Комментарии" ;
+"Yorum yapın" = "Оставить комментарий" ;
+"PAYLAŞ" = "доля" ;
+"Sil" = "Удалить" ;
+"Yorumunuzu silmek mi istiyorsunuz?" = "Хотите удалить свой комментарий?" ;
+"Paylaşımı sil" = "Удалить долю" ;
+"İptal Et" = "Отмена" ;
+"Arama Yap" = "Поиск" ;
+"Hiç bir şey bulunamadı." = "Ничего не найдено." ;
+"beğenme" = "лайк" ;
+"yorumun tümünü gör" = "Комментарии" ;
+"Sil" = "Удалить" ;
+"Paylaşımınızı silmek mi istiyorsunuz?" = "Хотите удалить свою долю?" ;
+"Paylaşımı sil" = "Удалить долю " ;
+"İptal Et" = "Отмена" ;
+
+

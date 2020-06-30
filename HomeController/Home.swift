@@ -151,6 +151,54 @@ class Home: UIViewController {
         return btn
     }()
     
+    let btnAlgeri : UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setImage(UIImage(named: "algeria"), for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(algeriAction), for: .touchUpInside)
+        return btn
+    }()
+    
+    let btnRussia : UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setImage(UIImage(named: "russia"), for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(russiaAction), for: .touchUpInside)
+        return btn
+    }()
+    
+    let btnDenmark : UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setImage(UIImage(named: "denmark"), for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(denmarkAction), for: .touchUpInside)
+        return btn
+    }()
+    
+    let btnFrench : UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setImage(UIImage(named: "french"), for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(frenchAction), for: .touchUpInside)
+        return btn
+    }()
+    
+    let btnItaly : UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setImage(UIImage(named: "italy"), for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(italyAction), for: .touchUpInside)
+        return btn
+    }()
+    
+    let btnHolland : UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setImage(UIImage(named: "holland"), for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(hollandAction), for: .touchUpInside)
+        return btn
+    }()
+    
     let visualEffectView : UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: .dark)
         let view = UIVisualEffectView(effect: blurEffect)
@@ -176,7 +224,47 @@ class Home: UIViewController {
         return view
     }()
     
+    let lineView3 : UIView = {
+           let view = UIView()
+           view.backgroundColor = .white
+           view.heightAnchor.constraint(equalToConstant: 70).isActive = true
+           view.widthAnchor.constraint(equalToConstant: 2).isActive = true
+           view.translatesAutoresizingMaskIntoConstraints = false
+           return view
+       }()
+    
+    let lineView4 : UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        view.widthAnchor.constraint(equalToConstant: 2).isActive = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let lineView5 : UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        view.widthAnchor.constraint(equalToConstant: 2).isActive = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let lineView6 : UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        view.widthAnchor.constraint(equalToConstant: 2).isActive = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     let stackView = UIStackView()
+    
+    let stackView2 = UIStackView()
+    
+    let stackView3 = UIStackView()
     
     var isHiddenn = ""
     
@@ -202,11 +290,48 @@ class Home: UIViewController {
         return lbl
     }()
     
+    var likeLbl : UILabel = {
+       let lbl = UILabel()
+        lbl.text = "beğenme"
+        return lbl
+    }()
+    
+    var commentLbl : UILabel = {
+       let lbl = UILabel()
+        lbl.text = "yorumun tümünü gör"
+        return lbl
+    }()
+    
+    let alertTitle : UILabel = {
+          let alert = UILabel()
+           alert.text = "Sil"
+           return alert
+       }()
+       
+       let alertMessage : UILabel = {
+          let alert = UILabel()
+           alert.text = "Yorumunuzu silmek mi istiyorsunuz?"
+           return alert
+       }()
+       
+       let alertButtonTitlle1 : UILabel = {
+           let alert = UILabel()
+           alert.text = "Paylaşımı sil"
+           return alert
+       }()
+       
+       let alertButtonTitlle2 : UILabel = {
+           let alert = UILabel()
+           alert.text = "İptal Et"
+           return alert
+       }()
+    
+    
     //________NOTIFICATION
     @objc func onReceiveData(_ notification:Notification) {
         getitemfromDB(query: "", categoryfilter: Cache.filterkeyword)
     }
-    override func viewWillDisappear(_ animated: Bool) {
+        override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "ReceiveData"), object: nil)
     }
@@ -214,6 +339,7 @@ class Home: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //________NOTIFICATION
         NotificationCenter.default.addObserver(self, selector: #selector(onReceiveData(_:)), name: NSNotification.Name(rawValue: "ReceiveData"), object: nil)
         //--------------------
@@ -240,7 +366,7 @@ class Home: UIViewController {
         btnAdd.isHidden = true
     }
     
-    
+   
     func tableview() {
         
         tableView.delegate = self
@@ -259,10 +385,42 @@ class Home: UIViewController {
         stackView.addArrangedSubview(btnGermany)
         stackView.addArrangedSubview(lineView2)
         stackView.addArrangedSubview(btnUk)
+        
+        stackView2.addArrangedSubview(btnAlgeri)
+        stackView2.addArrangedSubview(lineView3)
+        stackView2.addArrangedSubview(btnRussia)
+        stackView2.addArrangedSubview(lineView4)
+        stackView2.addArrangedSubview(btnDenmark)
+       
+        stackView3.addArrangedSubview(btnFrench)
+        stackView3.addArrangedSubview(lineView5)
+        stackView3.addArrangedSubview(btnItaly)
+        stackView3.addArrangedSubview(lineView6)
+        stackView3.addArrangedSubview(btnHolland)
+        
+        
         stackView.axis = .horizontal
         stackView.spacing = 10
+        
+        stackView2.axis = .horizontal
+        stackView2.spacing = 10
+        
+        stackView3.axis = .horizontal
+        stackView3.spacing = 10
+        
         view.addSubview(stackView)
-        stackView.merkezKonumlamdirmaSuperView()
+        view.addSubview(stackView2)
+        view.addSubview(stackView3)
+        
+        
+        stackView2.merkezKonumlamdirmaSuperView()
+        
+        _ = stackView.anchor(top: nil, bottom: stackView2.topAnchor, leading: nil, trailing: nil,padding: .init(top: 0, left: 0, bottom: 0, right: 0))
+        stackView.merkezXSuperView()
+        
+        _ = stackView3.anchor(top: stackView2.bottomAnchor, bottom: nil, leading: nil, trailing: nil,padding: .init(top: 0, left: 0, bottom: 0, right: 0))
+        
+        stackView3.merkezXSuperView()
         
         view.addSubview(activityIndicator)
         
@@ -299,6 +457,8 @@ class Home: UIViewController {
         if isHiddenn == "" {
             visualEffectView.isHidden = true
             stackView.isHidden = true
+            stackView2.isHidden = true
+            stackView3.isHidden = true
         }else{
             
         }
@@ -309,12 +469,18 @@ class Home: UIViewController {
     @objc func viewHiddenAction() {
         view.endEditing(true)
         stackView.isHidden = true
+        stackView2.isHidden = true
+        stackView3.isHidden = true
         UIView.animate(withDuration: 0.3, animations: {
             self.stackView.alpha = 0
+            self.stackView2.alpha = 0
+            self.stackView3.alpha = 0
             self.visualEffectView.alpha = 0
             self.stackView.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
         }) { (_) in
             self.stackView.removeFromSuperview()
+            self.stackView2.removeFromSuperview()
+            self.stackView3.removeFromSuperview()
         }
         
     }
@@ -323,7 +489,55 @@ class Home: UIViewController {
     
     @IBAction func btnLeftAction(_ sender: Any) {
         //        present(menu!, animated: true, completion: nil)
+         
     }
+    
+    
+    func actionLanguageHome_en() {
+        changeLanguage(str: "en") // engilsh
+    }
+    
+    func actionLanguageHome_de() {
+        //        changeLanguage(str: "de") //german
+    }
+    
+    func actionLanguageHome_ar() {
+        
+        //        changeLanguage(str: "ar") //arabic
+    }
+    
+    func actionLanguageHome_da() {
+        //        changeLanguage(str: "da") //danish
+    }
+    
+    func actionLanguageHome_it() {
+        //        changeLanguage(str: "it")  //italian
+    }
+    
+    func actionLanguageHome_ru() {
+        //        changeLanguage(str: "ru")  //russian
+    }
+    
+    func actionLanguageHome_nl() {
+        //        changeLanguage(str: "nl")  //duct flemence
+    }
+
+    
+    
+    func changeLanguage(str:String)  {
+        searchBar.placeholder = "Arama Yap".addLocalizableString(str: str)
+        bulunamadiLbl.text = "Hiç bir şey bulunamadı.".addLocalizableString(str: str)
+        likeLbl.text = "beğenme".addLocalizableString(str: str)
+        commentLbl.text = "yorumun tümünü gör".addLocalizableString(str: str)
+        
+        alertTitle.text = "Sil".addLocalizableString(str: str)
+        alertMessage.text = "Paylaşımınızı silmek mi istiyorsunuz?".addLocalizableString(str: str)
+        alertButtonTitlle1.text = "Paylaşımı sil".addLocalizableString(str: str)
+        alertButtonTitlle2.text = "İptal Et".addLocalizableString(str: str)
+        
+        
+    }
+    
     
     @objc func addAction() {
         let addimage = AddImage()
@@ -340,26 +554,43 @@ class Home: UIViewController {
     
     @objc func germanyAction() {
         print("german")
+        actionLanguageHome_en()
+        NotificationCenter.default.post(name: Notification.Name("AddImage"), object: nil)
+       
     }
     
     @objc func ukAction() {
         print("uk")
     }
     
-    //    func changeLanguage(str:String) -> String {
-    //
-    //    }
+    @objc func algeriAction() {
+        print("algeria")
+    }
+    
+    @objc func russiaAction() {
+        print("rusia")
+    }
+    
+    @objc func denmarkAction() {
+        print("denmark")
+    }
+    
+    @objc func frenchAction() {
+        print("frech")
+    }
+    
+    @objc func italyAction() {
+        print("italiy")
+    }
+    
+    @objc func hollandAction() {
+        print("holland")
+    }
     
     
 }
 
-extension String {
-    func addLocalizableString(str:String) -> String {
-        let path = Bundle.main.path(forResource: str, ofType: "Test")
-        let bundle = Bundle(path: path!)
-        return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
-    }
-}
+
 
 
 extension Home : UITableViewDelegate,UITableViewDataSource {
@@ -371,7 +602,7 @@ extension Home : UITableViewDelegate,UITableViewDataSource {
         let cell : cell666 = tableView.dequeueReusableCell(withIdentifier: "cell666") as! cell666
         let value2 = self.itemlist[indexPath.row]
 
-        var itemid = value2["itemid"] as? String ?? ""
+        let itemid = value2["itemid"] as? String ?? ""
         let header = value2["header"] as? String ?? ""
         let description = value2["description"] as? String ?? ""
         let photourl = value2["photourl"] as? String ?? ""
@@ -415,7 +646,7 @@ extension Home : UITableViewDelegate,UITableViewDataSource {
             userRef.observe(.value, with: { (snapshot) in
 
                
-                cell.lblLike.text = "\(snapshot.childrenCount) beğenme"
+                cell.lblLike.text = "\(snapshot.childrenCount) \(self.likeLbl.text!)"
                 
                
                 
@@ -431,7 +662,7 @@ extension Home : UITableViewDelegate,UITableViewDataSource {
         userRefComment.observe(.value, with: { (snapshot) in
 
            
-           cell.lblComment.text = "\(snapshot.childrenCount) yorumun tümünü gör"
+            cell.lblComment.text = "\(snapshot.childrenCount) \(self.commentLbl.text!)"
             
 
         }) { (error) in
@@ -493,8 +724,8 @@ extension Home : UITableViewDelegate,UITableViewDataSource {
         
         cell.btnEditAction = {
             () in
-            let alert = UIAlertController(title: "Sil", message: "Paylaşımınızı silmek mi istiyorsunuz?", preferredStyle: .actionSheet)
-            let silAction = UIAlertAction(title: "Paylaşımı sil", style: .default) { (action) in
+            let alert = UIAlertController(title: self.alertTitle.text, message: self.alertMessage.text, preferredStyle: .actionSheet)
+            let silAction = UIAlertAction(title: self.alertButtonTitlle1.text, style: .default) { (action) in
               
                 var ref : DatabaseReference?
                 var ref2 : DatabaseReference?
@@ -512,7 +743,7 @@ extension Home : UITableViewDelegate,UITableViewDataSource {
                 
                
             }
-            let iptalAction = UIAlertAction(title: "İptal Et", style: .cancel, handler: nil)
+            let iptalAction = UIAlertAction(title: self.alertButtonTitlle2.text, style: .cancel, handler: nil)
             
             alert.addAction(silAction)
             alert.addAction(iptalAction)

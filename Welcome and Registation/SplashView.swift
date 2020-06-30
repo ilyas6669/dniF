@@ -36,6 +36,7 @@ class SplashView: UIViewController {
         super.viewDidLoad()
          //        try! Auth.auth().signOut()
         
+        
         view.backgroundColor = .white
         addSubview()
         addConstraint()

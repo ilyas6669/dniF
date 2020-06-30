@@ -140,6 +140,21 @@ class SignIn: UIViewController {
         return indicator
     }()
     
+    var alertMesaj : UILabel = {
+        let alert = UILabel()
+        alert.text = "Lütfen email adresinizi girniz"
+        return alert
+    }()
+    var alertParola : UILabel = {
+       let alert = UILabel()
+        alert.text = "Lütfen şifrenizi giriniz"
+        return alert
+    }()
+    var alertHata : UILabel = {
+       let alert = UILabel()
+        alert.text = "Giris yapilirken bir hata oluştu"
+        return alert
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -171,6 +186,8 @@ class SignIn: UIViewController {
         
         let gestureREcongizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(gestureREcongizer)
+        
+        
     
     }
     
@@ -211,19 +228,64 @@ class SignIn: UIViewController {
     }
     
     @objc func forgotPasswordAction() {
+        
         let forgotpassword = ForgotPassword()
         forgotpassword.modalPresentationStyle = .fullScreen
         present(forgotpassword, animated: false, completion: nil)
     }
     
+    
+    func actionLanguageHome_en() {
+        //       changeLanguage(str: "en") // engilsh
+        
+    }
+    
+    func actionLanguageHome_de() {
+        //        changeLanguage(str: "de") //german
+    }
+    
+    func actionLanguageHome_ar() {
+        
+        //        changeLanguage(str: "ar") //arabic
+    }
+    
+    func actionLanguageHome_da() {
+        //        changeLanguage(str: "da") //danish
+    }
+    
+    func actionLanguageHome_it() {
+        //        changeLanguage(str: "it")  //italian
+    }
+    
+    func actionLanguageHome_ru() {
+        //        changeLanguage(str: "ru")  //russian
+    }
+    
+    func actionLanguageHome_nl() {
+        //        changeLanguage(str: "nl")  //duct flemence
+    }
+    
+    func changeLanguage(str:String)  {
+        lblSignIn.text = "Giriş Yap".addLocalizableString(str: str)
+        txtEmail.placeholder = "E-posta adresinizi giriniz".addLocalizableString(str: str)
+        txtPassword.placeholder = "Şifrenizi girin".addLocalizableString(str: str)
+        btnForgotPassword.setTitle("Şifreni mi unuttun ?".addLocalizableString(str: str), for: .normal)
+        btnSignIn.setTitle("GİRİŞ YAP".addLocalizableString(str: str), for: .normal)
+        btnSignUp.setTitle("Hesabın yok mu ? Hemen oluştur!".addLocalizableString(str: str), for: .normal)
+        alertMesaj.text = "Lütfen email adresinizi girniz".addLocalizableString(str: str)
+        alertParola.text = "Lütfen şifrenizi giriniz".addLocalizableString(str: str)
+        alertHata.text = "Giris yapilirken bir hata oluştu".addLocalizableString(str: str)
+        
+    }
+    
     @objc func signInpAction() {
         
         if txtEmail.text == "" {
-            makeAlert(tittle: "Error", message: "Lütfen email adresinizi girniz")
+            makeAlert(tittle: "Error", message: alertMesaj.text!)
             return
         }
         if txtPassword.text == "" {
-           makeAlert(tittle: "Error", message: "Lütfen şifrenizi giriniz")
+            makeAlert(tittle: "Error", message: alertParola.text!)
            return
         }
         
@@ -232,7 +294,7 @@ class SignIn: UIViewController {
         
         Auth.auth().signIn(withEmail: txtEmail.text!, password: txtPassword.text!) { (authdata, error) in
             if(error != nil){
-                self.makeAlert(tittle: "Error", message: "Giris yapilirken bir hata olustu")
+                self.makeAlert(tittle: "Error", message: self.alertHata.text!)
                 self.activityIndicator.stopAnimating()
                 self.btnSignIn.isHidden = false
             }else{
@@ -266,6 +328,8 @@ class SignIn: UIViewController {
     @objc func hideKeyboard() {
         view.endEditing(true)
     }
+    
+    
     
     
     

@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  Fiind
+
+  Created by İlyas Abiyev on 6/29/20.
+  Copyright © 2020 İlyas Abiyev. All rights reserved.
+*/
+"Giriş Yap" = "Login" ;
+"E-posta adresinizi giriniz" = "Enter your e-mail address" ;
+"Şifrenizi girin" = "Enter your password" ;
+"Şifreni mi unuttun ?" = "Forget your password ?" ;
+"GİRİŞ YAP" = "LOGIN" ;
+"Hesabın yok mu ? Hemen oluştur!" = "Don\'t have an account? Create now!" ;

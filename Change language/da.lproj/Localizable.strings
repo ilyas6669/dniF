@@ -1,0 +1,62 @@
+/* 
+  Localizable.strings
+  Fiind
+
+  Created by İlyas Abiyev on 6/29/20.
+  Copyright © 2020 İlyas Abiyev. All rights reserved.
+*/
+"Giriş Yap" = "Login" ;
+"E-posta adresinizi giriniz" = "Login med E-mail." ;
+"Şifrenizi girin" = "Indtastadgangskoden" ;
+"Şifreni mi unuttun ?" = "Glemtadgangskode?" ;
+"GİRİŞ YAP" = "LOG PÅ" ;
+"Hesabın yok mu ? Hemen oluştur!" = "Har duikke en konto?  Opret nu!" ;
+"Lütfen email adresinizi girniz" = "Din e-mail-adresse er forkert..." ;
+"Lütfen şifrenizi giriniz" = "Indtast venligst dit kodeord" ;
+"Giris yapilirken bir hata oluştu" = "Der opstod en fejl ved oprettelse af kontoen. Prøv igen. Fejlkode:" ;
+"Kayıt Ol" = "Sign up" ;
+"E-posta adresinizi giriniz" = "Login med E-mail." ;
+"Şifrenizi girin" = "Indtastadgangskoden" ;
+"Şifrenizi tekrar girin" = "Glemtadgangskode" ;
+"KONUMUNU BELİRLE" = "LOG PÅ" ;
+"İş yeri sahibiyim" = "I have a business owner" ;
+"İş yeri sahibi değilim" = "I don\'t own a business" ;
+"KAYIT OL" = "Tilmeld" ;
+"Lütfen email adresinizi girniz" = "Din e-mail-adresse er forkert ..." ;
+"Lütfen şifrenizi giriniz" = "Your password must be at least 8…" ;
+"Giris yapilirken bir hata oluştu" = "Der opstod en fejl ved indlogning" ;
+"Girdiğiniz şifreler aynı değil" = "Passwords must be the same…" ;
+"Lutfen konumunuzu belirleyin" = "u skal bestemme din placering for at registrere" ;
+"Şifremi unuttum" = "Glemtadgangskode" ;
+"E-posta adresinizi giriniz" = "Loginmed e-mail" ;
+"ŞİFREMİ SIFIRLA" = "NULSTIL MIN ADGANGSKODE" ;
+"Lütfen email adresinizi girniz" = "Din e-mail-adresse er forkert..." ;
+"Email adresinize gönderdiğimiz linke tıklıyarak şifrenizi değişebilirsiniz" = "Der er sendt et link til din e-mail-adresse for en ændring af en adgangskode. Kontroller din e-mail-adresse." ;
+"İlan ekle" = "Tilføjfortegnelse" ;
+"Ekle" = "Tilføje" ;
+"Başlık" = "Titel" ;
+"Açıklama" = "Forklaring" ;
+"Kategori?" = "Kategori ?" ;
+"KONUMUNU İŞARETLE" = "BemærkplaceringN" ;
+"Lütfen ilanınız için fotoğraf seçiniz" = "Kunne ikke uploade foto ..." ;
+"Lütfen başlık girniz" = "Indtast venligst en titel..." ;
+"Lütfen açıklama girniz" = "Indtast venligst en beskrivelse ..." ;
+"Lütfen kategori seçiniz" = "Indtast venligst en kategori..." ;
+"Lütfen konumu seçiniz" = "Vælg venligst placering ..." ;
+"Yorumlar" = "Kommentarer" ;
+"Yorum yapın" = "Skriv en kommentar" ;
+"PAYLAŞ" = "Del" ;
+"Sil" = "Slet" ;
+"Yorumunuzu silmek mi istiyorsunuz?" = "Vil du slette din kommentar?" ;
+"Paylaşımı sil" = "Slet deling" ;
+"İptal Et" = "Afbestille" ;
+"Arama Yap" = "Søg" ;
+"Hiç bir şey bulunamadı." = "Intet fundet." ;
+"beğenme" = "synes godt om" ;
+"yorumun tümünü gör" = "kommentarer" ;
+"Sil" = "Slet" ;
+"Paylaşımınızı silmek mi istiyorsunuz?" = "Vil du slette din del?" ;
+"Paylaşımı sil" = "Slet deling" ;
+"İptal Et" = "Afbestille" ;
+
+

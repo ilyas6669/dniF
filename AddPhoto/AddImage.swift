@@ -64,7 +64,7 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
         return btn
     }()
     
-    let lblIlanEkle : UILabel = {
+    var lblIlanEkle : UILabel = {
         let lbl = UILabel()
         lbl.text = "İlan ekle"
         lbl.textColor = .white
@@ -236,8 +236,39 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
         return toolBar
     }()
     
+    let alertBaslik : UILabel = {
+        let alert = UILabel()
+        alert.text = "Lütfen başlık girniz"
+        return alert
+    }()
+    
+    let alertAciklama : UILabel = {
+        let alert = UILabel()
+        alert.text = "Lütfen açıklama girniz"
+        return alert
+    }()
+    
+    let alertKategori : UILabel = {
+        let alert = UILabel()
+        alert.text = "Lütfen kategori seçiniz"
+        return alert
+    }()
+    
+    let alertKonum : UILabel = {
+        let alert = UILabel()
+        alert.text = "Lütfen konumu seçiniz"
+        return alert
+    }()
+    
+    let alertPhoto : UILabel = {
+        let alert = UILabel()
+        alert.text = "Lütfen ilanınız için fotoğraf seçiniz"
+        return alert
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         ref = Database.database().reference()
         mapView.isHidden = true
         view.backgroundColor = .customBlue()
@@ -279,8 +310,19 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
         toolBar.setItems([doneButton], animated: true)
         txtKategori.inputAccessoryView = toolBar
         
+        NotificationCenter.default.addObserver(self, selector: #selector(actionLanguageHome_en(_:)), name: NSNotification.Name(rawValue: "AddImage"), object: nil)
+      
+        
         
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "AddImage"), object: nil)
+    }
+  
+ 
+  
     
     @objc func actionTamam() {
         txtKategori.resignFirstResponder()
@@ -351,66 +393,113 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
         
         _ = map.anchor(top: topViewMap.bottomAnchor, bottom: mapView.bottomAnchor, leading: mapView.leadingAnchor, trailing: mapView.trailingAnchor)
         
+      
+        
         
     }
-    
-    
-    
     
     @objc func leftAction() {
         self.dismiss(animated: true, completion: nil)
+        
+    }
+   
+    
+    @objc func actionLanguageHome_en(_ notification:NSNotification) {
+        changeLanguage(str: "en") // engilsh
     }
     
+    func actionLanguageHome_de() {
+        //        changeLanguage(str: "de") //german
+    }
+    
+    func actionLanguageHome_ar() {
+        
+        //        changeLanguage(str: "ar") //arabic
+    }
+    
+    func actionLanguageHome_da() {
+        //        changeLanguage(str: "da") //danish
+    }
+    
+    func actionLanguageHome_it() {
+        //        changeLanguage(str: "it")  //italian
+    }
+    
+    func actionLanguageHome_ru() {
+        //        changeLanguage(str: "ru")  //russian
+    }
+    
+    func actionLanguageHome_nl() {
+        //        changeLanguage(str: "nl")  //duct flemence
+    }
+    
+    func changeLanguage(str:String)  {
+        lblIlanEkle.text = "İlan ekle".addLocalizableString(str: str)
+        btnEkle.setTitle("Ekle".addLocalizableString(str: str), for: .normal)
+        txtBaslik.placeholder = "Başlık".addLocalizableString(str: str)
+        txtAciklama.placeholder = "Açıklama".addLocalizableString(str: str)
+        txtKategori.placeholder = "Kategori?".addLocalizableString(str: str)
+        btnKonumuSec.setTitle("KONUMUNU İŞARETLE".addLocalizableString(str: str), for: .normal)
+        alertPhoto.text = "Lütfen ilanınız için fotoğraf seçiniz".addLocalizableString(str: str)
+        alertBaslik.text = "Lütfen başlık girniz".addLocalizableString(str: str)
+        alertAciklama.text = "Lütfen açıklama girniz".addLocalizableString(str: str)
+        alertKategori.text = "Lütfen kategori seçiniz".addLocalizableString(str: str)
+        alertKonum.text = "Lütfen konumu seçiniz".addLocalizableString(str: str)
+    }
+    
+    
+    
     @objc func ekleAction() {
+        
         activityIndicator.startAnimating()
         if txtBaslik.text == "" {
-            makeAlert(tittle: "Hata", message: "Lütfen başlık girniz")
+            makeAlert(tittle: "Error", message: alertBaslik.text!)
             activityIndicator.stopAnimating()
             return
         }else if txtAciklama.text == "" {
-            makeAlert(tittle: "Hata", message: "Lütfen açıklama girniz")
+            makeAlert(tittle: "Error", message: alertAciklama.text!)
             activityIndicator.stopAnimating()
             return
         }else if txtKategori.text == "" {
-            makeAlert(tittle: "Hata", message: "Lütfen kategori seçiniz")
+            makeAlert(tittle: "Error", message: alertKategori.text!)
             activityIndicator.stopAnimating()
             return
         }else if latidude1 == 0.0 && longutide1 == 0.0 {
-            makeAlert(tittle: "Hata", message: "Lütfen konumu seçiniz")
+            makeAlert(tittle: "Error", message: alertKonum.text!)
             activityIndicator.stopAnimating()
             return
         }else if imgAdd.image == UIImage(named: "camera") {
-            makeAlert(tittle: "Hata", message: "Lütfen ilanınız için fotoğraf seçiniz")
+            makeAlert(tittle: "Error", message: alertPhoto.text!)
             activityIndicator.stopAnimating()
             return
         }
-        
-        
+
+
         let postid = Database.database().reference().child("items").childByAutoId().key
-        
+
         let imagename = "images/\(postid!)/1.jpg"
         let storageRef = Storage.storage().reference().child("WorkPhoto").child(imagename)
-        
+
         if let uploadData = imgAdd.image!.pngData() {
             storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
                 if error != nil {
                     print("error:\(error.debugDescription)")
                     self.activityIndicator.stopAnimating()
                 } else { //succesfully
-                    
+
                     storageRef.downloadURL(completion: { (url, error) in
-                        
-                        
+
+
                         let photourl = url?.absoluteString
                         print("succes")
-                        
+
                         self.photoUrl = photourl
-                        
+
                         let userid = Auth.auth().currentUser!.uid
-                        
-                        
+
+
                         let items = Items(category: self.selectedcategory, description: self.txtAciklama.text!, header: self.txtBaslik.text!, itemid: postid!, latitude: self.latidude1, longitude: self.longutide1, photourl:self.photoUrl! , publisher: userid)
-                        
+
                         let dict : [String:Any] = ["category":items.category!,"description":items.description!,"header":items.header!,"itemid":items.itemid!,"latitude":items.latitude!,"longitude":items.longitude!,"photourl":items.photourl!,"publisher":items.publisher!]
                         //itemid postid did yuxaridaki
                         let newRef = self.ref?.child("items").child(postid!)
@@ -427,23 +516,19 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
                             let vc = storyboard.instantiateViewController(withIdentifier: "Home") as! Home
                             vc.modalPresentationStyle = .fullScreen
                             self.present(vc, animated: true, completion: nil)
-                            
-                            
+
+
                         }
-                        
-                        
+
+
                     })
                 }
             }
         }
-            
-        
-        
-        
-        
-        
+
+
     }
-    
+   
     @objc func leftActionMap() {
         
         if !mapView.isHidden {
@@ -545,6 +630,8 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
     @objc func keyboardWillHide(notification: NSNotification) {
         scrolView.contentSize = contentViewSize
     }
+    
+    
     
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

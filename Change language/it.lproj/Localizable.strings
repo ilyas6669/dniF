@@ -1,0 +1,62 @@
+/* 
+  Localizable.strings
+  Fiind
+
+  Created by İlyas Abiyev on 6/29/20.
+  Copyright © 2020 İlyas Abiyev. All rights reserved.
+*/
+"Giriş Yap" = "Accesso" ;
+"E-posta adresinizi giriniz" = "Inserisci il tuo indirizzo email" ;
+"Şifrenizi girin" = "Inserisci la tua password" ;
+"Şifreni mi unuttun ?" = "Hai dimenticato la tua password ?" ;
+"GİRİŞ YAP" = "ACCESSO" ;
+"Hesabın yok mu ? Hemen oluştur!" = "Non hai un account? Crea adesso!" ;
+"Lütfen email adresinizi girniz" = "Il tuo indirizzo e-mail è sbagliato ..." ;
+"Lütfen şifrenizi giriniz" = "per favore inserisci LA TUA password" ;
+"Giris yapilirken bir hata oluştu" = "Si è verificato un errore durante la creazione dell'account. Per favore riprova. Codice di errore:" ;
+"Kayıt Ol" = "Iscriviti" ;
+"E-posta adresinizi giriniz" = "Inserisci il tuo indirizzo email" ;
+"Şifrenizi girin" = "Inserisci la tua password" ;
+"Şifrenizi tekrar girin" = "Inserisci nuovamente la password" ;
+"KONUMUNU BELİRLE" = "IMPOSTA POSIZIONE" ;
+"İş yeri sahibiyim" = "Ho un imprenditore" ;
+"İş yeri sahibi değilim" = "Non possiedo un'azienda" ;
+"KAYIT OL" = "Iscriviti" ;
+"Lütfen email adresinizi girniz" = "Il tuo indirizzo e-mail è sbagliato..." ;
+"Lütfen şifrenizi giriniz" = "per favore inserisci LA TUA password" ;
+"Giris yapilirken bir hata oluştu" = "C'è stato un errore durante il log in" ;
+"Girdiğiniz şifreler aynı değil" = "Le password devono essere le stesse..." ;
+"Lutfen konumunuzu belirleyin" = "Devi impostare la tua posizione per registrarti" ;
+"Şifremi unuttum" = "Dimenticare la password" ;
+"E-posta adresinizi giriniz" = "Inserisci il tuo indirizzo email" ;
+"ŞİFREMİ SIFIRLA" = "RESETTA LA MIA PASSWORD" ;
+"Lütfen email adresinizi girniz" = "Il tuo indirizzo e-mail è sbagliato..." ;
+"Email adresinize gönderdiğimiz linke tıklıyarak şifrenizi değişebilirsiniz" = "È stato inviato un link al tuo indirizzo e-mail per una modifica della password, controlla il tuo indirizzo e-mail." ;
+"İlan ekle" = "Aggiungi lavoro" ;
+"Ekle" = "INSERISCI" ;
+"Başlık" = "Titolo" ;
+"Açıklama" = "Descrizione" ;
+"Kategori?" = "Categoria?" ;
+"KONUMUNU İŞARETLE" = "IMPOSTA POSIZIONE" ;
+"Lütfen ilanınız için fotoğraf seçiniz" = "Impossibile caricare la foto ..." ;
+"Lütfen başlık girniz" = "Inserisci un titolo..." ;
+"Lütfen açıklama girniz" = "Inserisci una descrizione..." ;
+"Lütfen kategori seçiniz" = "Inserisci una categoria..." ;
+"Lütfen konumu seçiniz" = "Seleziona la posizione..." ;
+"Yorumlar" = "Commenti" ;
+"Yorum yapın" = "Scrivi un commento" ;
+"PAYLAŞ" = "Condividere" ;
+"Sil" = "Elimina" ;
+"Yorumunuzu silmek mi istiyorsunuz?" = "Vuoi cancellare il tuo commento?" ;
+"Paylaşımı sil" = "Elimina condivisione" ;
+"İptal Et" = "Annulla" ;
+"Arama Yap" = "Ricerca" ;
+"Hiç bir şey bulunamadı." = "Non abbiamo trovato nulla." ;
+"beğenme" = "piace" ;
+"yorumun tümünü gör" = "Commenti" ;
+"Sil" = "Elimina" ;
+"Paylaşımınızı silmek mi istiyorsunuz?" = "Vuoi eliminare la tua condivisione?" ;
+"Paylaşımı sil" = "Elimina condivisione" ;
+"İptal Et" = "Annulla" ;
+
+

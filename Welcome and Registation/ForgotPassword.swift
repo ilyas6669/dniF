@@ -115,6 +115,18 @@ class ForgotPassword: UIViewController {
         return indicator
     }()
     
+    var alertMesaj : UILabel = {
+        let alert = UILabel()
+        alert.text = "Lütfen email adresinizi girniz"
+        return alert
+    }()
+    
+    var alertMesaj2 : UILabel = {
+        let alert = UILabel()
+        alert.text = "Email adresinize gönderdiğimiz linke tıklıyarak şifrenizi değişebilirsiniz"
+        return alert
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -178,17 +190,63 @@ class ForgotPassword: UIViewController {
     
     @objc func leftAction() {
         self.dismiss(animated: false, completion: nil)
+        
     }
+    
+    
+    func actionLanguageHome_en() {
+        //       changeLanguage(str: "en") // engilsh
+        
+        
+    }
+    
+    func actionLanguageHome_de() {
+        //        changeLanguage(str: "de") //german
+    }
+    
+    func actionLanguageHome_ar() {
+        
+        //        changeLanguage(str: "ar") //arabic
+    }
+    
+    func actionLanguageHome_da() {
+        //        changeLanguage(str: "da") //danish
+    }
+    
+    func actionLanguageHome_it() {
+        //        changeLanguage(str: "it")  //italian
+    }
+    
+    func actionLanguageHome_ru() {
+        //        changeLanguage(str: "ru")  //russian
+    }
+    
+    func actionLanguageHome_nl() {
+        //        changeLanguage(str: "nl")  //duct flemence
+    }
+    
+    
+    func changeLanguage(str:String)  {
+        lblSignUp.text = "Şifremi unuttum".addLocalizableString(str: str)
+        txtEmail.placeholder = "E-posta adresinizi giriniz".addLocalizableString(str: str)
+        btnForgotPassword.setTitle("ŞİFREMİ SIFIRLA".addLocalizableString(str: str), for: .normal)
+        
+        alertMesaj.text = "Lütfen email adresinizi girniz".addLocalizableString(str: str)
+        alertMesaj2.text = "Email adresinize gönderdiğimiz linke tıklıyarak şifrenizi değişebilirsiniz".addLocalizableString(str: str)
+        
+    }
+    
+    
     
     
     @objc func forgoPasswordAction() {
         if txtEmail.text == "" {
-            self.makeAlert(tittle: "Error", message: "Lütfen email adresinizi girniz")
+            self.makeAlert(tittle: "Error", message: alertMesaj.text!)
             return
         }
         
         Auth.auth().sendPasswordReset(withEmail: txtEmail.text!) { error in
-            self.makeAlert(tittle: "Başarılı", message: "Email adresinize gönderdiğimiz linke tıklıyarak şifrenizi değişebilirsiniz")
+            self.makeAlert(tittle: "Succes", message: self.alertMesaj2.text!)
         }
         
     }
