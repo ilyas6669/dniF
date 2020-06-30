@@ -194,37 +194,45 @@ class ForgotPassword: UIViewController {
     }
     
     
-    func actionLanguageHome_en() {
-        //       changeLanguage(str: "en") // engilsh
+    func actionLanguageForgot_tr() {
+        changeLanguage(str: "tr") // turkish
+    }
+    
+    func actionLanguageForgot_de() {
+        changeLanguage(str: "de") //german
+    }
+    
+    
+    func actionLanguageForgot_en() {
+        changeLanguage(str: "en") // engilsh
+    }
+    
+    
+    func actionLanguageForgot_ar() {
         
-        
+        changeLanguage(str: "ar") //arabic
     }
     
-    func actionLanguageHome_de() {
-        //        changeLanguage(str: "de") //german
+    func actionLanguageForgot_ru() {
+        changeLanguage(str: "ru")  //russian
     }
     
-    func actionLanguageHome_ar() {
-        
-        //        changeLanguage(str: "ar") //arabic
+    func actionLanguageForgot_da() {
+        changeLanguage(str: "da") //danish
     }
     
-    func actionLanguageHome_da() {
-        //        changeLanguage(str: "da") //danish
+    func actionLanguageForgot_fr() {
+           changeLanguage(str: "fr")  //frenc
+       }
+    
+    func actionLanguageForgot_it() {
+        changeLanguage(str: "it")  //italian
     }
     
-    func actionLanguageHome_it() {
-        //        changeLanguage(str: "it")  //italian
-    }
     
-    func actionLanguageHome_ru() {
-        //        changeLanguage(str: "ru")  //russian
+    func actionLanguageForgot_nl() {
+        changeLanguage(str: "nl")  //duct flemence
     }
-    
-    func actionLanguageHome_nl() {
-        //        changeLanguage(str: "nl")  //duct flemence
-    }
-    
     
     func changeLanguage(str:String)  {
         lblSignUp.text = "Şifremi unuttum".addLocalizableString(str: str)

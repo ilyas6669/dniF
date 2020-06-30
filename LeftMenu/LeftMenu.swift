@@ -10,7 +10,19 @@ import UIKit
 import Firebase
 import CoreLocation
 import MapKit
+import CoreData
 
+extension LeftMenu : UIGestureRecognizerDelegate {
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if touch.view?.isDescendant(of: self.tableVIew) == true {
+            return false
+        }  else {
+            view.endEditing(true)
+            return true
+        }
+    }
+}
 
 
 class LeftMenu: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
@@ -26,7 +38,155 @@ class LeftMenu: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
     var lattitude = Double()
     var longitude = Double()
     
-     
+    
+    
+    
+    let visualEffectView : UIVisualEffectView = {
+        let blurEffect = UIBlurEffect(style: .dark)
+        let view = UIVisualEffectView(effect: blurEffect)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    
+    let btnTurkey : UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setImage(UIImage(named: "turkey"), for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(turkeyAction), for: .touchUpInside)
+        return btn
+    }()
+    
+    let btnGermany : UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setImage(UIImage(named: "germany"), for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(germanyAction), for: .touchUpInside)
+        return btn
+    }()
+    
+    let btnUk : UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setImage(UIImage(named: "uk"), for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(ukAction), for: .touchUpInside)
+        return btn
+    }()
+    
+    let btnAlgeri : UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setImage(UIImage(named: "algeria"), for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(algeriAction), for: .touchUpInside)
+        return btn
+    }()
+    
+    let btnRussia : UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setImage(UIImage(named: "russia"), for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(russiaAction), for: .touchUpInside)
+        return btn
+    }()
+    
+    let btnDenmark : UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setImage(UIImage(named: "denmark"), for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(denmarkAction), for: .touchUpInside)
+        return btn
+    }()
+    
+    let btnFrench : UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setImage(UIImage(named: "french"), for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(frenchAction), for: .touchUpInside)
+        return btn
+    }()
+    
+    let btnItaly : UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setImage(UIImage(named: "italy"), for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(italyAction), for: .touchUpInside)
+        return btn
+    }()
+    
+    let btnHolland : UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setImage(UIImage(named: "holland"), for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(hollandAction), for: .touchUpInside)
+        return btn
+    }()
+    
+    let lineView1 : UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        view.widthAnchor.constraint(equalToConstant: 2).isActive = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let lineView2 : UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        view.widthAnchor.constraint(equalToConstant: 2).isActive = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let lineView3 : UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        view.widthAnchor.constraint(equalToConstant: 2).isActive = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let lineView4 : UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        view.widthAnchor.constraint(equalToConstant: 2).isActive = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let lineView5 : UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        view.widthAnchor.constraint(equalToConstant: 2).isActive = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let lineView6 : UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        view.widthAnchor.constraint(equalToConstant: 2).isActive = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let stackView = UIStackView()
+    
+    let stackView2 = UIStackView()
+    
+    let stackView3 = UIStackView()
+    
+    let lblHesap : UILabel = {
+        let hesap = UILabel()
+        hesap.text = "Hesap"
+        return hesap
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +202,64 @@ class LeftMenu: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
+        view.addSubview(visualEffectView)
         
+        stackView.addArrangedSubview(btnTurkey)
+        stackView.addArrangedSubview(lineView1)
+        stackView.addArrangedSubview(btnGermany)
+        stackView.addArrangedSubview(lineView2)
+        stackView.addArrangedSubview(btnUk)
+        
+        stackView2.addArrangedSubview(btnAlgeri)
+        stackView2.addArrangedSubview(lineView3)
+        stackView2.addArrangedSubview(btnRussia)
+        stackView2.addArrangedSubview(lineView4)
+        stackView2.addArrangedSubview(btnDenmark)
+        
+        stackView3.addArrangedSubview(btnFrench)
+        stackView3.addArrangedSubview(lineView5)
+        stackView3.addArrangedSubview(btnItaly)
+        stackView3.addArrangedSubview(lineView6)
+        stackView3.addArrangedSubview(btnHolland)
+        
+        
+        stackView.axis = .horizontal
+        stackView.spacing = 10
+        
+        stackView2.axis = .horizontal
+        stackView2.spacing = 10
+        
+        stackView3.axis = .horizontal
+        stackView3.spacing = 10
+        
+        view.addSubview(stackView)
+        view.addSubview(stackView2)
+        view.addSubview(stackView3)
+        
+        
+        stackView2.merkezKonumlamdirmaSuperView()
+        
+        _ = stackView.anchor(top: nil, bottom: stackView2.topAnchor, leading: nil, trailing: nil,padding: .init(top: 0, left: 0, bottom: 0, right: 0))
+        stackView.merkezXSuperView()
+        
+        _ = stackView3.anchor(top: stackView2.bottomAnchor, bottom: nil, leading: nil, trailing: nil,padding: .init(top: 0, left: 0, bottom: 0, right: 0))
+        
+        stackView3.merkezXSuperView()
+        
+        visualEffectView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        visualEffectView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        visualEffectView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        visualEffectView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        
+        visualEffectView.isHidden = true
+        stackView.isHidden = true
+        stackView2.isHidden = true
+        stackView3.isHidden = true
+        
+        
+        let gesturereRecongizer = UITapGestureRecognizer(target: self, action: #selector(viewHiddenAction))
+        gesturereRecongizer.delegate = self
+        view.addGestureRecognizer(gesturereRecongizer)
         
         
         
@@ -53,6 +270,256 @@ class LeftMenu: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
         lattitude = location.latitude
         longitude = location.latitude
     }
+    
+    func changeLanguage(str:String)  {
+        
+        
+        lblHesap.text = "Hesap".addLocalizableString(str: str)
+        tableVIew.reloadData()
+    }
+    
+    
+    
+    @objc func viewHiddenAction() {
+        view.endEditing(true)
+        stackView.isHidden = true
+        stackView2.isHidden = true
+        stackView3.isHidden = true
+        UIView.animate(withDuration: 0.3, animations: {
+            self.stackView.alpha = 0
+            self.stackView2.alpha = 0
+            self.stackView3.alpha = 0
+            self.visualEffectView.alpha = 0
+            self.stackView.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+        }) { (_) in
+            self.stackView.removeFromSuperview()
+            self.stackView2.removeFromSuperview()
+            self.stackView3.removeFromSuperview()
+        }
+        
+    }
+    
+    
+    @objc func turkeyAction() {
+        let splashView = SplashView()
+        splashView.modalPresentationStyle = .fullScreen
+        self.present(splashView, animated: true, completion: nil)
+        
+    }
+    
+    @objc func germanyAction() {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let newLanguage = NSEntityDescription.insertNewObject(forEntityName: "Language", into: context)
+        
+        newLanguage.setValue("de", forKey: "country")
+        
+        do {
+            try context.save()
+            print("save")
+        }catch {
+            print("erro")
+        }
+        
+        let splashView = SplashView()
+        splashView.modalPresentationStyle = .fullScreen
+        self.present(splashView, animated: true, completion: nil)
+        
+    }
+    
+    @objc func ukAction() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let newLanguage = NSEntityDescription.insertNewObject(forEntityName: "Language", into: context)
+        
+        newLanguage.setValue("en", forKey: "country")
+        
+        do {
+            try context.save()
+            print("save")
+        }catch {
+            print("erro")
+        }
+        
+        let splashView = SplashView()
+        splashView.modalPresentationStyle = .fullScreen
+        self.present(splashView, animated: true, completion: nil)
+    }
+    
+    @objc func algeriAction() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let newLanguage = NSEntityDescription.insertNewObject(forEntityName: "Language", into: context)
+        
+        newLanguage.setValue("ar", forKey: "country")
+        
+        do {
+            try context.save()
+            print("save")
+        }catch {
+            print("erro")
+        }
+        
+        
+        let splashView = SplashView()
+        splashView.modalPresentationStyle = .fullScreen
+        self.present(splashView, animated: true, completion: nil)
+    }
+    
+    @objc func russiaAction() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let newLanguage = NSEntityDescription.insertNewObject(forEntityName: "Language", into: context)
+        
+        newLanguage.setValue("ru", forKey: "country")
+        
+        do {
+            try context.save()
+            print("save")
+        }catch {
+            print("erro")
+        }
+        
+        
+        let splashView = SplashView()
+        splashView.modalPresentationStyle = .fullScreen
+        self.present(splashView, animated: true, completion: nil)
+    }
+    
+    @objc func denmarkAction() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let newLanguage = NSEntityDescription.insertNewObject(forEntityName: "Language", into: context)
+        
+        newLanguage.setValue("da", forKey: "country")
+        
+        do {
+            try context.save()
+            print("save")
+        }catch {
+            print("erro")
+        }
+        
+        
+        let splashView = SplashView()
+        splashView.modalPresentationStyle = .fullScreen
+        self.present(splashView, animated: true, completion: nil)
+    }
+    
+    @objc func frenchAction() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let newLanguage = NSEntityDescription.insertNewObject(forEntityName: "Language", into: context)
+        
+        newLanguage.setValue("fr", forKey: "country")
+        
+        do {
+            try context.save()
+            print("save")
+        }catch {
+            print("erro")
+        }
+        
+        
+        let splashView = SplashView()
+        splashView.modalPresentationStyle = .fullScreen
+        self.present(splashView, animated: true, completion: nil)
+    }
+    
+    @objc func italyAction() {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let newLanguage = NSEntityDescription.insertNewObject(forEntityName: "Language", into: context)
+        
+        newLanguage.setValue("it", forKey: "country")
+        
+        do {
+            try context.save()
+            print("save")
+        }catch {
+            print("erro")
+        }
+        
+        
+        let splashView = SplashView()
+        splashView.modalPresentationStyle = .fullScreen
+        self.present(splashView, animated: true, completion: nil)
+    }
+    
+    @objc func hollandAction() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let newLanguage = NSEntityDescription.insertNewObject(forEntityName: "Language", into: context)
+        
+        newLanguage.setValue("nl", forKey: "country")
+        
+        do {
+            try context.save()
+            print("save")
+        }catch {
+            print("erro")
+        }
+        
+        let splashView = SplashView()
+        splashView.modalPresentationStyle = .fullScreen
+        self.present(splashView, animated: true, completion: nil)
+    }
+    
+    
+
+     func actionLanguageLeft_tr() {
+         changeLanguage(str: "tr") // turkish
+     }
+     
+     func actionLanguageLeft_de() {
+         changeLanguage(str: "de") //german
+     }
+     
+     
+     func actionLanguageLeft_en() {
+         changeLanguage(str: "en") // engilsh
+     }
+     
+    
+     func actionLanguageLeft_ar() {
+         
+                 changeLanguage(str: "ar") //arabic
+     }
+     
+     func actionLanguageLeft_fr() {
+            changeLanguage(str: "ru")  //russian
+        }
+    
+    
+    func actionLanguageLeft_ru() {
+        changeLanguage(str: "ru")  //russian
+    }
+    
+    
+    func actionLanguageLeft_da() {
+        changeLanguage(str: "da") //danish
+    }
+    
+    
+    func actionLanguageLeft_it() {
+        changeLanguage(str: "en")  //french
+    }
+    
+    
+    func actionLanguageLeft_nl() {
+        changeLanguage(str: "nl")  //duct flemence
+    }
+    
     
     
     
@@ -73,6 +540,7 @@ extension LeftMenu : UITableViewDataSource,UITableViewDelegate {
             return cellLogo
         } else if indexPath.row == 1 {
             let cellHesap : cellHesap = tableView.dequeueReusableCell(withIdentifier: "cellHesap") as! cellHesap
+            cellHesap.lblHesap.text = lblHesap.text
             return cellHesap
         }else if indexPath.row == 2 {
             let cellAnaSayfa : cellAnaSayfa = tableView.dequeueReusableCell(withIdentifier: "cellAnaSayfa") as! cellAnaSayfa
@@ -246,11 +714,6 @@ extension LeftMenu : UITableViewDataSource,UITableViewDelegate {
             let cellTerzi45 : cellTerzi45 = tableView.dequeueReusableCell(withIdentifier: "cellTerzi45") as! cellTerzi45
             return cellTerzi45
         }
-        
-        //------------------------------
-        
-        
-        
         else if indexPath.row == 59 {
             let cellTerzi46 : cellTerzi46 = tableView.dequeueReusableCell(withIdentifier: "cellTerzi46") as! cellTerzi46
             return cellTerzi46
@@ -313,7 +776,7 @@ extension LeftMenu : UITableViewDataSource,UITableViewDelegate {
             
             Cache.filterkeyword = ""
             NotificationCenter.default.post(name: Notification.Name("ReceiveData"), object: nil)
-                           
+            
             self.dismiss(animated: true, completion: nil)
             
             
@@ -325,7 +788,7 @@ extension LeftMenu : UITableViewDataSource,UITableViewDelegate {
             
             let dict : [String:Any] = ["latitude":lattitude,"longitude":longitude]
             ref?.updateChildValues(dict)
-           
+            
             let refreshAlert = UIAlertController(title: "", message: "Konum Güncellendi", preferredStyle: UIAlertController.Style.alert)
             
             refreshAlert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: { (action: UIAlertAction!) in
@@ -341,11 +804,16 @@ extension LeftMenu : UITableViewDataSource,UITableViewDelegate {
             
             
         }else if indexPath.row == 4 {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "Home") as! Home
-            vc.modalPresentationStyle = .fullScreen
-            vc.isHiddenn = "false"
-            self.present(vc, animated: true, completion: nil)
+            //            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            //            let vc = storyboard.instantiateViewController(withIdentifier: "Home") as! Home
+            //            vc.modalPresentationStyle = .fullScreen
+            //            vc.isHiddenn = "false"
+            //            self.present(vc, animated: true, completion: nil)
+            
+            visualEffectView.isHidden = false
+            stackView.isHidden = false
+            stackView2.isHidden = false
+            stackView3.isHidden = false
             
             
         }else if indexPath.row == 5 {
@@ -382,8 +850,8 @@ extension LeftMenu : UITableViewDataSource,UITableViewDelegate {
             NotificationCenter.default.post(name: Notification.Name("ReceiveData"), object: nil) 
             self.dismiss(animated: true, completion: nil)
             
-           }
-            
+        }
+        
         
     }
     

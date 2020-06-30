@@ -48,11 +48,17 @@
 		003BCD9F2483E01100CE8981 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		003BCDA12483E04100CE8981 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		003BCDA32483E19000CE8981 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		0044D53524AABAC5003BFDED /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
+		0044D53624AABAC5003BFDED /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		0044D53724AABAC6003BFDED /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		004C803B249245CB00AEF579 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		00545919248EC2FE00395245 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		0072259524A2C76F0042AAFA /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		0074EB02248EF71B0087C97C /* LeftMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenu.swift; sourceTree = "<group>"; };
 		007A35D0248849F3001C6CDC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		008B7A0E24AB92A00097535A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		008B7A0F24AB92A10097535A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		008B7A1024AB92D70097535A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		00924E812485E27F0091D0EA /* OzelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OzelTextField.swift; sourceTree = "<group>"; };
 		0093FA7E24A08909009C24CA /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		0093FA7F24A08909009C24CA /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
@@ -68,8 +74,6 @@
 		00D8089824AA269F0023A102 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Main.strings; sourceTree = "<group>"; };
 		00D8089924AA269F0023A102 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		00D8089A24AA26A00023A102 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
-		00D8089B24AA26AC0023A102 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
-		00D8089C24AA26AD0023A102 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		00D8089D24AA26C30023A102 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
 		00D8089E24AA26C50023A102 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		00D8089F24AA26C60023A102 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -192,8 +196,8 @@
 				0049EB1D2483DC1200EB084A /* Welcome and Registation */,
 				006B96CD24866D2D00B2CF25 /* HomeController */,
 				004C803A249245A500AEF579 /* ItemComment */,
-				004C80392492458900AEF579 /* LeftMenu */,
 				00BD7BF5248D516200D54516 /* AddPhoto */,
+				004C80392492458900AEF579 /* LeftMenu */,
 				003BCD9E2483DFE700CE8981 /* Extension */,
 				00E6749B2481E19B00506B61 /* Products */,
 				1FA1843C093515E0C0C490E8 /* Pods */,
@@ -288,10 +292,11 @@
 				de,
 				ar,
 				da,
-				fr,
 				it,
 				ru,
 				nl,
+				tr,
+				fr,
 			);
 			mainGroup = 00E674912481E19B00506B61;
 			productRefGroup = 00E6749B2481E19B00506B61 /* Products */;
@@ -404,6 +409,8 @@
 				00D8089F24AA26C60023A102 /* it */,
 				00D808A224AA26E40023A102 /* ru */,
 				00D808A524AA27530023A102 /* nl */,
+				0044D53724AABAC6003BFDED /* tr */,
+				008B7A1024AB92D70097535A /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -415,10 +422,11 @@
 				0029FD8024A93C180074CE0F /* de */,
 				00D8089524AA26840023A102 /* ar */,
 				00D8089824AA269F0023A102 /* da */,
-				00D8089B24AA26AC0023A102 /* fr */,
 				00D8089D24AA26C30023A102 /* it */,
 				00D808A024AA26E20023A102 /* ru */,
 				00D808A324AA27520023A102 /* nl */,
+				0044D53524AABAC5003BFDED /* tr */,
+				008B7A0E24AB92A00097535A /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -430,10 +438,11 @@
 				0029FD8124A93C180074CE0F /* de */,
 				00D8089624AA26850023A102 /* ar */,
 				00D8089924AA269F0023A102 /* da */,
-				00D8089C24AA26AD0023A102 /* fr */,
 				00D8089E24AA26C50023A102 /* it */,
 				00D808A124AA26E40023A102 /* ru */,
 				00D808A424AA27530023A102 /* nl */,
+				0044D53624AABAC5003BFDED /* tr */,
+				008B7A0F24AB92A10097535A /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

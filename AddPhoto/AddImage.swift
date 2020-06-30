@@ -310,18 +310,10 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
         toolBar.setItems([doneButton], animated: true)
         txtKategori.inputAccessoryView = toolBar
         
-        NotificationCenter.default.addObserver(self, selector: #selector(actionLanguageHome_en(_:)), name: NSNotification.Name(rawValue: "AddImage"), object: nil)
-      
-        
+     
         
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "AddImage"), object: nil)
-    }
-  
- 
   
     
     @objc func actionTamam() {
@@ -404,34 +396,46 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
     }
    
     
-    @objc func actionLanguageHome_en(_ notification:NSNotification) {
+    func actionLanguageAddImage_tr() {
+        changeLanguage(str: "tr") // turkish
+    }
+    
+    func actionLanguageAddImage_de() {
+        changeLanguage(str: "de") //german
+    }
+    
+    
+    func actionLanguageAddImage_en() {
         changeLanguage(str: "en") // engilsh
     }
     
-    func actionLanguageHome_de() {
-        //        changeLanguage(str: "de") //german
-    }
     
-    func actionLanguageHome_ar() {
+    func actionLanguageAddImage_ar() {
         
-        //        changeLanguage(str: "ar") //arabic
+        changeLanguage(str: "ar") //arabic
     }
     
-    func actionLanguageHome_da() {
-        //        changeLanguage(str: "da") //danish
+    func actionLanguageAddImage_ru() {
+        changeLanguage(str: "ru")  //russian
     }
     
-    func actionLanguageHome_it() {
-        //        changeLanguage(str: "it")  //italian
+    func actionLanguageAddImage_fr() {
+        changeLanguage(str: "gr")  //frenach
     }
     
-    func actionLanguageHome_ru() {
-        //        changeLanguage(str: "ru")  //russian
+    func actionLanguageAddImage_da() {
+        changeLanguage(str: "da") //danish
     }
     
-    func actionLanguageHome_nl() {
-        //        changeLanguage(str: "nl")  //duct flemence
+    func actionLanguageAddImage_it() {
+        changeLanguage(str: "it")  //italian
     }
+    
+    
+    func actionLanguageAddImage_nl() {
+        changeLanguage(str: "nl")  //duct flemence
+    }
+    
     
     func changeLanguage(str:String)  {
         lblIlanEkle.text = "İlan ekle".addLocalizableString(str: str)
@@ -473,33 +477,33 @@ class AddImage: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UII
             activityIndicator.stopAnimating()
             return
         }
-
-
+        
+        
         let postid = Database.database().reference().child("items").childByAutoId().key
-
+        
         let imagename = "images/\(postid!)/1.jpg"
         let storageRef = Storage.storage().reference().child("WorkPhoto").child(imagename)
-
+        
         if let uploadData = imgAdd.image!.pngData() {
             storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
                 if error != nil {
                     print("error:\(error.debugDescription)")
                     self.activityIndicator.stopAnimating()
                 } else { //succesfully
-
+                    
                     storageRef.downloadURL(completion: { (url, error) in
-
-
+                        
+                        
                         let photourl = url?.absoluteString
                         print("succes")
-
+                        
                         self.photoUrl = photourl
-
+                        
                         let userid = Auth.auth().currentUser!.uid
-
-
+                        
+                        
                         let items = Items(category: self.selectedcategory, description: self.txtAciklama.text!, header: self.txtBaslik.text!, itemid: postid!, latitude: self.latidude1, longitude: self.longutide1, photourl:self.photoUrl! , publisher: userid)
-
+                        
                         let dict : [String:Any] = ["category":items.category!,"description":items.description!,"header":items.header!,"itemid":items.itemid!,"latitude":items.latitude!,"longitude":items.longitude!,"photourl":items.photourl!,"publisher":items.publisher!]
                         //itemid postid did yuxaridaki
                         let newRef = self.ref?.child("items").child(postid!)

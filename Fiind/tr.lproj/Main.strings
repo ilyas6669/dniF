@@ -1,18 +1,105 @@
 
-/* Class = "UILabel"; text = "Bankamatik"; ObjectID = "4EK-Wg-Iac"; */
-"4EK-Wg-Iac.text" = "Bankamatik";
+/* Class = "UILabel"; text = "Cafe"; ObjectID = "13r-aR-C4d"; */
+"13r-aR-C4d.text" = "Cafe";
 
-/* Class = "UILabel"; text = "Market"; ObjectID = "6l4-P8-Mhs"; */
-"6l4-P8-Mhs.text" = "Market";
+/* Class = "UILabel"; text = "Düğün"; ObjectID = "1P6-iB-4vp"; */
+"1P6-iB-4vp.text" = "Düğün";
 
-/* Class = "UILabel"; text = "Otel"; ObjectID = "6yj-c7-la4"; */
-"6yj-c7-la4.text" = "Otel";
+/* Class = "UILabel"; text = "Hamam"; ObjectID = "1dw-Ez-bve"; */
+"1dw-Ez-bve.text" = "Hamam";
+
+/* Class = "UILabel"; text = "Market"; ObjectID = "35I-Gq-Svs"; */
+"35I-Gq-Svs.text" = "Market";
+
+/* Class = "UILabel"; text = "Kuru Temizleme"; ObjectID = "3Ny-7m-heS"; */
+"3Ny-7m-heS.text" = "Kuru Temizleme";
+
+/* Class = "UILabel"; text = "Çiçekçi"; ObjectID = "3T1-mk-eOj"; */
+"3T1-mk-eOj.text" = "Çiçekçi";
+
+/* Class = "UILabel"; text = "Bilgisayar"; ObjectID = "41t-DF-lZe"; */
+"41t-DF-lZe.text" = "Bilgisayar";
+
+/* Class = "UILabel"; text = "Av Malzemesi"; ObjectID = "4EK-Wg-Iac"; */
+"4EK-Wg-Iac.text" = "Av Malzemesi";
+
+/* Class = "UILabel"; text = "Elektronik"; ObjectID = "5MF-1F-UHv"; */
+"5MF-1F-UHv.text" = "Elektronik";
+
+/* Class = "UILabel"; text = "Avukat"; ObjectID = "6l4-P8-Mhs"; */
+"6l4-P8-Mhs.text" = "Avukat";
+
+/* Class = "UILabel"; text = "Araba Parça"; ObjectID = "6yj-c7-la4"; */
+"6yj-c7-la4.text" = "Araba Parça";
+
+/* Class = "UILabel"; text = "Muhasebe"; ObjectID = "8SQ-td-XBr"; */
+"8SQ-td-XBr.text" = "Muhasebe";
+
+/* Class = "UILabel"; text = "Çocuk Parkı"; ObjectID = "8WK-1y-EFt"; */
+"8WK-1y-EFt.text" = "Çocuk Parkı";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "8bN-Rm-6a5"; */
 "8bN-Rm-6a5.text" = "Label";
 
+/* Class = "UILabel"; text = "Kozmetik"; ObjectID = "8sn-iC-j4M"; */
+"8sn-iC-j4M.text" = "Kozmetik";
+
 /* Class = "UILabel"; text = "Kategoriler"; ObjectID = "BkX-6h-Ocg"; */
 "BkX-6h-Ocg.text" = "Kategoriler";
+
+/* Class = "UISearchBar"; placeholder = "Arama Yap"; ObjectID = "DAa-x0-BT7"; */
+"DAa-x0-BT7.placeholder" = "Arama Yap";
+
+/* Class = "UILabel"; text = "Cep Telefonu"; ObjectID = "DXk-3y-DSD"; */
+"DXk-3y-DSD.text" = "Cep Telefonu";
+
+/* Class = "UILabel"; text = "Okul"; ObjectID = "FKY-LR-NHJ"; */
+"FKY-LR-NHJ.text" = "Okul";
+
+/* Class = "UILabel"; text = "Hastane"; ObjectID = "FOU-Vb-1V7"; */
+"FOU-Vb-1V7.text" = "Hastane";
+
+/* Class = "UILabel"; text = "Temizlik"; ObjectID = "Fzw-JN-yNa"; */
+"Fzw-JN-yNa.text" = "Temizlik";
+
+/* Class = "UILabel"; text = "Otel"; ObjectID = "GbX-Sl-pNi"; */
+"GbX-Sl-pNi.text" = "Otel";
+
+/* Class = "UILabel"; text = "Kasap"; ObjectID = "HvQ-4I-iP9"; */
+"HvQ-4I-iP9.text" = "Kasap";
+
+/* Class = "UILabel"; text = "Terzi"; ObjectID = "I2V-ao-WiQ"; */
+"I2V-ao-WiQ.text" = "Terzi";
+
+/* Class = "UILabel"; text = "Serbest Meslek"; ObjectID = "Ib6-zk-PPd"; */
+"Ib6-zk-PPd.text" = "Serbest Meslek";
+
+/* Class = "UILabel"; text = "Lokanta"; ObjectID = "Jjn-uV-MUn"; */
+"Jjn-uV-MUn.text" = "Lokanta";
+
+/* Class = "UILabel"; text = "Eğlence"; ObjectID = "K3H-TW-oqQ"; */
+"K3H-TW-oqQ.text" = "Eğlence";
+
+/* Class = "UILabel"; text = "Restorant"; ObjectID = "KcP-Jc-os9"; */
+"KcP-Jc-os9.text" = "Restorant";
+
+/* Class = "UILabel"; text = "Bisiklet"; ObjectID = "Kig-Fk-nXM"; */
+"Kig-Fk-nXM.text" = "Bisiklet";
+
+/* Class = "UILabel"; text = "Tercüme"; ObjectID = "L7H-ZA-ge3"; */
+"L7H-ZA-ge3.text" = "Tercüme";
+
+/* Class = "UILabel"; text = "Fırın"; ObjectID = "LJs-54-vDp"; */
+"LJs-54-vDp.text" = "Fırın";
+
+/* Class = "UILabel"; text = "Masaj"; ObjectID = "LK2-eT-v88"; */
+"LK2-eT-v88.text" = "Masaj";
+
+/* Class = "UILabel"; text = "Spor"; ObjectID = "LLz-eY-0Ig"; */
+"LLz-eY-0Ig.text" = "Spor";
+
+/* Class = "UILabel"; text = "Eczane"; ObjectID = "Ohu-Om-RRc"; */
+"Ohu-Om-RRc.text" = "Eczane";
 
 /* Class = "UILabel"; text = "Dili değiştir"; ObjectID = "PVe-XV-taE"; */
 "PVe-XV-taE.text" = "Dili değiştir";
@@ -23,32 +110,110 @@
 /* Class = "UILabel"; text = "0 yorumun tümünü gör"; ObjectID = "TRm-Hj-r6T"; */
 "TRm-Hj-r6T.text" = "0 yorumun tümünü gör";
 
-/* Class = "UILabel"; text = "Berber"; ObjectID = "fFb-CT-5XG"; */
-"fFb-CT-5XG.text" = "Berber";
+/* Class = "UILabel"; text = "Benzinlik"; ObjectID = "UcU-ct-VdQ"; */
+"UcU-ct-VdQ.text" = "Benzinlik";
 
-/* Class = "UILabel"; text = "Terzi"; ObjectID = "g70-Oh-11Z"; */
-"g70-Oh-11Z.text" = "Terzi";
+/* Class = "UILabel"; text = "Fabrika"; ObjectID = "UsL-0m-bUD"; */
+"UsL-0m-bUD.text" = "Fabrika";
 
-/* Class = "UILabel"; text = "Eczane"; ObjectID = "gun-Mv-9QU"; */
-"gun-Mv-9QU.text" = "Eczane";
+/* Class = "UILabel"; text = "Sigorta"; ObjectID = "XAS-kW-fBU"; */
+"XAS-kW-fBU.text" = "Sigorta";
 
-/* Class = "UILabel"; text = "Restoran"; ObjectID = "ke6-9e-egi"; */
-"ke6-9e-egi.text" = "Restoran";
+/* Class = "UILabel"; text = "Ehliyet"; ObjectID = "Y4V-zp-rdf"; */
+"Y4V-zp-rdf.text" = "Ehliyet";
+
+/* Class = "UILabel"; text = "Konsolosluk"; ObjectID = "YYN-Pi-ccf"; */
+"YYN-Pi-ccf.text" = "Konsolosluk";
+
+/* Class = "UILabel"; text = "Beyaz Eşya"; ObjectID = "ZSq-UE-YZg"; */
+"ZSq-UE-YZg.text" = "Beyaz Eşya";
+
+/* Class = "UILabel"; text = "Güzellik Salonu"; ObjectID = "bzC-U5-hKY"; */
+"bzC-U5-hKY.text" = "Güzellik Salonu";
+
+/* Class = "UILabel"; text = "Nüfus"; ObjectID = "c6k-Vd-S1c"; */
+"c6k-Vd-S1c.text" = "Nüfus";
+
+/* Class = "UILabel"; text = "Organizasyon"; ObjectID = "eAc-8z-CIR"; */
+"eAc-8z-CIR.text" = "Organizasyon";
+
+/* Class = "UILabel"; text = "PTT"; ObjectID = "eG6-xR-9K4"; */
+"eG6-xR-9K4.text" = "PTT";
+
+/* Class = "UILabel"; text = "Bankamatik"; ObjectID = "fFb-CT-5XG"; */
+"fFb-CT-5XG.text" = "Bankamatik";
+
+/* Class = "UILabel"; text = "Küçük İlan"; ObjectID = "fmo-Qd-o7h"; */
+"fmo-Qd-o7h.text" = "Küçük İlan";
+
+/* Class = "UILabel"; text = "Pastane"; ObjectID = "g0V-g1-mhr"; */
+"g0V-g1-mhr.text" = "Pastane";
+
+/* Class = "UILabel"; text = "Berber"; ObjectID = "g70-Oh-11Z"; */
+"g70-Oh-11Z.text" = "Berber";
+
+/* Class = "UILabel"; text = "Tatil Yeri"; ObjectID = "gdT-48-5UX"; */
+"gdT-48-5UX.text" = "Tatil Yeri";
+
+/* Class = "UILabel"; text = "Araba Tamir"; ObjectID = "gun-Mv-9QU"; */
+"gun-Mv-9QU.text" = "Araba Tamir";
+
+/* Class = "UILabel"; text = "Kurs Yerleri"; ObjectID = "hns-GN-nVT"; */
+"hns-GN-nVT.text" = "Kurs Yerleri";
+
+/* Class = "UILabel"; text = "Özel Okul"; ObjectID = "i9Y-Fu-otj"; */
+"i9Y-Fu-otj.text" = "Özel Okul";
+
+/* Class = "UILabel"; text = "Belediye"; ObjectID = "ke6-9e-egi"; */
+"ke6-9e-egi.text" = "Belediye";
 
 /* Class = "UILabel"; text = "Hesap"; ObjectID = "mI0-VV-JFx"; */
 "mI0-VV-JFx.text" = "Hesap";
 
-/* Class = "UILabel"; text = "Ptt"; ObjectID = "mnW-f4-Yfq"; */
-"mnW-f4-Yfq.text" = "Ptt";
+/* Class = "UILabel"; text = "Banka"; ObjectID = "mnW-f4-Yfq"; */
+"mnW-f4-Yfq.text" = "Banka";
+
+/* Class = "UILabel"; text = "Otopark"; ObjectID = "mnj-tf-MwW"; */
+"mnj-tf-MwW.text" = "Otopark";
+
+/* Class = "UILabel"; text = "Giyim"; ObjectID = "my2-kq-NJO"; */
+"my2-kq-NJO.text" = "Giyim";
 
 /* Class = "UILabel"; text = "Çıkış Yap"; ObjectID = "nTk-JS-Yuk"; */
 "nTk-JS-Yuk.text" = "Çıkış Yap";
 
+/* Class = "UILabel"; text = "Toptancı"; ObjectID = "ny1-4p-jei"; */
+"ny1-4p-jei.text" = "Toptancı";
+
+/* Class = "UILabel"; text = "Sinema"; ObjectID = "pFz-oF-bPZ"; */
+"pFz-oF-bPZ.text" = "Sinema";
+
 /* Class = "UILabel"; text = "Ana Sayfa"; ObjectID = "qgp-ya-41M"; */
 "qgp-ya-41M.text" = "Ana Sayfa";
 
+/* Class = "UILabel"; text = "Kırtasiye"; ObjectID = "sW3-za-mP1"; */
+"sW3-za-mP1.text" = "Kırtasiye";
+
 /* Class = "UILabel"; text = "Konumunu Güncelle"; ObjectID = "sdH-Q5-5Qw"; */
 "sdH-Q5-5Qw.text" = "Konumunu Güncelle";
+
+/* Class = "UILabel"; text = "Sarraf"; ObjectID = "spv-ED-EQc"; */
+"spv-ED-EQc.text" = "Sarraf";
+
+/* Class = "UILabel"; text = "Dershane"; ObjectID = "t7Y-aF-3nU"; */
+"t7Y-aF-3nU.text" = "Dershane";
+
+/* Class = "UILabel"; text = "Polis Karakolu"; ObjectID = "tkN-Yd-MXL"; */
+"tkN-Yd-MXL.text" = "Polis Karakolu";
+
+/* Class = "UILabel"; text = "Kreş"; ObjectID = "ufv-4f-O31"; */
+"ufv-4f-O31.text" = "Kreş";
+
+/* Class = "UILabel"; text = "Marangoz"; ObjectID = "uiO-4R-WNC"; */
+"uiO-4R-WNC.text" = "Marangoz";
+
+/* Class = "UILabel"; text = "Manav"; ObjectID = "ujI-95-BZi"; */
+"ujI-95-BZi.text" = "Manav";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "uv5-mf-8dI"; */
 "uv5-mf-8dI.text" = "Label";
@@ -56,5 +221,11 @@
 /* Class = "UITabBarItem"; title = "Item"; ObjectID = "vk6-61-yjC"; */
 "vk6-61-yjC.title" = "Item";
 
+/* Class = "UILabel"; text = "Müzik"; ObjectID = "wD6-Hn-ksL"; */
+"wD6-Hn-ksL.text" = "Müzik";
+
 /* Class = "UILabel"; text = "0 beğenme"; ObjectID = "yrg-ki-KwD"; */
 "yrg-ki-KwD.text" = "0 beğenme";
+
+/* Class = "UILabel"; text = "Mobilya"; ObjectID = "zNY-9b-dSW"; */
+"zNY-9b-dSW.text" = "Mobilya";

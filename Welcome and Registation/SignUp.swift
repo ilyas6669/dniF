@@ -331,37 +331,49 @@ class SignUp: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
     
    
     
-    func actionLanguageHome_en() {
-        //       changeLanguage(str: "en") // engilsh
-        
-        
+   func actionLanguageSignUp_tr() {
+           changeLanguage(str: "tr") // turkish
+       }
+       
+       func actionLanguageSignUp_de() {
+           changeLanguage(str: "de") //german
+       }
+       
+       
+       func actionLanguageSignUp_en() {
+           changeLanguage(str: "en") // engilsh
+       }
+       
+       
+       func actionLanguageSignUp_ar() {
+           
+           changeLanguage(str: "ar") //arabic
+       }
+       
+       func actionLanguageSignUp_ru() {
+           changeLanguage(str: "ru")  //russian
+       }
+       
+       func actionLanguageSignUp_fr() {
+           changeLanguage(str: "ru")  //russian
+       }
+       
+    func actionLanguageSignUp_da() {
+        changeLanguage(str: "da") //danish
     }
     
-    func actionLanguageHome_de() {
-        //        changeLanguage(str: "de") //german
+    func actionLanguageSignUp_fr() {
+        changeLanguage(str: "fr")  //frenc
     }
     
-    func actionLanguageHome_ar() {
-        
-        //        changeLanguage(str: "ar") //arabic
-    }
-    
-    func actionLanguageHome_da() {
-        //        changeLanguage(str: "da") //danish
-    }
-    
-    func actionLanguageHome_it() {
-        //        changeLanguage(str: "it")  //italian
-    }
-    
-    func actionLanguageHome_ru() {
-        //        changeLanguage(str: "ru")  //russian
-    }
-    
-    func actionLanguageHome_nl() {
-        //        changeLanguage(str: "nl")  //duct flemence
-    }
-    
+    func actionLanguageSignUp_it() {
+        changeLanguage(str: "it")  //italian
+       }
+       
+       
+       func actionLanguageSignUp_nl() {
+           changeLanguage(str: "nl")  //duct flemence
+       }
     
     func changeLanguage(str:String)  {
         lblSignUp.text = "Kayıt Ol".addLocalizableString(str: str)

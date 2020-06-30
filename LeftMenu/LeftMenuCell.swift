@@ -15,6 +15,8 @@ class cellLogo: UITableViewCell {
 
 class cellHesap: UITableViewCell {
     
+    @IBOutlet weak var lblHesap: UILabel!
+    
 }
 
 class cellAnaSayfa: UITableViewCell {
@@ -39,6 +41,7 @@ class cellCik : UITableViewCell {
 
 class cellKategori : UITableViewCell {
     
+    @IBOutlet weak var lblKategori: UILabel!
 }
 
 class cellMarket : UITableViewCell {

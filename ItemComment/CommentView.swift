@@ -191,36 +191,47 @@ class CommentView: UIViewController,UITextFieldDelegate {
         
     }
     
-    func actionLanguageHome_en() {
-        //       changeLanguage(str: "en") // engilsh
+    func actionLanguageComment_tr() {
+        changeLanguage(str: "tr") // turkish
+    }
+    
+    func actionLanguageComment_de() {
+        changeLanguage(str: "de") //german
+    }
+    
+    
+    func actionLanguageComment_en() {
+        changeLanguage(str: "en") // engilsh
+    }
+    
+    
+    func actionLanguageComment_ar() {
         
-        
+        changeLanguage(str: "ar") //arabic
     }
     
-    func actionLanguageHome_de() {
-        //        changeLanguage(str: "de") //german
+    func actionLanguageComment_ru() {
+        changeLanguage(str: "ru")  //russian
     }
     
-    func actionLanguageHome_ar() {
-        
-        //        changeLanguage(str: "ar") //arabic
+    
+    func actionLanguageComment_da() {
+        changeLanguage(str: "da") //danish
     }
     
-    func actionLanguageHome_da() {
-        //        changeLanguage(str: "da") //danish
+    func actionLanguageComment_frencEn() {
+        changeLanguage(str: "it")  //italian
     }
     
-    func actionLanguageHome_it() {
-        //        changeLanguage(str: "it")  //italian
+    
+    func actionLanguageComment_it() {
+        changeLanguage(str: "it")  //italian
     }
     
-    func actionLanguageHome_ru() {
-        //        changeLanguage(str: "ru")  //russian
-    }
     
-    func actionLanguageHome_nl() {
-        //        changeLanguage(str: "nl")  //duct flemence
-    }
+    func actionLanguageComment_nl() {
+           changeLanguage(str: "nl")  //duct flemence
+       }
     
     
     func changeLanguage(str:String)  {

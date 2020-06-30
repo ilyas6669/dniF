@@ -235,34 +235,45 @@ class SignIn: UIViewController {
     }
     
     
-    func actionLanguageHome_en() {
-        //       changeLanguage(str: "en") // engilsh
+    func actionLanguageSignIn_tr() {
+        changeLanguage(str: "tr") // turkish
+    }
+    
+    func actionLanguageSignIn_de() {
+        changeLanguage(str: "de") //german
+    }
+    
+    
+    func actionLanguageSignIn_en() {
+        changeLanguage(str: "en") // engilsh
+    }
+    
+    
+    func actionLanguageSignIn_ar() {
         
+        changeLanguage(str: "ar") //arabic
     }
     
-    func actionLanguageHome_de() {
-        //        changeLanguage(str: "de") //german
+    func actionLanguageSignIn_ru() {
+        changeLanguage(str: "ru")  //russian
     }
     
-    func actionLanguageHome_ar() {
-        
-        //        changeLanguage(str: "ar") //arabic
+    func actionLanguageSignIn_da() {
+        changeLanguage(str: "da") //danish
     }
     
-    func actionLanguageHome_da() {
-        //        changeLanguage(str: "da") //danish
+    func actionLanguageSignIn_fr() {
+        changeLanguage(str: "fr")  //frenc
     }
     
-    func actionLanguageHome_it() {
-        //        changeLanguage(str: "it")  //italian
+    
+    func actionLanguageSignIn_it() {
+        changeLanguage(str: "it")  //italian
     }
     
-    func actionLanguageHome_ru() {
-        //        changeLanguage(str: "ru")  //russian
-    }
     
-    func actionLanguageHome_nl() {
-        //        changeLanguage(str: "nl")  //duct flemence
+    func actionLanguageSignIn_nl() {
+        changeLanguage(str: "nl")  //duct flemence
     }
     
     func changeLanguage(str:String)  {
